@@ -21,6 +21,7 @@ namespace Project_G3.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public virtual DbSet<Product> Products { get; set; } 
+        public virtual DbSet <Price> Prices { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
