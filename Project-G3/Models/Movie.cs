@@ -17,12 +17,6 @@ namespace Project_G3.Models
         public string MoviePosters { get; set; }
         public decimal MoviePrice { get; set; }
 
-        // Foreign key
-       /*   [Display(Name = "Director")]
-        public int DirectorId { get; set; }
-
-        [ForeignKey("DirectorId")]
-        public virtual Director Directors { get; set; } */
-
+        public virtual ICollection<Star> Stars { get; set; }
     }
 }
