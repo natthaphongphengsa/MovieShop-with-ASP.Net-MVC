@@ -173,25 +173,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104121032427_Initial.cs" />
-    <Compile Include="Migrations\202104121032427_Initial.Designer.cs">
-      <DependentUpon>202104121032427_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104140956499_AddProducts.cs" />
-    <Compile Include="Migrations\202104140956499_AddProducts.Designer.cs">
-      <DependentUpon>202104140956499_AddProducts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104151154130_AddPrices.cs" />
-    <Compile Include="Migrations\202104151154130_AddPrices.Designer.cs">
-      <DependentUpon>202104151154130_AddPrices.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104290804337_AddMovies.cs" />
-    <Compile Include="Migrations\202104290804337_AddMovies.Designer.cs">
-      <DependentUpon>202104290804337_AddMovies.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104290847385_AddFlashSaleEntity.cs" />
-    <Compile Include="Migrations\202104290847385_AddFlashSaleEntity.Designer.cs">
-      <DependentUpon>202104290847385_AddFlashSaleEntity.cs</DependentUpon>
+    <Compile Include="Migrations\202104291217010_Init.cs" />
+    <Compile Include="Migrations\202104291217010_Init.Designer.cs">
+      <DependentUpon>202104291217010_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -279,20 +263,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104121032427_Initial.resx">
-      <DependentUpon>202104121032427_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104140956499_AddProducts.resx">
-      <DependentUpon>202104140956499_AddProducts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151154130_AddPrices.resx">
-      <DependentUpon>202104151154130_AddPrices.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104290804337_AddMovies.resx">
-      <DependentUpon>202104290804337_AddMovies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104290847385_AddFlashSaleEntity.resx">
-      <DependentUpon>202104290847385_AddFlashSaleEntity.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104291217010_Init.resx">
+      <DependentUpon>202104291217010_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
