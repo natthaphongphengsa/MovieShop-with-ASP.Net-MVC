@@ -11,5 +11,7 @@ namespace Project_G3.Models
         [Key]
         public int StarId { get; set; }
         public string StarName { get; set; }
-    }
+
+        public virtual ICollection<Movie> Movies { get; set; }
+    }    
 }
