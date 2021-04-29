@@ -189,10 +189,20 @@
     <Compile Include="Migrations\202104290901399_Stars.Designer.cs">
       <DependentUpon>202104290901399_Stars.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104290804337_AddMovies.cs" />
+    <Compile Include="Migrations\202104290804337_AddMovies.Designer.cs">
+      <DependentUpon>202104290804337_AddMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104290847385_AddFlashSaleEntity.cs" />
+    <Compile Include="Migrations\202104290847385_AddFlashSaleEntity.Designer.cs">
+      <DependentUpon>202104290847385_AddFlashSaleEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FlashSale.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Price.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Star.cs" />
@@ -285,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104290901399_Stars.resx">
       <DependentUpon>202104290901399_Stars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104290804337_AddMovies.resx">
+      <DependentUpon>202104290804337_AddMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104290847385_AddFlashSaleEntity.resx">
+      <DependentUpon>202104290847385_AddFlashSaleEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
