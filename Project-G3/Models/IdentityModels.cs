@@ -23,6 +23,7 @@ namespace Project_G3.Models
         public virtual DbSet<Product> Products { get; set; } 
         public virtual DbSet <Price> Prices { get; set; }
 
+        public virtual DbSet<FlashSale> FlashSales { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
 
         public ApplicationDbContext()
