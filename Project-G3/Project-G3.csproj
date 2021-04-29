@@ -185,12 +185,17 @@
     <Compile Include="Migrations\202104151154130_AddPrices.Designer.cs">
       <DependentUpon>202104151154130_AddPrices.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104290901399_Stars.cs" />
+    <Compile Include="Migrations\202104290901399_Stars.Designer.cs">
+      <DependentUpon>202104290901399_Stars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Price.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Star.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -277,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104151154130_AddPrices.resx">
       <DependentUpon>202104151154130_AddPrices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104290901399_Stars.resx">
+      <DependentUpon>202104290901399_Stars.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
