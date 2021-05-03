@@ -27,6 +27,7 @@ namespace Project_G3.Models
         public virtual DbSet<Movie> Movies { get; set; }
 
         public virtual DbSet <Star> Stars { get; set; }
+        public virtual DbSet <Genre> Genres { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

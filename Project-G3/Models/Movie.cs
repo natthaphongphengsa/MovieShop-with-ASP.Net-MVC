@@ -18,5 +18,7 @@ namespace Project_G3.Models
         public decimal MoviePrice { get; set; }
 
         public virtual ICollection<Star> Stars { get; set; }
+        public virtual ICollection<Genre> Genres { get; set; }
+
     }
 }
