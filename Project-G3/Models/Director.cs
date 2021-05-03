@@ -10,6 +10,6 @@ namespace Project_G3.Models
         public int DirectorId { get; set; }
         public string DirectorName { get; set; }
 
-        public virtual ICollection<Movie> Movies { get; set; }
+        public ICollection<Movie> Movies { get; set; }
     }
 }

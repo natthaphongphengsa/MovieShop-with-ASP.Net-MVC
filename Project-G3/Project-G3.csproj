@@ -185,6 +185,10 @@
     <Compile Include="Migrations\202105031147493_directors.Designer.cs">
       <DependentUpon>202105031147493_directors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105031156411_Error1.cs" />
+    <Compile Include="Migrations\202105031156411_Error1.Designer.cs">
+      <DependentUpon>202105031156411_Error1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Director.cs" />
@@ -282,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105031147493_directors.resx">
       <DependentUpon>202105031147493_directors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105031156411_Error1.resx">
+      <DependentUpon>202105031156411_Error1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
