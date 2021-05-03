@@ -19,6 +19,7 @@ namespace Project_G3.Models
 
         public virtual ICollection<Star> Stars { get; set; }
         public virtual ICollection<Genre> Genres { get; set; }
+        public Director Director { get; set; }
 
     }
 }

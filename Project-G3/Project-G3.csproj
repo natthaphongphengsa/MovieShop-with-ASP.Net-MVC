@@ -181,8 +181,13 @@
     <Compile Include="Migrations\202105031135378_migration2.Designer.cs">
       <DependentUpon>202105031135378_migration2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105031147493_directors.cs" />
+    <Compile Include="Migrations\202105031147493_directors.Designer.cs">
+      <DependentUpon>202105031147493_directors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Director.cs" />
     <Compile Include="Models\FlashSale.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -274,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105031135378_migration2.resx">
       <DependentUpon>202105031135378_migration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105031147493_directors.resx">
+      <DependentUpon>202105031147493_directors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

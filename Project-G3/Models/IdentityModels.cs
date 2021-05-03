@@ -28,6 +28,8 @@ namespace Project_G3.Models
 
         public virtual DbSet <Star> Stars { get; set; }
         public virtual DbSet <Genre> Genres { get; set; }
+
+        public virtual DbSet <Director> Directors { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
