@@ -189,6 +189,10 @@
     <Compile Include="Migrations\202105031156411_Error1.Designer.cs">
       <DependentUpon>202105031156411_Error1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105041228256_Add-MovieDescription.cs" />
+    <Compile Include="Migrations\202105041228256_Add-MovieDescription.Designer.cs">
+      <DependentUpon>202105041228256_Add-MovieDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Director.cs" />
@@ -226,6 +230,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="seedData100.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -289,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105031156411_Error1.resx">
       <DependentUpon>202105031156411_Error1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105041228256_Add-MovieDescription.resx">
+      <DependentUpon>202105041228256_Add-MovieDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
