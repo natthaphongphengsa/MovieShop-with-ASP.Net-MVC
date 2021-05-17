@@ -16,6 +16,7 @@ namespace Project_G3.Models
         public string MovieDuration { get; set; }
         public string MoviePosters { get; set; }
         public string MovieDescription { get; set; }
+       
         public decimal MoviePrice { get; set; }
 
         public virtual ICollection<Star> Stars { get; set; }
