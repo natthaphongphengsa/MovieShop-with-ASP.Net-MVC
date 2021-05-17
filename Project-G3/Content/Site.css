@@ -22,3 +22,27 @@ select,
 textarea {
     max-width: 280px;
 }
+.column{
+    padding-top:22px;
+}
+#col-img {
+    width: 100%;
+    padding-top: 28px;
+}
+
+.underNav {
+    font-size: 24px;
+    padding: 12px 0px 12px;
+}
+.Mtitle {
+    height: 48px;
+    width: fit-content();
+    font-size: 1.2em;
+    font-weight: bold;
+}
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+.carousel-inner {
+    height:500px;
+}
