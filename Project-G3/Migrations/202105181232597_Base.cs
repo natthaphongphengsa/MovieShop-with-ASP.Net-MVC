@@ -3,40 +3,62 @@ namespace Project_G3.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init : DbMigration
+    public partial class Base : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.FlashSales",
+                "dbo.Directors",
                 c => new
                     {
-                        FlashSaleID = c.Int(nullable: false, identity: true),
-                        FlashSaleDiscount = c.String(),
+                        DirectorId = c.Int(nullable: false, identity: true),
+                        DirectorName = c.String(unicode: false),
                     })
-                .PrimaryKey(t => t.FlashSaleID);
+                .PrimaryKey(t => t.DirectorId);
             
             CreateTable(
                 "dbo.Movies",
                 c => new
                     {
                         MovieId = c.Int(nullable: false, identity: true),
-                        MovieTitle = c.String(),
-                        MovieReleaseYear = c.String(),
-                        MovieDuration = c.String(),
-                        MoviePosters = c.String(),
+                        MovieTitle = c.String(unicode: false),
+                        MovieReleaseYear = c.String(unicode: false),
+                        MovieDuration = c.String(unicode: false),
+                        MoviePosters = c.String(unicode: false),
+                        MovieDescription = c.String(unicode: false),
                         MoviePrice = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Director_DirectorId = c.Int(),
                     })
-                .PrimaryKey(t => t.MovieId);
+                .PrimaryKey(t => t.MovieId)
+                .ForeignKey("dbo.Directors", t => t.Director_DirectorId)
+                .Index(t => t.Director_DirectorId);
+            
+            CreateTable(
+                "dbo.Genres",
+                c => new
+                    {
+                        GenreId = c.Int(nullable: false, identity: true),
+                        GenreName = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.GenreId);
             
             CreateTable(
                 "dbo.Stars",
                 c => new
                     {
                         StarId = c.Int(nullable: false, identity: true),
-                        StarName = c.String(),
+                        StarName = c.String(unicode: false),
                     })
                 .PrimaryKey(t => t.StarId);
+            
+            CreateTable(
+                "dbo.FlashSales",
+                c => new
+                    {
+                        FlashSaleID = c.Int(nullable: false, identity: true),
+                        FlashSaleDiscount = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.FlashSaleID);
             
             CreateTable(
                 "dbo.Prices",
@@ -46,15 +68,6 @@ namespace Project_G3.Migrations
                         PriceValue = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.PriceId);
-            
-            CreateTable(
-                "dbo.Products",
-                c => new
-                    {
-                        ProductID = c.Int(nullable: false, identity: true),
-                        ProductName = c.String(),
-                    })
-                .PrimaryKey(t => t.ProductID);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -125,6 +138,19 @@ namespace Project_G3.Migrations
                 .Index(t => t.UserId);
             
             CreateTable(
+                "dbo.GenreMovies",
+                c => new
+                    {
+                        Genre_GenreId = c.Int(nullable: false),
+                        Movie_MovieId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Genre_GenreId, t.Movie_MovieId })
+                .ForeignKey("dbo.Genres", t => t.Genre_GenreId, cascadeDelete: true)
+                .ForeignKey("dbo.Movies", t => t.Movie_MovieId, cascadeDelete: true)
+                .Index(t => t.Genre_GenreId)
+                .Index(t => t.Movie_MovieId);
+            
+            CreateTable(
                 "dbo.StarMovies",
                 c => new
                     {
@@ -147,25 +173,33 @@ namespace Project_G3.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.StarMovies", "Movie_MovieId", "dbo.Movies");
             DropForeignKey("dbo.StarMovies", "Star_StarId", "dbo.Stars");
+            DropForeignKey("dbo.GenreMovies", "Movie_MovieId", "dbo.Movies");
+            DropForeignKey("dbo.GenreMovies", "Genre_GenreId", "dbo.Genres");
+            DropForeignKey("dbo.Movies", "Director_DirectorId", "dbo.Directors");
             DropIndex("dbo.StarMovies", new[] { "Movie_MovieId" });
             DropIndex("dbo.StarMovies", new[] { "Star_StarId" });
+            DropIndex("dbo.GenreMovies", new[] { "Movie_MovieId" });
+            DropIndex("dbo.GenreMovies", new[] { "Genre_GenreId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Movies", new[] { "Director_DirectorId" });
             DropTable("dbo.StarMovies");
+            DropTable("dbo.GenreMovies");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.Products");
             DropTable("dbo.Prices");
-            DropTable("dbo.Stars");
-            DropTable("dbo.Movies");
             DropTable("dbo.FlashSales");
+            DropTable("dbo.Stars");
+            DropTable("dbo.Genres");
+            DropTable("dbo.Movies");
+            DropTable("dbo.Directors");
         }
     }
 }
