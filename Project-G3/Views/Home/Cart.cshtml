@@ -44,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.MoviePrice)
         </td>
         <td>            
-            @Html.ActionLink("Delete", "Delete", new { id=item.MovieId })
+            @Html.ActionLink("Delete", "DeleteFromCart", new { Id =item.MovieId })
         </td>
     </tr>
 }

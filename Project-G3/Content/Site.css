@@ -1,6 +1,6 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 20px;    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -26,8 +26,7 @@ textarea {
     padding-top:22px;
 }
 #col-img {
-    width: 100%;
-    padding-top: 28px;
+    width: 100%;    
 }
 
 .underNav {
@@ -45,4 +44,8 @@ hr.solid {
 }
 .carousel-inner {
     height:500px;
+}
+cart{
+    float:right;  
+    margin-top:2px;
 }

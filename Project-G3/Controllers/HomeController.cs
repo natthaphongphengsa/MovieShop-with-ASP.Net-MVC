@@ -34,12 +34,13 @@ namespace Project_G3.Controllers
             if (!CartList.Any(m => m.MovieId == movie.MovieId)) CartList.Add(movie);
             HttpContext.Session["ShoppingCart"] = CartList;
 
-            return RedirectToAction("Cart");
+            return RedirectToAction("Index");
         }
-        public ActionResult Delete()
+        public ActionResult DeleteFromCart(int Id)
         {
+            List<Movie> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<Movie>)HttpContext.Session["ShoppingCart"] : new List<Movie>();
+            if (CartList.Any(m => m.MovieId == Id)) CartList.Remove(CartList.First(m => m.MovieId == Id));
             return RedirectToAction("Cart");
-
         }
         public ActionResult About()
         {

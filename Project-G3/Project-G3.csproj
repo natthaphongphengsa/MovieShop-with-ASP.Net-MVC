@@ -228,6 +228,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Picture\Godzilla-VS-Kong-Poster-Header.png" />
     <Content Include="Picture\RWNgX1.jpg" />
+    <Content Include="Picture\unnamed.png" />
     <Content Include="Picture\wp2207620.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

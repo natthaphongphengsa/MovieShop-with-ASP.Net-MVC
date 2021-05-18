@@ -55,7 +55,7 @@
         var RadomMovies = random.OrderBy(u => rd.Next()).Take(6);
         foreach (var item in RadomMovies)
         {
-            <div class="col-md-2">
+            <div class="column col-md-2">
                 <a href="@Url.Action("Info","Home",new { id = item.MovieId })">
                     <img id="col-img" src="@item.MoviePosters" />
                     @*@Html.ActionLink("More info", "Infor", new { id = Movie.MovieId })*@
@@ -68,7 +68,7 @@
 <div class="row">
     @foreach (Project_G3.Models.Movie movie in Model)
     {
-        <div class="column col-md-2">
+        <div class="col-md-2">
             <h4 class="Mtitle">@movie.MovieTitle</h4>
             <p>Release Year: @movie.MovieReleaseYear</p>
             <a href="@Url.Action("Info","Home",new { id = movie.MovieId })">
