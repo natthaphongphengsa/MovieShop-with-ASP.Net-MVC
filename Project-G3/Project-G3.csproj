@@ -193,6 +193,14 @@
     <Compile Include="Migrations\202105041228256_Add-MovieDescription.Designer.cs">
       <DependentUpon>202105041228256_Add-MovieDescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105171319241_Movie-Utf8.cs" />
+    <Compile Include="Migrations\202105171319241_Movie-Utf8.Designer.cs">
+      <DependentUpon>202105171319241_Movie-Utf8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105180838018_ChangeToUtf8.cs" />
+    <Compile Include="Migrations\202105180838018_ChangeToUtf8.Designer.cs">
+      <DependentUpon>202105180838018_ChangeToUtf8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Director.cs" />
@@ -202,7 +210,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Price.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\SeedModel.cs" />
     <Compile Include="Models\Star.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -265,6 +273,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="SeedData100.min.json" />
+    <Content Include="SeedData100.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -297,6 +307,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105041228256_Add-MovieDescription.resx">
       <DependentUpon>202105041228256_Add-MovieDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105171319241_Movie-Utf8.resx">
+      <DependentUpon>202105171319241_Movie-Utf8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105180838018_ChangeToUtf8.resx">
+      <DependentUpon>202105180838018_ChangeToUtf8.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,5 +1,7 @@
 namespace Project_G3.Migrations
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
     using Project_G3.Models;
     using System;
     using System.Collections.Generic;
@@ -16,62 +18,44 @@ namespace Project_G3.Migrations
 
         protected override void Seed(ApplicationDbContext context)
         {
-            string text = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "..\\..\\Project-G3\\seedData100.txt"));
-            string[] movieList = text.Split(new string[] { ":::" }, StringSplitOptions.None);
-            #region List declerations
-            List<Genre> genresList = new List<Genre>();
-            List<Star> starsList = new List<Star>();
-            List<Director> directorsList = new List<Director>();
-            #endregion
-            foreach (string movieString in movieList)
+            decimal[] priceList = { 25M, 50M, 99.9M, 150M, 200M };
+            Random r = new Random(1);
+            string jsonString = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "..\\SeedData100.min.json"));
+            List<SeedModel> movieList = JsonConvert.DeserializeObject<List<SeedModel>>(jsonString);
+            List<Star> starList = context.Stars.ToList();
+            List<Genre> genreList = context.Genres.ToList();
+            List<Director> directorList = context.Directors.ToList();
+            foreach (SeedModel mo in movieList)
             {
-                string[] movieData = movieString.Split(new string[] { "::" }, StringSplitOptions.None);
-                Movie movieObj = new Movie()
+                Movie movieObj = new Movie
                 {
-                    MovieTitle = movieData[0],
-                    MoviePosters = movieData[1],
-                    MovieReleaseYear = movieData[2],
-                    MovieDuration = movieData[3],
-                    MovieDescription = movieData[5],
+                    MovieTitle = mo.tittle,
+                    MovieDuration = mo.duration,
+                    MovieDescription = mo.text,
+                    MoviePosters = mo.cover,
+                    MovieReleaseYear = mo.releasYear,
+                    MoviePrice = priceList[r.Next(0, 5)],
                     Stars = new List<Star>(),
                     Genres = new List<Genre>()
                 };
-                #region Add stars to movie
-                foreach (string star in movieData[7].Split(new string[] { ", " }, StringSplitOptions.None))
+                foreach (string star in mo.stars)
                 {
-                    Star starSelected = starsList.Find(s => s.StarName.Equals(star));
-                    if (starSelected == null)
-                    {
-                        starSelected = new Star { StarName = star };
-                        starsList.Add(starSelected);
-                    }
+                    Star starSelected = starList.Find(s => s.StarName.Equals(star));
+                    if (starSelected == null) starList.Add(starSelected = new Star { StarName = star });
                     movieObj.Stars.Add(starSelected);
                 }
-                #endregion
-                #region Add director to movie
-                Director directorSelected = directorsList.Find(d => d.DirectorName.Equals(movieData[6])); 
-                if(directorSelected == null)
+                foreach (string genre in mo.genres)
                 {
-                    directorSelected = new Director { DirectorName = movieData[6] };
-                    directorsList.Add(directorSelected);
-                }
-                movieObj.Director = directorSelected;
-                #endregion
-                #region Add genres to movie
-                foreach (string genre in movieData[4].Split(new string[] { ", " }, StringSplitOptions.None))
-                {
-                    Genre genreSelected = genresList.Find(g => g.GenreName.Equals(genre));
-                    if (genreSelected == null)
-                    {
-                        genreSelected = new Genre { GenreName = genre };
-                        genresList.Add(genreSelected);
-                    }
+                    Genre genreSelected = genreList.Find(g => g.GenreName.Equals(genre));
+                    if (genreSelected == null) genreList.Add(genreSelected = new Genre { GenreName = genre });
                     movieObj.Genres.Add(genreSelected);
                 }
-                #endregion
-
+                Director directorSelected = directorList.Find(d => d.DirectorName.Equals(mo.director));
+                if (directorSelected == null) directorList.Add(directorSelected = new Director { DirectorName = mo.director });
+                movieObj.Director=directorSelected;
                 context.Movies.AddOrUpdate(m => m.MovieTitle, movieObj);
             }
+            context.SaveChanges();
         }
     }
 }
