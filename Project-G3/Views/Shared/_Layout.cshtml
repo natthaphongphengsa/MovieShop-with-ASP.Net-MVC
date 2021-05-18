@@ -17,16 +17,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("MovieShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <button type="submit" class="btn btn-default">Search</button>
+                </div>
+            </form>            
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                <                
                 @Html.Partial("_LoginPartial")
+                <Cart><a href="@Url.Action("Cart","Home")"><img src="~/Picture/unnamed.png" width="40" /></a></Cart>
             </div>
         </div>
     </div>
@@ -40,26 +41,45 @@
         </div>*@
         <div class="underNav navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li role="presentation" class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         Genre <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         @*@foreach (var item in collection)
-                        {
-                            <li></li>
-                        }*@
+                {
+                    <li></li>
+                }*@
                         <li>@Html.ActionLink("Drama", "About", "Home")</li>
                     </ul>
                 </li>
                 <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
                 <li>@Html.ActionLink("Erbjudande", "About", "Home")</li>
-                
             </ul>
         </div>
         @RenderBody()
         <hr />
         <footer>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>Om oss
+                        <li>Movie Company</li>
+                    </ul>                                        
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        Kontakta oss
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        Kundtjänst
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
