@@ -32,20 +32,14 @@ namespace Project_G3.Migrations
                 foreach (string star in mo.stars)
                 {
                     Star starSelected = starList.Find(s => s.StarName.Equals(star));
-                    if (starSelected == null)
-                    {
-                        starList.Add(starSelected = new Star { StarName = star });
-                        stars.Add(starSelected);
-                    }
+                    if (starSelected == null) starList.Add(starSelected = new Star { StarName = star });
+                    stars.Add(starSelected);
                 }
                 foreach (string genre in mo.genres)
                 {
                     Genre genreSelected = genreList.Find(g => g.GenreName.Equals(genre));
-                    if (genreSelected == null)
-                    {
-                        genreList.Add(genreSelected = new Genre { GenreName = genre });
-                        genres.Add(genreSelected);
-                    }
+                    if (genreSelected == null) genreList.Add(genreSelected = new Genre { GenreName = genre });
+                    genres.Add(genreSelected);
                 }
                 Director directorSelected = directorList.Find(d => d.DirectorName.Equals(mo.director));
                 if (directorSelected == null) directorList.Add(directorSelected = new Director { DirectorName = mo.director });
@@ -63,6 +57,11 @@ namespace Project_G3.Migrations
                 };
                 if (!context.Movies.Any(m => m.MovieTitle.Equals(mo.tittle)))
                     context.Movies.Add(movieObj);
+                else
+                {
+                    movieObj.MovieId = context.Movies.First(m => m.MovieTitle == movieObj.MovieTitle).MovieId;
+                    context.Movies.AddOrUpdate(m => m.MovieId, movieObj);
+                }
             }
             context.SaveChanges();
         }
