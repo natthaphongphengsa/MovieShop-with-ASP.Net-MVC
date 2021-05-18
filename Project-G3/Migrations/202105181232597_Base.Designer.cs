@@ -7,13 +7,13 @@ namespace Project_G3.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddMovieDescription : IMigrationMetadata
+    public sealed partial class Base : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddMovieDescription));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Base));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105041228256_Add-MovieDescription"; }
+            get { return "202105181232597_Base"; }
         }
         
         string IMigrationMetadata.Source

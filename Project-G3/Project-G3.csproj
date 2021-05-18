@@ -173,33 +173,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104291137398_init.cs" />
-    <Compile Include="Migrations\202104291137398_init.Designer.cs">
-      <DependentUpon>202104291137398_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105031135378_migration2.cs" />
-    <Compile Include="Migrations\202105031135378_migration2.Designer.cs">
-      <DependentUpon>202105031135378_migration2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105031147493_directors.cs" />
-    <Compile Include="Migrations\202105031147493_directors.Designer.cs">
-      <DependentUpon>202105031147493_directors.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105031156411_Error1.cs" />
-    <Compile Include="Migrations\202105031156411_Error1.Designer.cs">
-      <DependentUpon>202105031156411_Error1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105041228256_Add-MovieDescription.cs" />
-    <Compile Include="Migrations\202105041228256_Add-MovieDescription.Designer.cs">
-      <DependentUpon>202105041228256_Add-MovieDescription.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105171319241_Movie-Utf8.cs" />
-    <Compile Include="Migrations\202105171319241_Movie-Utf8.Designer.cs">
-      <DependentUpon>202105171319241_Movie-Utf8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105180838018_ChangeToUtf8.cs" />
-    <Compile Include="Migrations\202105180838018_ChangeToUtf8.Designer.cs">
-      <DependentUpon>202105180838018_ChangeToUtf8.cs</DependentUpon>
+    <Compile Include="Migrations\202105181232597_Base.cs" />
+    <Compile Include="Migrations\202105181232597_Base.Designer.cs">
+      <DependentUpon>202105181232597_Base.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -300,26 +276,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104291137398_init.resx">
-      <DependentUpon>202104291137398_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105031135378_migration2.resx">
-      <DependentUpon>202105031135378_migration2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105031147493_directors.resx">
-      <DependentUpon>202105031147493_directors.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105031156411_Error1.resx">
-      <DependentUpon>202105031156411_Error1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105041228256_Add-MovieDescription.resx">
-      <DependentUpon>202105041228256_Add-MovieDescription.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105171319241_Movie-Utf8.resx">
-      <DependentUpon>202105171319241_Movie-Utf8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105180838018_ChangeToUtf8.resx">
-      <DependentUpon>202105180838018_ChangeToUtf8.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105181232597_Base.resx">
+      <DependentUpon>202105181232597_Base.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
