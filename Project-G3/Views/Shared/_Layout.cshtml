@@ -24,7 +24,7 @@
                     <input type="text" class="form-control" placeholder="Search">
                     <button type="submit" class="btn btn-default">Search</button>
                 </div>
-            </form>            
+            </form>
             <div class="navbar-collapse collapse">
                 @Html.Partial("_LoginPartial")
                 <Cart><a href="@Url.Action("Cart","Home")"><img src="~/Picture/unnamed.png" width="40" /></a></Cart>
@@ -33,12 +33,12 @@
     </div>
     <div class="container body-content">
         @*<div class="underNav navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Genre", "Movie", "Home")</li>
-                <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
-                <li>@Html.ActionLink("Erbjudande", "Contact", "Home")</li>
-            </ul>
-        </div>*@
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Genre", "Movie", "Home")</li>
+                    <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
+                    <li>@Html.ActionLink("Erbjudande", "Contact", "Home")</li>
+                </ul>
+            </div>*@
         <div class="underNav navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -47,11 +47,10 @@
                         Genre <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        @*@foreach (var item in collection)
-                {
-                    <li></li>
-                }*@
-                        <li>@Html.ActionLink("Drama", "About", "Home")</li>
+                        @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
+                        {
+                            <li>@Html.ActionLink(Genre.GenreName, "About", "Home")</li>
+                        }
                     </ul>
                 </li>
                 <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
@@ -63,9 +62,10 @@
         <footer>
             <div class="row">
                 <div class="col-md-4">
-                    <ul>Om oss
+                    <ul>
+                        Om oss
                         <li>Movie Company</li>
-                    </ul>                                        
+                    </ul>
                 </div>
                 <div class="col-md-4">
                     <ul>

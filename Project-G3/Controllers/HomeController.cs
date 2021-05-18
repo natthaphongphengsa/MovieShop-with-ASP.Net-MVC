@@ -10,13 +10,12 @@ namespace Project_G3.Controllers
     public class HomeController : Controller
     {        
         private ApplicationDbContext db = new ApplicationDbContext();
+        public HomeController()
+        {
+            ViewData["Genres"] = db.Genres.ToList();
+        }
         public ActionResult Index()
         {
-            //ApplicationDbContext _db = new ApplicationDbContext();
-            //ViewBag.Movies = _db.Movies; //= _db.Movies; //.Select(m => m.MovieTitle.ToLower().Contains("g")).ToArray();
-            
-           // _db.SaveChanges();
-
             return View(db.Movies.ToArray());
         }
         public ActionResult Cart()
