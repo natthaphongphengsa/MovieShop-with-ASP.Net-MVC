@@ -8,15 +8,16 @@ using System.Web.Mvc;
 namespace Project_G3.Controllers
 {
     public class HomeController : Controller
-    {
+    {        
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-            ApplicationDbContext _db = new ApplicationDbContext();
+            //ApplicationDbContext _db = new ApplicationDbContext();
             //ViewBag.Movies = _db.Movies; //= _db.Movies; //.Select(m => m.MovieTitle.ToLower().Contains("g")).ToArray();
             
            // _db.SaveChanges();
 
-            return View(_db.Movies.ToArray());
+            return View(db.Movies.ToArray());
         }
         public ActionResult Cart()
         {
@@ -27,13 +28,18 @@ namespace Project_G3.Controllers
         
         public ActionResult AddToCart(int Id)
         {
-            ApplicationDbContext _db = new ApplicationDbContext();
+            //ApplicationDbContext _db = new ApplicationDbContext();
             List<Movie> CartList = HttpContext.Session["ShoppingCart"]!=null ? (List<Movie>) HttpContext.Session["ShoppingCart"] : new List<Movie>();
-            Movie movie = _db.Movies.First(m => m.MovieId == Id);
+            Movie movie = db.Movies.First(m => m.MovieId == Id);
             if (!CartList.Any(m => m.MovieId == movie.MovieId)) CartList.Add(movie);
             HttpContext.Session["ShoppingCart"] = CartList;
 
             return RedirectToAction("Cart");
+        }
+        public ActionResult Delete()
+        {
+            return RedirectToAction("Cart");
+
         }
         public ActionResult About()
         {
@@ -48,6 +54,20 @@ namespace Project_G3.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public ActionResult Info(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            //ApplicationDbContext db = new ApplicationDbContext();
+            Movie movie = db.Movies.FirstOrDefault(m => m.MovieId == id);
+            return View(movie);
+        }  
+        public ActionResult Genre()
+        {
+            return View(db.Genres.ToList());
         }
     }
 }

@@ -11,10 +11,15 @@ namespace Project_G3.Models
     {
         [Key]
         public int MovieId { get; set; }
+        [Column(TypeName = "varchar(MAX)")]
         public string MovieTitle { get; set; }
+        [Column(TypeName = "varchar(MAX)")]
         public string MovieReleaseYear { get; set; }
+        [Column(TypeName = "varchar(MAX)")]
         public string MovieDuration { get; set; }
+        [Column(TypeName = "varchar(MAX)")]
         public string MoviePosters { get; set; }
+        [Column(TypeName = "varchar(MAX)")]
         public string MovieDescription { get; set; }
        
         public decimal MoviePrice { get; set; }

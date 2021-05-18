@@ -25,11 +25,38 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
+                <                
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
     <div class="container body-content">
+        @*<div class="underNav navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Genre", "Movie", "Home")</li>
+                <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
+                <li>@Html.ActionLink("Erbjudande", "Contact", "Home")</li>
+            </ul>
+        </div>*@
+        <div class="underNav navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Genre <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        @*@foreach (var item in collection)
+                        {
+                            <li></li>
+                        }*@
+                        <li>@Html.ActionLink("Drama", "About", "Home")</li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
+                <li>@Html.ActionLink("Erbjudande", "About", "Home")</li>
+                
+            </ul>
+        </div>
         @RenderBody()
         <hr />
         <footer>
