@@ -39,24 +39,7 @@
                     <li>@Html.ActionLink("Erbjudande", "Contact", "Home")</li>
                 </ul>
             </div>*@
-        <div class="underNav navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li role="presentation" class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        Genre <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
-                        {
-                            <li>@Html.ActionLink(Genre.GenreName, "About", "Home")</li>
-                        }
-                    </ul>
-                </li>
-                <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
-                <li>@Html.ActionLink("Erbjudande", "About", "Home")</li>
-            </ul>
-        </div>
+
         @RenderBody()
         <hr />
         <footer>
