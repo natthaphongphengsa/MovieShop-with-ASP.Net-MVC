@@ -1,0 +1,60 @@
+﻿@model Project_G3.Models.Movie
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieReleaseYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieReleaseYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieDuration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieDuration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoviePosters)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoviePosters)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoviePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoviePrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MovieId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
