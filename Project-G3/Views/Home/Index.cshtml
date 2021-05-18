@@ -18,8 +18,8 @@
                 }
             </ul>
         </li>
-        <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
-        <li>@Html.ActionLink("Erbjudande", "About", "Home")</li>
+        <li>@Html.ActionLink("News", "About", "Home")</li>
+        <li>@Html.ActionLink("Flash Sale", "About", "Home")</li>
     </ul>
 </div>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -87,14 +87,14 @@
     @foreach (Project_G3.Models.Movie movie in Model)
     {
         <div class="col-md-2">
-            <h4 class="Mtitle">@movie.MovieTitle</h4>
+            <h4 class="Movietitle">@movie.MovieTitle</h4>
             <p>Release Year: @movie.MovieReleaseYear</p>
             <a href="@Url.Action("Info","Home",new { id = movie.MovieId })">
                 <img id="col-img" src="@movie.MoviePosters" />
             </a>
             <p>Movie Duration: @movie.MovieDuration</p>
             <p>Price :@movie.MoviePrice Kr</p>
-            <a class="btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.MovieId })">Add To Cart</a>
+            <a class="btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.MovieId })" onclick="return confirm('Do you want to add ( @movie.MovieTitle ) to your cart?');">Add To Cart</a>
         </div>
 
         @*<a class="col-md-2">

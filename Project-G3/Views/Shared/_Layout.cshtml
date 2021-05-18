@@ -27,19 +27,15 @@
             </form>
             <div class="navbar-collapse collapse">
                 @Html.Partial("_LoginPartial")
-                <Cart><a href="@Url.Action("Cart","Home")"><img src="~/Picture/unnamed.png" width="40" /></a></Cart>
+                <Cart>
+                    @*Om varukorgen är tomt visas inte någon siffra, annars visa antal filmer som finns i varukorgen brevid Varukorgn Icon*@
+                    @if(@ViewBag.Amount == 0){}else{<p class="amount">@ViewBag.Amount</p>}                    
+                    <a href="@Url.Action("Cart","Home")"><img src="~/Picture/unnamed.png" width="40" /></a>
+                </Cart>
             </div>
         </div>
     </div>
     <div class="container body-content">
-        @*<div class="underNav navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Genre", "Movie", "Home")</li>
-                    <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
-                    <li>@Html.ActionLink("Erbjudande", "Contact", "Home")</li>
-                </ul>
-            </div>*@
-
         @RenderBody()
         <hr />
         <footer>

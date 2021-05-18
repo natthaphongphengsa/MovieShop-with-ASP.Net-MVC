@@ -22,30 +22,62 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*-----------------Egen CSS------------------------*/
+/*Justera Movie bilden under slider*/
 .column{
     padding-top:22px;
 }
+/*Justera storlek på varje Movie bilden*/
 #col-img {
     width: 100%;    
 }
-
+/*Justera Nagiveringsbar*/
 .underNav {
     font-size: 24px;
     padding: 12px 0px 12px;
 }
-.Mtitle {
+/*Justera film titel*/
+.Movietitle {
     height: 48px;
     width: fit-content();
     font-size: 1.2em;
     font-weight: bold;
 }
+/*Sklijer linjen*/
 hr.solid {
     border-top: 3px solid #bbb;
 }
+/*Ändra höjden på Slider bilden*/
 .carousel-inner {
-    height:500px;
+    height:520px;
 }
+/*Justera Cart Icon */
 cart{
     float:right;  
-    margin-top:2px;
+    margin-top:6px;
+}
+/*Flytta meddelande texten till mitten*/
+.MSG{
+    margin-top:200px;
+    margin-left:auto;
+    margin-right:auto;
+    width:fit-content;
+    padding:45px;
+}
+/*Ändra bred&Höjd på meddelande titel*/
+.Title{
+    min-height:800px;
+}
+/*Justera storlek på TotaltPris*/
+.Price{
+    padding:14px;
+    font-size:34px;
+}
+/*Justera Antal film*/
+.amount {
+    position:absolute;
+    color:white;
+    margin:8px -10px;
+    font-size:20px;
 }
