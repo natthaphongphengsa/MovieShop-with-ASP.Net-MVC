@@ -13,7 +13,7 @@ namespace Project_G3.Models
         public int FlashSaleID { get; set; }
         [Column(TypeName = "varchar(MAX)")]
         public string FlashSaleDiscount { get; set; }
-
+        public virtual ICollection<Movie> Movies { get; set; }
 
     }
 }

@@ -1,5 +1,7 @@
 namespace Project_G3.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using Project_G3.Models;
@@ -18,6 +20,28 @@ namespace Project_G3.Migrations
 
         protected override void Seed(ApplicationDbContext context)
         {
+            #region Default user and role
+            if (!context.Roles.Any(role => role.Name == "Admin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole("Admin");
+
+                manager.Create(role);
+            }
+
+            if (!context.Users.Any(u => u.UserName == "Admin"))
+            {
+                UserStore<ApplicationUser> store = new UserStore<ApplicationUser>(context);
+                UserManager<ApplicationUser> manager = new UserManager<ApplicationUser>(store);
+                ApplicationUser user = new ApplicationUser { UserName = "Admin" };
+
+
+                manager.Create(user, "P@ssw0rd");
+                manager.AddToRole(user.Id, "Admin");
+            }
+            #endregion
+            #region 100 movies (Seeded)
             decimal[] priceList = { 25M, 50M, 99.9M, 150M, 200M };
             Random r = new Random(1);
             string jsonString = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "..\\SeedData100.min.json"));
@@ -63,6 +87,7 @@ namespace Project_G3.Migrations
                     context.Movies.AddOrUpdate(m => m.MovieId, movieObj);
                 }
             }
+            #endregion
             context.SaveChanges();
         }
     }
