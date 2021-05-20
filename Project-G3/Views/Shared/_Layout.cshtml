@@ -27,56 +27,40 @@
             </form>
             <div class="navbar-collapse collapse">
                 @Html.Partial("_LoginPartial")
-                <Cart><a href="@Url.Action("Cart","Home")"><img src="~/Picture/unnamed.png" width="40" /></a></Cart>
+                <Cart>
+                    @*Om varukorgen är tomt visas inte någon siffra, annars visa antal filmer som finns i varukorgen brevid Varukorgn Icon*@
+                    @if(@ViewBag.Amount == 0){}else{<p class="amount">@ViewBag.Amount</p>}                    
+                    <a href="@Url.Action("Cart","Home")"><img src="~/Picture/unnamed.png" width="40" /></a>
+                </Cart>
             </div>
         </div>
     </div>
     <div class="container body-content">
-        @*<div class="underNav navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Genre", "Movie", "Home")</li>
-                    <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
-                    <li>@Html.ActionLink("Erbjudande", "Contact", "Home")</li>
-                </ul>
-            </div>*@
-        <div class="underNav navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li role="presentation" class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        Genre <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
-                        {
-                            <li>@Html.ActionLink(Genre.GenreName, "About", "Home")</li>
-                        }
-                    </ul>
-                </li>
-                <li>@Html.ActionLink("Nyheter", "About", "Home")</li>
-                <li>@Html.ActionLink("Erbjudande", "About", "Home")</li>
-            </ul>
-        </div>
         @RenderBody()
         <hr />
         <footer>
             <div class="row">
                 <div class="col-md-4">
-                    <ul>
-                        Om oss
-                        <li>Movie Company</li>
+                    <ul style="list-style-type:none">
+                        <b> Om oss </b>
+                        <li>MovieShop grundades år 2021 och sedan dess </li>
+                        <li>har bedrivit E-handel på Internet.</li>
+                        <li>Inriktningen är online filmer.</li>
+
                     </ul>
+                     </div>
+                <div class="col-md-4">
+                    <ul style="list-style-type:none">
+                       <b> Adress</b>
+                        <li>Hamngatan 27</li>
+                        <li>58226 Linköping</li>
+                        </ul>
                 </div>
                 <div class="col-md-4">
-                    <ul>
-                        Kontakta oss
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul>
-                        Kundtjänst
-                        <li></li>
+                    <ul style="list-style-type:none">
+                        <b>Kontakt</b>
+                        <li>Tel. 070-7625665</li>
+                        <li>e-post: info@movie-shop.com</li>
                     </ul>
                 </div>
             </div>

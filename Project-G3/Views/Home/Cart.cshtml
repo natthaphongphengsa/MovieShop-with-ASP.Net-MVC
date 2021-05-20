@@ -1,52 +1,81 @@
 ﻿@model IEnumerable<Project_G3.Models.Movie>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieReleaseYear)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieDuration)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MoviePosters)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MoviePrice)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieReleaseYear)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieDuration)
-        </td>
-        <td>
-            <img id="info-img" src="@Html.DisplayTextFor(model => item.MoviePosters)" />            
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoviePrice)
-        </td>
-        <td>            
-            @Html.ActionLink("Delete", "DeleteFromCart", new { Id =item.MovieId })
-        </td>
-    </tr>
+@{
+    //Om varukorgen är tomt ska detta visa annars visa filmen som man har lagt till
+    if (ViewBag.ShoppingCart.Count == 0)
+    {
+        <div class="Title row">
+            <h1 class="MSG">Shopping cart is empty!</h1>
+            <p class="MSG">@Html.ActionLink("Back To Shop", "Index", "Home")</p>
+        </div>
+    }
+    else
+    {
+        <h2>Varukorg:</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MovieTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MovieReleaseYear)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MovieDuration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoviePosters)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MovieDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoviePrice)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieReleaseYear)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieDuration)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Info","Home",new { id = item.MovieId })">
+                            <img id="info-img" src="@Html.DisplayTextFor(model => item.MoviePosters)" />
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MoviePrice)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "DeleteFromCart", new { Id = item.MovieId })
+                    </td>
+                </tr>
+            }
+        </table>
+        <hr />
+        <div class="row">
+            <p class="Price pull-right">Totalt: @ViewBag.Sum kr</p>
+        </div>
+        <button role="presentation" class="dropdown" style="width:100%;height:44px;">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Chose your payment
+            </a>
+            <ul class="dropdown-menu" style="width:100%;">
+                <li>Visa</li>
+                <li>Mastercard</li>
+                <li>Payphon</li>
+            </ul>
+        </button>
+    }
 }
-
-</table>

@@ -4,6 +4,24 @@
 
 @model IEnumerable<Project_G3.Models.Movie>
 
+<div class="underNav navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Genre <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
+                {
+                    <li>@Html.ActionLink(Genre.GenreName, "About", "Home")</li>
+                }
+            </ul>
+        </li>
+        <li>@Html.ActionLink("News", "About", "Home")</li>
+        <li>@Html.ActionLink("Flash Sale", "About", "Home")</li>
+    </ul>
+</div>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -62,21 +80,21 @@
                 </a>
             </div>
         }
-    }    
+    }
 </div>
 <hr class="solid">
 <div class="row">
     @foreach (Project_G3.Models.Movie movie in Model)
     {
         <div class="col-md-2">
-            <h4 class="Mtitle">@movie.MovieTitle</h4>
+            <h4 class="Movietitle">@movie.MovieTitle</h4>
             <p>Release Year: @movie.MovieReleaseYear</p>
             <a href="@Url.Action("Info","Home",new { id = movie.MovieId })">
                 <img id="col-img" src="@movie.MoviePosters" />
             </a>
             <p>Movie Duration: @movie.MovieDuration</p>
             <p>Price :@movie.MoviePrice Kr</p>
-            <a class="btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.MovieId })">Add To Cart</a>
+            <a class="btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.MovieId })" onclick="return confirm('Do you want to add ( @movie.MovieTitle ) to your cart?');">Add To Cart</a>
         </div>
 
         @*<a class="col-md-2">
