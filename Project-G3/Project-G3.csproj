@@ -177,6 +177,10 @@
     <Compile Include="Migrations\202105181232597_Base.Designer.cs">
       <DependentUpon>202105181232597_Base.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105201142383_LinkMoviesFlashsale.cs" />
+    <Compile Include="Migrations\202105201142383_LinkMoviesFlashsale.Designer.cs">
+      <DependentUpon>202105201142383_LinkMoviesFlashsale.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Director.cs" />
@@ -284,6 +288,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105181232597_Base.resx">
       <DependentUpon>202105181232597_Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105201142383_LinkMoviesFlashsale.resx">
+      <DependentUpon>202105201142383_LinkMoviesFlashsale.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
