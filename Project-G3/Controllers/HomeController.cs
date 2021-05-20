@@ -18,7 +18,8 @@ namespace Project_G3.Controllers
         {            
             List<Movie> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<Movie>)HttpContext.Session["ShoppingCart"] : new List<Movie>();
             //Visa Antal film som finns i varukorg i index sidan
-            int amount = 0;            
+            int amount = 0;    
+            //Om varukorg är tomt sätt 0
             if (CartList.Count != 0) {  amount = CartList.Count; } else { amount = 0; }
             ViewBag.Amount = amount;
             return View(db.Movies.ToArray());
@@ -30,6 +31,7 @@ namespace Project_G3.Controllers
             decimal TotalPrice = 0;
             foreach (var item in CartList) { TotalPrice += item.MoviePrice; }
             ViewBag.Sum = TotalPrice;
+            
             return View(CartList);
         }
         
@@ -73,9 +75,13 @@ namespace Project_G3.Controllers
             Movie movie = db.Movies.FirstOrDefault(m => m.MovieId == id);
             return View(movie);
         }  
-        public ActionResult Genre()
+        public ActionResult PaymentMethod()
         {
-            return View(db.Genres.ToList());
+            return View();
+        }
+        public ActionResult ConfirmAsGuest()
+        {
+            return View();
         }
     }
 }

@@ -65,17 +65,68 @@
         </table>
         <hr />
         <div class="row">
+            @*Visa Totalt pris*@
             <p class="Price pull-right">Totalt: @ViewBag.Sum kr</p>
         </div>
-        <button role="presentation" class="dropdown" style="width:100%;height:44px;">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Chose your payment
-            </a>
-            <ul class="dropdown-menu" style="width:100%;">
-                <li>Visa</li>
-                <li>Mastercard</li>
-                <li>Payphon</li>
-            </ul>
-        </button>
+
+        @*<form class="form-group">
+                <label for="Payment method">Payment method</label>
+                <select class="form-control">
+                    <option>Large select</option>
+                    <option>Large select2</option>
+                </select>
+            </form>*@
+
+        @*<form class="form-inline">
+                <label class="h3" for="inlineformcustomselect">chose your payment</label>
+                <select class="custom-select" id="inlineformcustomselect">
+                    <option selected>choose...</option>
+                    <option value="1">Master card</option>
+                    <option value="2">Visa card</option>
+                    <option value="3">Paypal</option>
+                    <option value="4">Swish</option>
+                </select>
+        </form>*@
+
+        <button role="presentation" class="dropdown" style="width: 100%;height: 44px; border:none; border-radius:4px;">
+                <div class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Click here to choose your payment method
+                </div>
+                <div class="drop dropdown-menu" style="width:100%;">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleradios" id="MasterCard" value="option1" checked>
+                            <img src="~/picture/—pngtree—mastercard logo icon_6019479.png" width="65" />
+                            Master card
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleradios" id="VisaCard" value="option2" checked>
+                            <img src="~/picture/visa.png" width="65" />
+                            Visa card
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleradios" id="Paypal" value="option3" checked>
+                            <img src="~/picture/paypal.png" width="65" />
+                            Paypal
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleradios" id="Swish" value="option4" checked>
+                            <img src="~/picture/Swish.png" width="65" />
+                            Swish
+                        </label>
+                    </div>
+                </div>
+                </button>
+            <div class="row" style="padding:12px;">
+                <button class="btn1 pull-left btn" type="button">Already Custumer? Sign in</button>
+                <button class="btn1 pull-right btn" type="button">Already Custumer? Sign in</button>
+            </div>
+
     }
 }
