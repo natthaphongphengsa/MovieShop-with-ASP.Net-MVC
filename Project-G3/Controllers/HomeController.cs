@@ -80,5 +80,48 @@ namespace Project_G3.Controllers
             List<Movie> movies = db.Genres.First(g => g.GenreId == Id).Movies.ToList();
             return View(movies);
         }
+        public ActionResult PaymentMethod()
+        {
+            return View();
+        }
+        public ActionResult ConfirmAsGuest()
+        {
+            return View();
+        }
+
+        public ActionResult GetFlashSale()
+        {
+            List<Movie> movies = new List<Movie>();
+            List<FlashSale> flashsales = db.FlashSales.ToList();
+            foreach (FlashSale item in flashsales)
+            {
+                bool isprocentedbased = item.FlashSaleDiscount[item.FlashSaleDiscount.Length - 1] == '%';
+                foreach (Movie movie in item.Movies)
+                {
+                    decimal discount;
+                    if (isprocentedbased)
+                    {
+                        discount = Decimal.Parse(item.FlashSaleDiscount.Substring(0, item.FlashSaleDiscount.Length - 1)) / 100;
+                        movie.MoviePrice = movie.MoviePrice - movie.MoviePrice * discount;
+                    }
+                    else
+                    {
+                        discount = decimal.Parse(item.FlashSaleDiscount);
+                        movie.MoviePrice = movie.MoviePrice - discount;
+                    }
+                    Movie Mo = movies.Find(m => m.MovieId == movie.MovieId);
+                    if (Mo == null)
+                    {
+                        movies.Add(movie);
+                    }
+                    else if (Mo.MoviePrice > movie.MoviePrice)
+                    {
+                        movies.Remove(Mo);
+                        movies.Add(movie);
+                    }
+                }
+            }
+            return View(movies);
+        }
     }
 }
