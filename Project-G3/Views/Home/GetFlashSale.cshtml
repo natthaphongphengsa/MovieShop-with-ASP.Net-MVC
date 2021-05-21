@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Project_G3.Models.Movie>
+
+@{
+    ViewBag.Title = "GetFlashSale";
+}
+
+<h2>FlashSale</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MovieTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MovieReleaseYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MovieDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoviePosters)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MovieDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoviePrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MovieTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MovieReleaseYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MovieDuration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoviePosters)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MovieDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoviePrice)
+        </td>
+        
+    </tr>
+}
+
+</table>
