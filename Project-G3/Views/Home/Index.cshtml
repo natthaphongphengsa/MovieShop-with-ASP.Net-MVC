@@ -14,7 +14,7 @@
             <ul class="dropdown-menu">
                 @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
                 {
-                    <li>@Html.ActionLink(Genre.GenreName, "About", "Home")</li>
+                    <li>@Html.ActionLink(Genre.GenreName, "Genre", new { Id=Genre.GenreId})</li>
                 }
             </ul>
         </li>

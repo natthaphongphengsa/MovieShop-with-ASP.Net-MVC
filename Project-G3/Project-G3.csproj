@@ -262,6 +262,7 @@
     <Content Include="Views\Home\Info.cshtml" />
     <Content Include="SeedData100.min.json" />
     <Content Include="SeedData100.json" />
+    <Content Include="Views\Home\Genre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
