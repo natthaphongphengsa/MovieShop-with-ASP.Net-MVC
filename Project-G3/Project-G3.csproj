@@ -266,6 +266,10 @@
     <Content Include="Views\Home\Info.cshtml" />
     <Content Include="SeedData100.min.json" />
     <Content Include="SeedData100.json" />
+    <Content Include="Views\Home\ConfirmAsGuest.cshtml" />
+    <Content Include="Views\Home\Genre.cshtml" />
+    <Content Include="Views\Home\GetFlashSale.cshtml" />
+    <Content Include="Views\Home\PaymentMethod.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -75,9 +75,10 @@ namespace Project_G3.Controllers
             Movie movie = db.Movies.FirstOrDefault(m => m.MovieId == id);
             return View(movie);
         }  
-        public ActionResult Genre()
+        public ActionResult Genre(int Id)
         {
-            return View(db.Genres.ToList());
+            List<Movie> movies = db.Genres.First(g => g.GenreId == Id).Movies.ToList();
+            return View(movies);
         }
     }
 }
