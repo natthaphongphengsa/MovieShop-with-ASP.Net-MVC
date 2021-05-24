@@ -123,5 +123,18 @@ namespace Project_G3.Controllers
             }
             return View(movies);
         }
+        public ActionResult News()
+        {
+            List<Movie> moviesNew = new List<Movie>();
+            foreach (var item in db.Movies)
+            { 
+                if (Int32.Parse(item.MovieReleaseYear) > 2018)
+                {
+                    moviesNew.Add(item);
+                }
+            }
+            
+            return View(moviesNew);
+        }
     }
 }
