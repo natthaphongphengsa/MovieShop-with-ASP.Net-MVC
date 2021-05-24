@@ -1,0 +1,48 @@
+﻿@model Project_G3.Models.PaymentOption
+
+@using (Html.BeginForm("PaymentMethod", "Payment", FormMethod.Post))
+{
+    <div class="row">
+        <label></label>
+        <h3 style="height:65px;">Payment method: <img src="@ViewBag.PaymentIcon" width="65" /></h3>
+        <button role="presentation" class="dropdown btn btn-default" style="width: 100%;height: 44px;">
+            <div class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                @ViewBag.Name
+            </div>
+            <div class="drop dropdown-menu" style="width:100%;">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        @Html.RadioButtonFor(m => m.PaymentName, "Master Card", new { @value = "Option1", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
+                        <img src="~/picture/—pngtree—mastercard logo icon_6019479.png" width="65" />
+                        Master card
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        @Html.RadioButtonFor(m => m.PaymentName, "Visa", new { @value = "Option2", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
+                        <img src="~/picture/visa.png" width="65" />
+                        Visa card
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        @Html.RadioButtonFor(m => m.PaymentName, "Paypal", new { @value = "Option3", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
+                        <img src="~/picture/paypal.png" width="65" />
+                        Paypal
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        @Html.RadioButtonFor(m => m.PaymentName, "Swish", new { @value = "Option4", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
+                        <img src="~/picture/Swish.png" width="65" />
+                        Swish
+                    </label>
+                </div>
+            </div>
+        </button>
+        <div class="col-lg">
+            <a class="btn btn-default pull-left" href="@Url.Action("Cart","Home")" style="width:35%" ;>Back</a>
+            <a class="btn btn-default pull-right" href="@Url.Action("Receipt","Payment")" style="width:35%" ;">Continue</a>
+        </div>
+    </div>
+}
