@@ -16,7 +16,7 @@
         background-color: #fc030b;
         border: solid black;
     }
-    
+
     body {
         background-color: #fdf1ec;
     }
@@ -26,8 +26,7 @@
         width: 654px;
         margin: 50px auto;
         border-radius: 7px 7px 7px 7px;
-        VIA CSS MATIC https://goo.gl/cIbnS
-        -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        VIA CSS MATIC https://goo.gl/cIbnS -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     }
@@ -136,102 +135,51 @@
         .product-price-btn button:hover {
             background-color: black;
         }
-                                                  
+
     .flashtable {
         border: solid black;
         max-width: 50%;
     }
 
     .tablediv {
-        
         width: 100%;
     }
 </style>
 @Html.Partial("_Navigations")
-<h2>FlashSale</h2>
+
 
 
 <h2 class="FlashSale">FLASHSALE</h2>
-<div class="tablediv">
-    <table class="flashtable">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.MovieTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MovieReleaseYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MovieDuration)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MoviePosters)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MovieDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MoviePrice)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MovieTitle)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MovieReleaseYear)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MovieDuration)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MoviePosters)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MovieDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MoviePrice)
-                </td>
-
-            </tr>
-        }
-
-    </table>
-</div>
 
 
 
 
 
 
-<div class="wrapper">
-    <div class="product-img">
-        <img src="http://bit.ly/2tMBBTd" height="420" width="327" />
-    </div>
-    <div class="product-info">
-        <div class="product-text">
-            <h1>
-                @Html.DisplayFor(modelItem => Model.First().MovieTitle);
+@foreach (Project_G3.Models.Movie movie in Model)
+{
 
-            </h1>
-            <h2>by studio and friends</h2>
-            <p>
-                Harvest Vases are a reinterpretation<br />
-                of peeled fruits and vegetables as<br />
-                functional objects. The surfaces<br />
-                appear to be sliced and pulled aside,<br />
-                allowing room for growth.
-            </p>
+
+    <div class="wrapper">
+        <div class="product-img">
+            <img src=@movie.MoviePosters height="420" width="327" />
         </div>
-        <div class="product-price-btn">
-            <p><span>78</span>$</p>
-            <button type="button">buy now</button>
+        <div class="product-info">
+            <div class="product-text">
+                <h1>
+                    @Html.DisplayFor(modelItem => movie.MovieTitle);
+
+                </h1>
+                <h2>@movie.MovieReleaseYear</h2>
+                <p>
+                    @movie.MovieDescription;
+                </p>
+            </div>
+            <div class="product-price-btn">
+                <p><span>@movie.MoviePrice</span>kr</p>
+                <button type="button">buy now</button>
+            </div>
         </div>
     </div>
-</div>
+}
 
