@@ -281,7 +281,6 @@
     <Content Include="Views\Payment\PaymentMethod.cshtml" />
     <Content Include="Views\Home\ConfirmAdress.cshtml" />
     <Content Include="Views\Payment\Receipt.cshtml" />
-    <Content Include="Views\Home\PaymentMethod.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
   </ItemGroup>
   <ItemGroup>
