@@ -1,59 +1,39 @@
 ﻿@model Project_G3.Models.Movie
+@{
+    ViewBag.Title = "MovieShop/" + @Html.DisplayFor(model => model.MovieTitle);
+}
 
 <div>
-    <h4>Movie</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.MovieTitle)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MovieTitle)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MovieReleaseYear)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MovieReleaseYear)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MovieDuration)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MovieDuration)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MoviePosters)
-        </dt>
-
-        <dd>
-            <img id="info-img" src="@Html.DisplayTextFor(model => model.MoviePosters)" />
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MovieDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MovieDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MoviePrice)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MoviePrice)
-        </dd>
-
-    </dl>
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                @Html.ActionLink("Back to Movie", "Index")
+            </p>
+            <h2>@Html.DisplayFor(model => model.MovieTitle)</h2>
+            <div class="col-md">
+                <p style="width:50%;float:left;">Release year: @Html.DisplayFor(model => model.MovieReleaseYear)</p>
+                <p style="width:50%;float:right;text-align:right;">Duration: @Html.DisplayFor(model => model.MovieDuration) min</p>
+            </div>
+            <img id="info-img" src="@Html.DisplayTextFor(model => model.MoviePosters)" style="width:100%;" />
+        </div>
+        <div class="addToCart col-md-4">            
+            <h3>Price: @Html.DisplayFor(model => model.MoviePrice) SEK</h3>
+            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = Model.MovieId })" >Add To Cart</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                Genre:
+                @foreach (Project_G3.Models.Genre genres in ViewBag.GenreInfo)
+                {           
+                    <a href="@Url.Action("Genre", new { Id = genres.GenreId })">@genres.GenreName</a>                    
+                }
+            </h3>
+        </div>
+        <div class="col-md-12">
+            <h2>Description</h2>
+            <p>@Html.DisplayFor(model => model.MovieDescription)</p>
+        </div>
+    </div>
 </div>
-<p>    
-    @Html.ActionLink("Back to Movie", "Index")
-</p>

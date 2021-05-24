@@ -4,6 +4,7 @@
     ViewBag.Title = "GetFlashSale";
 }
 
+@Html.Partial("_Navigations")
 <h2>FlashSale</h2>
 
 
@@ -30,28 +31,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieReleaseYear)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieDuration)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoviePosters)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoviePrice)
-        </td>
-        
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieReleaseYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoviePosters)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoviePrice)
+            </td>
+
+        </tr>
+    }
 
 </table>
