@@ -1,0 +1,20 @@
+﻿<div class="underNav navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li class="underNavli">@Html.ActionLink("Home", "Index", "Home", new { @class = "underNavli" })</li>
+        <li role="presentation" class="underNavli dropdown">
+            <a class="underNavli dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Genre <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
+                {
+                    <li>@Html.ActionLink(Genre.GenreName, "Genre", new { Id = Genre.GenreId })</li>
+                }
+            </ul>
+        </li>
+        <li class="underNavli">@Html.ActionLink("News", "About", "Home", new { @class = "underNavli" })</li>
+        <li class="underNavli">@Html.ActionLink("Flash Sale", "GetFlashSale", "Home", new { @class = "underNavli" })</li>
+    </ul>
+    <hr class="Breakline" />
+    @Html.Partial("_LoginPartial")
+</div>

@@ -176,6 +176,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -195,6 +196,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\PaymentOption.cs" />
     <Compile Include="Models\Price.cs" />
     <Compile Include="Models\SeedModel.cs" />
     <Compile Include="Models\Star.cs" />
@@ -212,6 +214,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Picture\free-movie-icon-850-thumb.png" />
     <Content Include="Picture\Godzilla-VS-Kong-Poster-Header.png" />
     <Content Include="Picture\paypal.png" />
     <Content Include="Picture\RWNgX1.jpg" />
@@ -272,9 +275,12 @@
     <Content Include="Views\Home\Info.cshtml" />
     <Content Include="SeedData100.min.json" />
     <Content Include="SeedData100.json" />
-    <Content Include="Views\Home\ConfirmAsGuest.cshtml" />
     <Content Include="Views\Home\Genre.cshtml" />
     <Content Include="Views\Home\GetFlashSale.cshtml" />
+    <Content Include="Views\Shared\_Navigations.cshtml" />
+    <Content Include="Views\Payment\PaymentMethod.cshtml" />
+    <Content Include="Views\Home\ConfirmAdress.cshtml" />
+    <Content Include="Views\Payment\Receipt.cshtml" />
     <Content Include="Views\Home\PaymentMethod.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
   </ItemGroup>

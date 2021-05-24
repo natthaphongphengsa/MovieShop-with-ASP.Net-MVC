@@ -1,6 +1,7 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;    
+    padding-bottom: 20px;
+    background-image: url(https://i1.wp.com/desktopbackground.org/download/4096x2160/2010/04/17/3405_cool-simple-white-backgrounds-picture-gallery_5120x2880_h.jpg);
+    background-attachment: fixed;    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,46 +25,93 @@ textarea {
 }*/
 
 /*-----------------Egen CSS------------------------*/
+html {
+    scroll-behavior: smooth;   
+}
+/*Justera navbar-top*/
+.navbar {
+    color: white;
+    opacity: 0.9;
+}
+/*Juster navbar-toggle*/
+.navbar-toggle {
+    margin-left: 12px;
+    margin-right: -10px;
+}
+.navbar-header {
+    width: 100%;
+}
 /*Justera Movie bilden under slider*/
 .column{
     padding-top:22px;
 }
 /*Justera storlek på varje Movie bilden*/
 #col-img {
-    width: 100%;    
+    width: 100%;  
 }
-/*Justera Nagiveringsbar*/
+/*Justera undernav Nagiveringsbar*/
 .underNav {
-    font-size: 24px;
-    padding: 12px 0px 12px;
+    border-radius:4px;
+    color:whitesmoke;
+    margin:12px;    
+    font-size: 24px;    
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 }
-/*Justera film titel*/
+.underNavli {
+   color:white;
+}
+.Breakline{
+    display:none;
+}
+/*Justera film titel (Home page)*/
 .Movietitle {
     height: 48px;
     width: fit-content();
     font-size: 1.2em;
     font-weight: bold;
 }
+.mvlp {
+    margin-top: 34px;
+    font-weight: 700; 
+}
+.mvlbtn {
+    width: 100%;
+    color: whitesmoke;
+    background-color: #06bcfb;
+    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
+}
+.mvlbtn:hover{        
+    opacity:70%;    
+    transition: .5s ease;    
+}
+.col-md-2 {
+    margin-top: 24px;
+}
+.col-md-2:hover {    
+    transform: scale(1.08);       
+    transition: .5s ease;
+}
 /*Sklijer linjen*/
 hr.solid {
     border-top: 3px solid #bbb;
 }
-/*Ändra höjden på Slider bilden*/
+/*Ändra höjden på Slider bilden (Home page)*/
 .carousel-inner {
-    height:520px;
+    max-height:520px;
 }
 /*Justera Cart Icon */
 cart{
     float:right;  
     margin-top:6px;
 }
-/*Flytta meddelande texten till mitten*/
-.MSG{
-    margin-top:200px;
-    margin-left:auto;
-    margin-right:auto;
-    width:fit-content;
-    padding:45px;
+/*Flytta meddelande texten till mitten (cart page)*/
+.MSG {
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding: 45px;
 }
 /*Ändra bred&Höjd på meddelande titel*/
 .Title{
@@ -74,13 +122,35 @@ cart{
     padding:14px;
     font-size:34px;
 }
-/*Justera Antal film*/
+/*Justera Antal siffra film*/
 .amount {
-    position:absolute;
-    color:white;
-    margin:8px -10px;
+    background-color:red;    
+    color:white;    
     font-size:20px;
 }
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+#lblCartCount {
+    font-size: 18px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+/*justera Betaltsätt knappar */
 .form-check:hover{
     background-color:whitesmoke;    
 }
@@ -104,3 +174,90 @@ cart{
 }.btn1{
      width:35%;
  }
+/* styla PaymentMethod sidan*/
+.col-lg{
+    margin-top:24px;
+}
+.form{    
+    max-width:600px;
+    margin:auto;
+}
+.form-horizontal .form-group{
+    margin-left:0;
+    margin-right:0;
+}
+/*styla Kvitto sidan*/
+.Row {
+    background-color: #cfc7f8;
+    background-image: linear-gradient(315deg, #cfc7f8 0%, #ebbba7 74%);
+    border-radius: 8px;
+    max-width: 75%;
+    margin: auto;
+    padding: 44px;
+    margin-top: 42px;
+}
+.inner-row {
+    background-color: #fee2f8;
+    background-image: linear-gradient(360deg, #fee2f8 0%, #dcf8ef 100%);
+    padding: 22px;
+    border-radius: 8px;
+}
+.thankscard {
+    margin:auto;
+    padding:44px;
+    width: fit-content;
+    height: 170px;
+    color: white;
+}
+.addToCart {
+    padding: 88px 48px;
+}
+/*Fixa underNav mobil anpasning */
+@media (max-width: 425px) {
+    .underNav {
+        margin-top: 0;
+    }
+
+    .randomImg {
+        display: none;
+    }
+
+    .dropdown-menu > li > a {
+        color: whitesmoke;
+    }
+
+    .Breakline {
+        display: inherit;
+    }
+    .col-md-2 {
+        float: left;
+        width: 50%;
+    }
+    .addToCart {
+        padding: 18px 18px;
+    }
+}
+@media (max-width: 768px) and (min-width:425px) {
+    .underNav {
+        margin-top: 0;
+    }
+
+    .randomImg {
+        display: none;
+    }
+
+    .dropdown-menu > li > a {
+        color: whitesmoke;
+    }
+
+    .Breakline {
+        display: inherit;
+    }
+    .addToCart {
+        padding: 18px 18px;
+    }
+    .col-md-2 {
+        float: left;
+        width: 150px;
+    }
+}

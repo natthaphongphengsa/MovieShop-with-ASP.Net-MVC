@@ -3,12 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
+    <div  style="height:51px;">
+    </div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -17,21 +20,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("MovieShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <button type="submit" class="btn btn-default">Search</button>
-                </div>
-            </form>
-            <div class="navbar-collapse collapse">
-                @Html.Partial("_LoginPartial")
-                <Cart>
+                <Cart class="pull-right">
                     @*Om varukorgen är tomt visas inte någon siffra, annars visa antal filmer som finns i varukorgen brevid Varukorgn Icon*@
-                    @if(@ViewBag.Amount == 0){}else{<p class="amount">@ViewBag.Amount</p>}                    
+                    @if (@ViewBag.Amount == 0) { }
+                    else
+                    {
+                        <span class='amount badge badge-warning w3-container w3-center w3-animate-top' id='lblCartCount'>@ViewBag.Amount</span>
+                    }
                     <a href="@Url.Action("Cart","Home")"><img src="~/Picture/unnamed.png" width="40" /></a>
                 </Cart>
+                @*<img src="~/Picture/free-movie-icon-850-thumb.png" width="48" />*@
+                @Html.ActionLink("MovieShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <!--<form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">-->
+                @*<button type="submit" class="btn btn-default">Search</button>*@
+                <!--</div>
+                </form>-->
             </div>
         </div>
     </div>
@@ -49,13 +54,13 @@
                         <li>Inriktningen är online filmer.</li>
 
                     </ul>
-                     </div>
+                </div>
                 <div class="col-md-4">
                     <ul style="list-style-type:none">
-                       <b> Adress</b>
+                        <b> Adress</b>
                         <li>Hamngatan 27</li>
                         <li>58226 Linköping</li>
-                        </ul>
+                    </ul>
                 </div>
                 <div class="col-md-4">
                     <ul style="list-style-type:none">
