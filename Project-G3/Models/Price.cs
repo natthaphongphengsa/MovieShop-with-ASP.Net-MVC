@@ -12,6 +12,5 @@ namespace Project_G3.Models
         [Key]
         public int PriceId { get; set; }
         public int PriceValue { get; set; }
-
     }
 }

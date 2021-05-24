@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Project_G3.Models.Movie>
+
+<div class="Row">
+    <div class="row" style="width:fit-content;margin:auto;">
+        <img src="~/Picture/free-movie-icon-850-thumb.png" width="120" />        
+    </div>    
+    <h1 class="thankscard">Thank you for your purchase!</h1>
+    <div class="inner-row">
+        <table class="table">
+            <tr>
+                <th>
+                    Movie:
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MovieDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoviePrice)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("Info","Home",new { id = item.MovieId })">
+                            <img id="info-img" src="@Html.DisplayTextFor(model => item.MoviePosters)" />
+                        </a>
+                    </td>
+                    <td>
+                        <p style="font-weight:600;">Title: @Html.DisplayFor(modelItem => item.MovieTitle)</p>
+                        @Html.DisplayFor(modelItem => item.MovieDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MoviePrice)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="row">
+        @*Visa Totalt pris*@
+        <p class="Price pull-right" style="color:white;">Totalt: @ViewBag.Sum kr</p>
+    </div>
+</div>

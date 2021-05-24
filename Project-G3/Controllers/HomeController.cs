@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -9,10 +10,10 @@ namespace Project_G3.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();        
         public HomeController()
-        {
-            ViewData["Genres"] = db.Genres.ToList();
+        {            
+            ViewData["Genres"] = db.Genres.ToList();            
         }
         public ActionResult Index()
         {
@@ -30,11 +31,9 @@ namespace Project_G3.Controllers
             ViewData["ShoppingCart"] = CartList;
             decimal TotalPrice = 0;
             foreach (var item in CartList) { TotalPrice += item.MoviePrice; }
-            ViewBag.Sum = TotalPrice;
-
+            ViewBag.Sum = TotalPrice;            
             return View(CartList);
         }
-
         public ActionResult AddToCart(int Id)
         {
             //ApplicationDbContext _db = new ApplicationDbContext();
@@ -58,7 +57,6 @@ namespace Project_G3.Controllers
 
             return View();
         }
-
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -73,22 +71,30 @@ namespace Project_G3.Controllers
             }
             //ApplicationDbContext db = new ApplicationDbContext();
             Movie movie = db.Movies.FirstOrDefault(m => m.MovieId == id);
+
+            //skapa en lita med all genre
+            List<Genre> genres = db.Genres.ToList();            
+            List<Genre> title = new List<Genre>();
+            //leta efter vilken genre och hur många genre som finns i den filmen och lägger in i tomt lista
+            foreach (var genre in movie.Genres) 
+            {
+                title.Add(genre);
+            }
+            //lägger in alla genre i Viewdata med Namn GenreInfo
+            ViewData["GenreInfo"] = title;
             return View(movie);
         }  
         public ActionResult Genre(int Id)
         {
             List<Movie> movies = db.Genres.First(g => g.GenreId == Id).Movies.ToList();
+            List<Genre> genre = db.Genres.ToList();            
+            ViewData["GenreTitle"] = genre.First(g => g.GenreId == Id).GenreName;            
             return View(movies);
-        }
-        public ActionResult PaymentMethod()
+        }                   
+        public ActionResult ConfirmAdress()
         {
             return View();
         }
-        public ActionResult ConfirmAsGuest()
-        {
-            return View();
-        }
-
         public ActionResult GetFlashSale()
         {
             List<Movie> movies = new List<Movie>();

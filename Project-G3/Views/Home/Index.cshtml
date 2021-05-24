@@ -1,28 +1,9 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "MovieShop";
 }
 
 @model IEnumerable<Project_G3.Models.Movie>
-
-
-<div class="underNav navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Genre <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
-                {
-                    <li>@Html.ActionLink(Genre.GenreName, "Genre", new { Id=Genre.GenreId})</li>
-                }
-            </ul>
-        </li>
-        <li>@Html.ActionLink("News", "About", "Home")</li>
-        <li>@Html.ActionLink("Flash Sale", "GetFlashSale", "Home")</li>
-    </ul>
-</div>
+@Html.Partial("_Navigations")
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -61,8 +42,7 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
 </div> <!-- Carousel -->
-
-<div class="row">
+<div class="randomImg row">
     @{
         List<Project_G3.Models.Movie> random = new List<Project_G3.Models.Movie>();
         foreach (var Movie in Model)
@@ -74,10 +54,9 @@
         var RadomMovies = random.OrderBy(u => rd.Next()).Take(6);
         foreach (var item in RadomMovies)
         {
-            <div class="column col-md-2">
+            <div class="column col-md-2 ">
                 <a href="@Url.Action("Info","Home",new { id = item.MovieId })">
                     <img id="col-img" src="@item.MoviePosters" />
-                    @*@Html.ActionLink("More info", "Infor", new { id = Movie.MovieId })*@
                 </a>
             </div>
         }
@@ -89,28 +68,16 @@
     {
         <div class="col-md-2">
             <h4 class="Movietitle">@movie.MovieTitle</h4>
-            <p>Release Year: @movie.MovieReleaseYear</p>
+            @*<p>Release Year: @movie.MovieReleaseYear</p>*@
             <a href="@Url.Action("Info","Home",new { id = movie.MovieId })">
                 <img id="col-img" src="@movie.MoviePosters" />
             </a>
-            <p>Movie Duration: @movie.MovieDuration</p>
-            <p>Price :@movie.MoviePrice Kr</p>
-            <a class="btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.MovieId })" onclick="return confirm('Do you want to add ( @movie.MovieTitle ) to your cart?');">Add To Cart</a>
+            @*<p>Movie Duration: @movie.MovieDuration</p>*@
+            <p class="mvlp"> Price: @movie.MoviePrice Kr</p>
+            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.MovieId })">Add To Cart</a>
         </div>
-
-        @*<a class="col-md-2">
-                <h4>@movie.MovieTitle</h4>
-                <img src="@movie.MoviePosters" width="100" height="150" />
-                <p> <br /> Pris: @movie.MoviePrice Kr</p>
-
-                @Html.ActionLink("Add to cart", "AddToCart", new { Id = movie.MovieId }, new { @class = "button-cart" });
-
-            </a>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-link"><img src="~/fonts/Add_to_cart.jpg" width="30" hight="30" onclick="DoSomething();" /></button>
-            </div>*@
-
     }
-
-
+</div>
+<div class="row">
+    <p class="MSG"><a href="#top">Back To Top</a></pclass="BackToTopBtn">    
 </div>

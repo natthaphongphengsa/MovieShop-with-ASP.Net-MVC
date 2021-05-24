@@ -1,57 +1,25 @@
-﻿@model IEnumerable<Project_G3.Models.Movie>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieReleaseYear)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieDuration)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MoviePosters)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MoviePrice)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieReleaseYear)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieDuration)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoviePosters)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoviePrice)
-        </td>
-        <td>
-            @*@Html.ActionLink("Edit", "Edit", new { id=item.MovieId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MovieId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MovieId })*@
-        </td>
-    </tr>
+﻿@{
+    ViewBag.Title = ViewBag.GenreTitle;
 }
+@model IEnumerable<Project_G3.Models.Movie>
+@Html.Partial("_Navigations")
 
-</table>
+
+<h1>@ViewBag.GenreTitle</h1>
+<div class="row">
+    @foreach (Project_G3.Models.Movie movie in Model)
+    {
+        <div class="col-md-2" style="margin-top:24px;">
+            <h4 class="Movietitle">@movie.MovieTitle</h4>
+            @*<p>Release Year: @movie.MovieReleaseYear</p>*@
+            <a href="@Url.Action("Info","Home",new { id = movie.MovieId })">
+                <img id="col-img" src="@movie.MoviePosters" />
+            </a>
+            @*<p>Movie Duration: @movie.MovieDuration</p>*@
+            <p class="mvlp"> Price: @movie.MoviePrice Kr</p>
+            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.MovieId })">Add To Cart</a>
+        </div>
+    }
+
+
+</div>
