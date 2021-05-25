@@ -196,6 +196,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MovieViewModels.cs" />
     <Compile Include="Models\PaymentOption.cs" />
     <Compile Include="Models\Price.cs" />
     <Compile Include="Models\SeedModel.cs" />

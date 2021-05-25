@@ -97,10 +97,11 @@ namespace Project_G3.Controllers
         }
         public ActionResult GetFlashSale()
         {
-            List<Movie> movies = new List<Movie>();
+            List<FlashSalePriceViewModel> movies = new List<FlashSalePriceViewModel>();
             List<FlashSale> flashsales = db.FlashSales.ToList();
             foreach (FlashSale item in flashsales)
             {
+                decimal newPrice;
                 bool isprocentedbased = item.FlashSaleDiscount[item.FlashSaleDiscount.Length - 1] == '%';
                 foreach (Movie movie in item.Movies)
                 {
@@ -108,22 +109,32 @@ namespace Project_G3.Controllers
                     if (isprocentedbased)
                     {
                         discount = Decimal.Parse(item.FlashSaleDiscount.Substring(0, item.FlashSaleDiscount.Length - 1)) / 100;
-                        movie.MoviePrice = movie.MoviePrice - movie.MoviePrice * discount;
+                        newPrice = movie.MoviePrice - movie.MoviePrice * discount;
                     }
                     else
                     {
                         discount = decimal.Parse(item.FlashSaleDiscount);
-                        movie.MoviePrice = movie.MoviePrice - discount;
+                        newPrice = movie.MoviePrice - discount;
                     }
-                    Movie Mo = movies.Find(m => m.MovieId == movie.MovieId);
+                    FlashSalePriceViewModel Mo  = movies.Find(m => m.Movie.MovieId == movie.MovieId);
                     if (Mo == null)
                     {
-                        movies.Add(movie);
+                        movies.Add(new FlashSalePriceViewModel
+                        {
+                            Movie = movie,
+                            NewPrice = newPrice.ToString("#.#0"),
+                            FlashSale = item.FlashSaleDiscount
+                        }) ;
                     }
-                    else if (Mo.MoviePrice > movie.MoviePrice)
+                    else if (Mo.Movie.MoviePrice > movie.MoviePrice)
                     {
                         movies.Remove(Mo);
-                        movies.Add(movie);
+                        movies.Add(new FlashSalePriceViewModel
+                        {
+                            Movie = movie,
+                            NewPrice = newPrice.ToString(),
+                            FlashSale = item.FlashSaleDiscount
+                        });
                     }
                 }
             }

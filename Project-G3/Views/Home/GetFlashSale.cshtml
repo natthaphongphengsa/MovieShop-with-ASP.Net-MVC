@@ -1,20 +1,26 @@
-﻿@model IEnumerable<Project_G3.Models.Movie>
+﻿@model IEnumerable<Project_G3.Models.FlashSalePriceViewModel>
 
 @{
     ViewBag.Title = "GetFlashSale";
 }
+
+
+
 <style>
 
     .FlashSale {
         font-family: futura;
         font-style: italic;
-        width: 100%;
+        max-width: 100%;
         margin: 0 auto;
         text-align: center;
         color: white;
-        font-size: 100px;
+        font-size: 5em;
         background-color: #fc030b;
-        border: solid black;
+        border: solid white;
+        border-radius: 5px;
+        -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     }
 
     body {
@@ -26,10 +32,15 @@
         width: 654px;
         margin: 50px auto;
         border-radius: 7px 7px 7px 7px;
-        VIA CSS MATIC https://goo.gl/cIbnS -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        transition: transform .2s;
+        max-width: 100%;
     }
+
+        .wrapper:hover {
+            transform: scale(1.2);
+        }
 
     .product-img {
         float: left;
@@ -141,45 +152,101 @@
         max-width: 50%;
     }
 
-    .tablediv {
-        width: 100%;
+    .Flash {
+        float: right;
+        max-height: 150px;
+        max-width: 150px;
+        transform: rotate(30deg);
+    }
+
+    p.oldprice {
+        color: black;
+        opacity: 0.3;
+    }
+
+    .saleIMG {
+        max-height: 35%;
+        max-width: 35%;
+        border-radius: 50%;
+        position: absolute;
+        top: 57%;
+        left: 59%;
     }
 </style>
+
 @Html.Partial("_Navigations")
 
 
 
 <h2 class="FlashSale">FLASHSALE</h2>
+<img class="Flash" src="https://cdn.pixabay.com/photo/2017/05/26/05/38/discount-2345221_960_720.png" alt="FlashSale" />
 
 
-
-
-
-
-@foreach (Project_G3.Models.Movie movie in Model)
+@foreach (Project_G3.Models.FlashSalePriceViewModel movie in Model)
 {
-
-
     <div class="wrapper">
         <div class="product-img">
-            <img src=@movie.MoviePosters height="420" width="327" />
+            <img src=@movie.Movie.MoviePosters height="420" width="327" />
         </div>
         <div class="product-info">
+
             <div class="product-text">
                 <h1>
-                    @Html.DisplayFor(modelItem => movie.MovieTitle);
+                    @Html.DisplayFor(modelItem => movie.Movie.MovieTitle)
 
                 </h1>
-                <h2>@movie.MovieReleaseYear</h2>
+                <h2>&nbsp; @movie.Movie.MovieReleaseYear | @movie.Movie.MovieDuration min </h2>
+
                 <p>
-                    @movie.MovieDescription;
+                    @movie.Movie.MovieDescription
                 </p>
+
             </div>
             <div class="product-price-btn">
-                <p><span>@movie.MoviePrice</span>kr</p>
-                <button type="button">buy now</button>
+                <p><span>@movie.NewPrice</span>Kr</p>
+                <p class="oldprice"></p>
+                <button type="button" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })">buy now</button>
             </div>
         </div>
     </div>
 }
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("wrapper");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 6000);
+    }
+</script>
+
+<hr class="solid">
+<div class="row">
+    @foreach (Project_G3.Models.FlashSalePriceViewModel movie1 in Model)
+    {
+        <div class="col-md-2">
+            <h4 class="Movietitle">@movie1.Movie.MovieTitle</h4>
+            @*<p>Release Year: @movie.MovieReleaseYear</p>*@
+            <a href="@Url.Action("Info","Home",new { id = movie1.Movie.MovieId })">
+                <img id="col-img" src="@movie1.Movie.MoviePosters" />
+            </a>
+            @*<p>Movie Duration: @movie.MovieDuration</p>*@
+            <p class="oldprice">@movie1.Movie.MoviePrice Kr</p>
+            <p class="mvlp">New price: @movie1.NewPrice Kr</p>
+            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie1.Movie.MovieId })">Add To Cart</a>
+            <img class="saleIMG" src="https://th.bing.com/th/id/OIP.7LnzqF2D9IH73pynNCNu4QHaHa?pid=ImgDet&rs=1" alt="50%off" />
+        </div>
+    }
+</div>
+<div class="row">
+    <p class="MSG"><a class="BackToTopBtn" href="#top">Back To Top</a></p>
+</div>
 
