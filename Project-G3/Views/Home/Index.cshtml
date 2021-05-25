@@ -87,7 +87,7 @@
 <div class="row">
     @foreach (Project_G3.Models.Movie movie in Model)
     {
-        <div class="col-md-2">
+        <div class="column col-md-2">
             <h4 class="Movietitle">@movie.MovieTitle</h4>
             @*<p>Release Year: @movie.MovieReleaseYear</p>*@
             <a href="@Url.Action("Info","Home",new { id = movie.MovieId })">
@@ -100,5 +100,5 @@
     }
 </div>
 <div class="row">
-    <p class="MSG"><a class="BackToTopBtn" href="#top">Back To Top</a></p>    
+    <div class="MSG"><a class="BackToTopBtn" href="#top">Back To Top</a></div>
 </div>

@@ -190,13 +190,14 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Contries.cs" />
     <Compile Include="Models\Director.cs" />
     <Compile Include="Models\FlashSale.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
-    <Compile Include="Models\PaymentOption.cs" />
+    <Compile Include="Models\PaymentOptionViewModels.cs" />
     <Compile Include="Models\Price.cs" />
     <Compile Include="Models\SeedModel.cs" />
     <Compile Include="Models\Star.cs" />
@@ -278,10 +279,10 @@
     <Content Include="Views\Home\Genre.cshtml" />
     <Content Include="Views\Home\GetFlashSale.cshtml" />
     <Content Include="Views\Shared\_Navigations.cshtml" />
-    <Content Include="Views\Payment\PaymentMethod.cshtml" />
     <Content Include="Views\Home\ConfirmAdress.cshtml" />
     <Content Include="Views\Payment\Receipt.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Payment\PaymentMethod.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,5 @@
 ﻿body {
+    padding-top:50px;
     padding-bottom: 20px;
     background-image: url(https://i1.wp.com/desktopbackground.org/download/4096x2160/2010/04/17/3405_cool-simple-white-backgrounds-picture-gallery_5120x2880_h.jpg);
     background-attachment: fixed;    
@@ -59,10 +60,10 @@ html {
     background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 }
 .underNavli {
-   color:white;
+    color: white;    
 }
-.Breakline{
-    display:none;
+.Breakline {
+    display: none;
 }
 /*Justera film titel (Home page)*/
 .Movietitle {
@@ -85,7 +86,7 @@ html {
     opacity:70%;    
     transition: .5s ease;    
 }
-.col-md-2 {
+.column {
     margin-top: 24px;
 }
 .col-md-2:hover {    
@@ -164,7 +165,7 @@ cart{
 }
 .dropdown-toggle {
     font-weight: 300;
-    font-size: 22px;
+    font-size: 22px;    
 }
 .custom-select{
     padding:6px;
@@ -178,10 +179,10 @@ cart{
 .col-lg{
     margin-top:24px;
 }
-.form{    
+/*.form{    
     max-width:600px;
     margin:auto;
-}
+}*/
 .form-horizontal .form-group{
     margin-left:0;
     margin-right:0;
@@ -209,13 +210,17 @@ cart{
     height: 170px;
     color: white;
 }
+/*Justera höjd och längd på AddToCart knapp*/
 .addToCart {
-    padding: 88px 48px;
+    padding: 88px 48px ;
 }
 /*Fixa underNav mobil anpasning */
 @media (max-width: 425px) {
     .underNav {
         margin-top: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
     }
 
     .randomImg {
@@ -240,6 +245,9 @@ cart{
 @media (max-width: 768px) and (min-width:425px) {
     .underNav {
         margin-top: 0;
+        position: fixed;
+        width: 100%;
+        z-index:100;
     }
 
     .randomImg {

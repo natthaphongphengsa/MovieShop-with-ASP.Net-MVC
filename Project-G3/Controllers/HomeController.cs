@@ -19,7 +19,7 @@ namespace Project_G3.Controllers
         {
             List<Movie> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<Movie>)HttpContext.Session["ShoppingCart"] : new List<Movie>();
             //Visa Antal film som finns i varukorg i index sidan
-            int amount = 0;
+            int amount;
             //Om varukorg är tomt sätt 0
             if (CartList.Count != 0) { amount = CartList.Count; } else { amount = 0; }
             ViewBag.Amount = amount;
@@ -91,9 +91,40 @@ namespace Project_G3.Controllers
             ViewData["GenreTitle"] = genre.First(g => g.GenreId == Id).GenreName;            
             return View(movies);
         }                   
-        public ActionResult ConfirmAdress()
+        public ActionResult ConfirmAdress(PaymentOptionViewModels op)
         {
-            return View();
+            List<Contries> contry = new List<Contries>();
+            if (Session["Email"] != null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else if (op.PaymentName is null)
+            {
+                ViewBag.Name = "Please select your payment!";
+                return View();
+            }
+            else
+            {
+                string options = null;
+                switch (op.PaymentName)
+                {
+                    case "Master Card":
+                        options = "https://aux2.iconspalace.com/uploads/master-card-icon-256.png";
+                        break;
+                    case "Visa":
+                        options = "https://cdn4.iconfinder.com/data/icons/payment-method/160/payment_method_card_visa-256.png";
+                        break;
+                    case "Paypal":
+                        options = "https://www.skibike.se/wp-content/uploads/2018/11/Paypal-icon.png";
+                        break;
+                    case "Swish":
+                        options = "https://redlight.se/wp-content/uploads/2015/12/produkt-swish-2.png";
+                        break;
+                }
+                ViewBag.PaymentIcon = options;
+                ViewBag.Name = op.PaymentName.ToString();
+                return View();
+            }
         }
         public ActionResult GetFlashSale()
         {
