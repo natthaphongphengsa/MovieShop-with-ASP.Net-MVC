@@ -1,54 +1,19 @@
 ﻿@model IEnumerable<Project_G3.Models.Movie>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieReleaseYear)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieDuration)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MoviePosters)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MoviePrice)
-        </th>
-        <th></th>
-    </tr>
+@Html.Partial("_Navigations")
+<h4>NEW MOVIES</h4>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieReleaseYear)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieDuration)
-        </td>
-        <td>
-           <img id="info-img" src="@Html.DisplayTextFor(modelItem => item.MoviePosters)" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoviePrice)
-        </td>
-        <td>
-        </td>
-    </tr>
-}
-
-</table>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-2">
+            <h4 class="Movietitle">@item.MovieTitle</h4>
+            <a href="@Url.Action("Info", "Home", new { id = item.MovieId })">
+            <img id="col-img" src="@item.MoviePosters" />
+            </a>
+            <p class="mvlp"> Price: @item.MoviePrice Kr</p>
+            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart", "Home", new { Id = item.MovieId })">Add To Cart</a>
+        </div>
+    }
+    </div>
+       
