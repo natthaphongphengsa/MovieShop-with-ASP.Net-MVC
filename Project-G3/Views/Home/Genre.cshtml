@@ -11,12 +11,12 @@
         <div class="col-md-2" style="margin-top:24px;">
             <h4 class="Movietitle">@movie.MovieTitle</h4>
             @*<p>Release Year: @movie.MovieReleaseYear</p>*@
-            <a href="@Url.Action(" Info","Home",new { id=movie.MovieId })">
+            <a href="@Url.Action("Info","Home",new { id=movie.MovieId })">
                 <img id="col-img" src="@movie.MoviePosters" />
             </a>
             @*<p>Movie Duration: @movie.MovieDuration</p>*@
             <p class="mvlp"> Price: @movie.MoviePrice Kr</p>
-            <a class="mvlbtn btn btn-default" href="@Url.Action(" AddToCart","Home", new { Id=movie.MovieId })">Add To Cart</a>
+            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id=movie.MovieId })">Add To Cart</a>
         </div>
         }
     </div>
