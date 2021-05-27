@@ -50,6 +50,14 @@ html {
 #col-img {
     width: 100%;  
 }
+.saleIMG {
+    max-height: 35%;
+    max-width: 35%;
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 55%;
+}
 /*Justera undernav Nagiveringsbar*/
 .underNav {
     border-radius:4px;
@@ -89,6 +97,8 @@ html {
 }
 .column {
     margin-top: 24px;
+    transform: scale(1);
+    transition: .5s ease-out;
 }
 .column:hover {
     transform: scale(1.08);
