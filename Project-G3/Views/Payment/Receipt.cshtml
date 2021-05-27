@@ -2,9 +2,24 @@
 
 <div class="Row">
     <div class="row" style="width:fit-content;margin:auto;">
-        <img src="~/Picture/free-movie-icon-850-thumb.png" width="120" />        
-    </div>    
+        <img src="~/Picture/free-movie-icon-850-thumb.png" width="120" />
+    </div>
     <h1 class="thankscard">Thank you for your purchase!</h1>
+    @foreach (var item in ViewBag.CustomDetails)
+    {
+        <div class="inner-row" style="margin-bottom: 10px;">
+            <h3>Delivery To:</h3>
+            <p>Name: @item.FirstName @item.LastName</p>
+            <p>Email: @item.EmailAdress</p>
+            <hr />
+            <h3>Receipt To:</h3>
+            <p>Name: @item.FirstName Lastname @item.LastName</p>
+            <p>Street adress: @item.StreetAdress</p>
+            <p>Zip: @item.Zipcode @item.City</p>
+            <p>Email: @item.EmailAdress</p>
+            <p>Phone: @item.PhoneNumber</p>
+        </div>
+    }
     <div class="inner-row">
         <table class="table">
             <tr>
@@ -43,4 +58,7 @@
         @*Visa Totalt pris*@
         <p class="Price pull-right" style="color:white;">Totalt: @ViewBag.Sum kr</p>
     </div>
+</div>
+<div class="row">
+    <div class="MSG"><a class="BackToTopBtn" href="@Html.Action("DeleteFromCart","Home", new { Id = 0 })">Back To Shopping</a></div>
 </div>

@@ -10,10 +10,10 @@ namespace Project_G3.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();        
+        private ApplicationDbContext db = new ApplicationDbContext();
         public HomeController()
-        {            
-            ViewData["Genres"] = db.Genres.ToList();            
+        {
+            ViewData["Genres"] = db.Genres.ToList();
         }
 
         //[Authorize (Roles="Admin")]
@@ -33,7 +33,7 @@ namespace Project_G3.Controllers
             ViewData["ShoppingCart"] = CartList;
             decimal TotalPrice = 0;
             foreach (var item in CartList) { TotalPrice += item.MoviePrice; }
-            ViewBag.Sum = TotalPrice;            
+            ViewBag.Sum = TotalPrice;
             return View(CartList);
         }
         public ActionResult AddToCart(int Id)
@@ -75,59 +75,36 @@ namespace Project_G3.Controllers
             Movie movie = db.Movies.FirstOrDefault(m => m.MovieId == id);
 
             //skapa en lita med all genre
-            List<Genre> genres = db.Genres.ToList();            
+            List<Genre> genres = db.Genres.ToList();
             List<Genre> title = new List<Genre>();
             //leta efter vilken genre och hur många genre som finns i den filmen och lägger in i tomt lista
-            foreach (var genre in movie.Genres) 
+            foreach (var genre in movie.Genres)
             {
                 title.Add(genre);
             }
             //lägger in alla genre i Viewdata med Namn GenreInfo
             ViewData["GenreInfo"] = title;
             return View(movie);
-        }  
+        }
         public ActionResult Genre(int Id)
         {
             List<Movie> movies = db.Genres.First(g => g.GenreId == Id).Movies.ToList();
-            List<Genre> genre = db.Genres.ToList();            
-            ViewData["GenreTitle"] = genre.First(g => g.GenreId == Id).GenreName;            
+            List<Genre> genre = db.Genres.ToList();
+            ViewData["GenreTitle"] = genre.First(g => g.GenreId == Id).GenreName;
             return View(movies);
-        }                   
-        public ActionResult ConfirmAdress(PaymentOptionViewModels op)
-        {
-            List<Contries> contry = new List<Contries>();
-            if (Session["Email"] != null)
-            {
-                return RedirectToAction("Login", "Account");
-            }
-            else if (op.PaymentName is null)
-            {
-                ViewBag.Name = "Please select your payment!";
-                return View();
-            }
-            else
-            {
-                string options = null;
-                switch (op.PaymentName)
-                {
-                    case "Master Card":
-                        options = "https://aux2.iconspalace.com/uploads/master-card-icon-256.png";
-                        break;
-                    case "Visa":
-                        options = "https://cdn4.iconfinder.com/data/icons/payment-method/160/payment_method_card_visa-256.png";
-                        break;
-                    case "Paypal":
-                        options = "https://www.skibike.se/wp-content/uploads/2018/11/Paypal-icon.png";
-                        break;
-                    case "Swish":
-                        options = "https://redlight.se/wp-content/uploads/2015/12/produkt-swish-2.png";
-                        break;
-                }
-                ViewBag.PaymentIcon = options;
-                ViewBag.Name = op.PaymentName.ToString();
-                return View();
-            }
         }
+        public ActionResult ConfirmAdress(int? SelectedId)
+        {
+            //List<PaymentOption> method = new List<PaymentOption>();
+            //method.Add(new PaymentOption() { PaymentId = 1, PaymentIcon = "https://aux2.iconspalace.com/uploads/master-card-icon-256.png", PaymentName = "Master Card" });
+            //method.Add(new PaymentOption() { PaymentId = 2, PaymentIcon = "https://cdn4.iconfinder.com/data/icons/payment-method/160/payment_method_card_visa-256.png", PaymentName = "Visa" });
+            //method.Add(new PaymentOption() { PaymentId = 3, PaymentIcon = "https://www.skibike.se/wp-content/uploads/2018/11/Paypal-icon.png", PaymentName = "Paypal" });
+            //method.Add(new PaymentOption() { PaymentId = 4, PaymentIcon = "https://redlight.se/wp-content/uploads/2015/12/produkt-swish-2.png", PaymentName = "Swish" });
+            //ViewData["PaymentList"] = method;
+            ViewBag.Name = "Please select your payment!";
+            ViewBag.ContinueAsGuest = SelectedId;
+            return View();
+        }        
         public ActionResult GetFlashSale()
         {
             List<FlashSalePriceViewModel> movies = new List<FlashSalePriceViewModel>();
@@ -149,7 +126,7 @@ namespace Project_G3.Controllers
                         discount = decimal.Parse(item.FlashSaleDiscount);
                         newPrice = movie.MoviePrice - discount;
                     }
-                    FlashSalePriceViewModel Mo  = movies.Find(m => m.Movie.MovieId == movie.MovieId);
+                    FlashSalePriceViewModel Mo = movies.Find(m => m.Movie.MovieId == movie.MovieId);
                     if (Mo == null)
                     {
                         movies.Add(new FlashSalePriceViewModel
@@ -157,7 +134,7 @@ namespace Project_G3.Controllers
                             Movie = movie,
                             NewPrice = newPrice.ToString("#.#0"),
                             FlashSale = item.FlashSaleDiscount
-                        }) ;
+                        });
                     }
                     else if (Mo.Movie.MoviePrice > movie.MoviePrice)
                     {
@@ -177,13 +154,13 @@ namespace Project_G3.Controllers
         {
             List<Movie> moviesNew = new List<Movie>();
             foreach (var item in db.Movies)
-            { 
+            {
                 if (Int32.Parse(item.MovieReleaseYear) > 2018)
                 {
                     moviesNew.Add(item);
                 }
             }
-            
+
             return View(moviesNew);
         }
     }

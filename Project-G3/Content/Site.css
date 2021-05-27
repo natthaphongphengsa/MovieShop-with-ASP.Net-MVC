@@ -153,7 +153,8 @@ cart{
 }
 /*justera Betaltsätt knappar */
 .form-check:hover{
-    background-color:whitesmoke;    
+    background-color:whitesmoke;  
+    border-radius:4px;
 }
 .form-check-label{
     padding:18px;
@@ -242,7 +243,7 @@ cart{
         padding: 18px 18px;
     }
 }
-@media (max-width: 768px) and (min-width:425px) {
+@media (max-width: 766px) and (min-width:425px) {
     .underNav {
         margin-top: 0;
         position: fixed;

@@ -193,12 +193,12 @@
     <Compile Include="Models\Contries.cs" />
     <Compile Include="Models\Director.cs" />
     <Compile Include="Models\FlashSale.cs" />
+    <Compile Include="Models\FormDetails.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MovieViewModels.cs" />
-    <Compile Include="Models\PaymentOptionViewModels.cs" />
     <Compile Include="Models\Price.cs" />
     <Compile Include="Models\SeedModel.cs" />
     <Compile Include="Models\Star.cs" />
@@ -218,8 +218,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Picture\free-movie-icon-850-thumb.png" />
     <Content Include="Picture\Godzilla-VS-Kong-Poster-Header.png" />
+    <Content Include="Picture\iconfinder_visa_1933702.png" />
     <Content Include="Picture\paypal.png" />
+    <Content Include="Picture\pngwing.com %281%29.png" />
+    <Content Include="Picture\pngwing.com.png" />
     <Content Include="Picture\RWNgX1.jpg" />
+    <Content Include="Picture\swish QR code.png" />
     <Content Include="Picture\Swish.png" />
     <Content Include="Picture\unnamed.png" />
     <Content Include="Picture\visa.png" />
