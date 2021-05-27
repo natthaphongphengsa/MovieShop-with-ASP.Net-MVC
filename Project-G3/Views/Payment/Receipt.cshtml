@@ -35,20 +35,20 @@
                 <th></th>
             </tr>
 
-            @foreach (var item in Model)
+            @foreach (Project_G3.Models.Movie item in Model)
             {
                 <tr>
                     <td>
                         <a href="@Url.Action("Info","Home",new { id = item.MovieId })">
-                            <img id="info-img" src="@Html.DisplayTextFor(model => item.MoviePosters)" />
+                            <img id="info-img" src="@Html.DisplayTextFor(ModelItem => item.MoviePosters)" />
                         </a>
                     </td>
                     <td>
-                        <p style="font-weight:600;">Title: @Html.DisplayFor(modelItem => item.MovieTitle)</p>
-                        @Html.DisplayFor(modelItem => item.MovieDescription)
+                        <p style="font-weight:600;">Title: @Html.DisplayFor(ModelItem => item.MovieTitle)</p>
+                        @Html.DisplayFor(ModelItem => item.MovieDescription)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.MoviePrice)
+                        @Html.DisplayFor(ModelItem => item.MoviePrice)
                     </td>
                 </tr>
             }
@@ -59,6 +59,9 @@
         <p class="Price pull-right" style="color:white;">Totalt: @ViewBag.Sum kr</p>
     </div>
 </div>
-<div class="row">
-    <div class="MSG"><a class="BackToTopBtn" href="@Html.Action("DeleteFromCart","Home", new { Id = 0 })">Back To Shopping</a></div>
-</div>
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="MSG"><a class="BackToTopBtn" href="@Url.Action("DeleteFromCart","Home", new { Id = item.MovieId })">Back To Shopping</a></div>
+    </div>
+}
