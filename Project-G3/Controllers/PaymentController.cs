@@ -33,13 +33,24 @@ namespace Project_G3.Controllers
         }
         public ActionResult Receipt(FormDetails FD)
         {
-            List<Movie> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<Movie>)HttpContext.Session["ShoppingCart"] : new List<Movie>();
+            List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
             ViewData["ShoppingCart"] = CartList;
             List<FormDetails> info = new List<FormDetails>();
             info.Add(FD);
             ViewData["CustomDetails"] = info;
             decimal TotalPrice = 0;
-            foreach (var item in CartList) { TotalPrice += item.MoviePrice; }
+            foreach (var item in CartList)
+            {
+                if (item.IsOnSale == true)
+                {
+                    TotalPrice += decimal.Parse(item.NewPrice);
+                }
+                else
+                {
+                    TotalPrice += item.Movie.MoviePrice;
+                }
+
+            }
             ViewBag.Sum = TotalPrice;
             return View(CartList);
         }

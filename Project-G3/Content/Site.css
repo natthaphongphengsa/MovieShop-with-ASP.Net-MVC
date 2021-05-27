@@ -84,13 +84,14 @@ html {
 }
 .mvlbtn:hover{        
     opacity:70%;    
-    transition: .5s ease;    
+    transition: .5s ease;      
+    text-decoration:none;
 }
 .column {
     margin-top: 24px;
 }
-.col-md-2:hover {    
-    transform: scale(1.08);       
+.column:hover {
+    transform: scale(1.08);
     transition: .5s ease;
 }
 /*Sklijer linjen*/

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Project_G3.Models.Movie>
+﻿@model IEnumerable<Project_G3.Models.MovieDisplayViewModel>
 
 <div class="Row">
     <div class="row" style="width:fit-content;margin:auto;">
@@ -24,31 +24,39 @@
         <table class="table">
             <tr>
                 <th>
-                    Movie:
+                    Movie
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.MovieDescription)
+                    Description
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.MoviePrice)
+                    Price
                 </th>
                 <th></th>
             </tr>
 
-            @foreach (Project_G3.Models.Movie item in Model)
+            @foreach (Project_G3.Models.MovieDisplayViewModel item in Model)
             {
                 <tr>
                     <td>
-                        <a href="@Url.Action("Info","Home",new { id = item.MovieId })">
-                            <img id="info-img" src="@Html.DisplayTextFor(ModelItem => item.MoviePosters)" />
+                        <a href="@Url.Action("Info","Home",new { id = item.Movie.MovieId })">
+                            <img id="info-img" src="@Html.DisplayTextFor(ModelItem => item.Movie.MoviePosters)" />
                         </a>
                     </td>
                     <td>
-                        <p style="font-weight:600;">Title: @Html.DisplayFor(ModelItem => item.MovieTitle)</p>
-                        @Html.DisplayFor(ModelItem => item.MovieDescription)
+                        <p style="font-weight:600;">Title: @Html.DisplayFor(ModelItem => item.Movie.MovieTitle)</p>
+                        @Html.DisplayFor(ModelItem => item.Movie.MovieDescription)
                     </td>
                     <td>
-                        @Html.DisplayFor(ModelItem => item.MoviePrice)
+                        @if (item.IsOnSale)
+                        {
+                            <p style="text-decoration: line-through">@Html.DisplayFor(modelItem => item.Movie.MoviePrice)</p>
+                            <p class="mvlp"><span style="color:red">@Html.DisplayFor(modelItem => item.NewPrice) SEK</span></p>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.Movie.MoviePrice)
+                        }
                     </td>
                 </tr>
             }
@@ -56,12 +64,12 @@
     </div>
     <div class="row">
         @*Visa Totalt pris*@
-        <p class="Price pull-right" style="color:white;">Totalt: @ViewBag.Sum kr</p>
+        <p class="Price pull-right" style="color:white;">Totalt: @ViewBag.Sum SEK</p>
     </div>
 </div>
 @foreach (var item in Model)
 {
     <div class="row">
-        <div class="MSG"><a class="BackToTopBtn" href="@Url.Action("DeleteFromCart","Home", new { Id = item.MovieId })">Back To Shopping</a></div>
+        <div class="MSG"><a class="BackToTopBtn" href="@Url.Action("DeleteFromCart","Home", new { Id = item.Movie.MovieId })">Back To Shopping</a></div>
     </div>
 }

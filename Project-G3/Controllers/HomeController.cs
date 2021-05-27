@@ -19,7 +19,7 @@ namespace Project_G3.Controllers
         //[Authorize (Roles="Admin")]
         public ActionResult Index()
         {
-            List<Movie> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<Movie>)HttpContext.Session["ShoppingCart"] : new List<Movie>();
+            List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
             //Visa Antal film som finns i varukorg i index sidan
             int amount;
             //Om varukorg är tomt sätt 0
@@ -43,27 +43,51 @@ namespace Project_G3.Controllers
         }
         public ActionResult Cart()
         {
-            List<Movie> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<Movie>)HttpContext.Session["ShoppingCart"] : new List<Movie>();
+            List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
             ViewData["ShoppingCart"] = CartList;
             decimal TotalPrice = 0;
-            foreach (var item in CartList) { TotalPrice += item.MoviePrice; }
+            foreach (var item in CartList)
+            {
+                if (item.IsOnSale == true)
+                {
+                    TotalPrice += decimal.Parse(item.NewPrice);
+                }
+                else
+                {
+                    TotalPrice += item.Movie.MoviePrice;
+                }
+                
+            }
             ViewBag.Sum = TotalPrice;
             return View(CartList);
         }
         public ActionResult AddToCart(int Id)
         {
             //ApplicationDbContext _db = new ApplicationDbContext();
-            List<Movie> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<Movie>)HttpContext.Session["ShoppingCart"] : new List<Movie>();
-            Movie movie = db.Movies.First(m => m.MovieId == Id);
-            if (!CartList.Any(m => m.MovieId == movie.MovieId)) CartList.Add(movie);
-            HttpContext.Session["ShoppingCart"] = CartList;
+            List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
+            List<Movie> movies = db.Movies.ToList();
+            List<MovieDisplayViewModel> dm = GetAllFlashSales();
+            foreach (Movie movie in movies)
+            {
+                if (!dm.Any(m => m.Movie == movie))
+                {                    
+                    dm.Add(new MovieDisplayViewModel
+                    {
+                        Movie = movie,
+                        IsOnSale = false
+                    });
+                }
+            }
+            if(!CartList.Any(m => m.Movie.MovieId == Id)) CartList.Add(dm.Find(m => m.Movie.MovieId == Id));
+            
 
+            HttpContext.Session["ShoppingCart"] = CartList;
             return RedirectToAction("Index");
         }
         public ActionResult DeleteFromCart(int Id)
         {
-            List<Movie> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<Movie>)HttpContext.Session["ShoppingCart"] : new List<Movie>();
-            if (CartList.Any(m => m.MovieId == Id)) CartList.Remove(CartList.First(m => m.MovieId == Id));
+            List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
+            if (CartList.Any(m => m.Movie.MovieId == Id)) CartList.Remove(CartList.First(m => m.Movie.MovieId == Id));
             return RedirectToAction("Cart");
         }
         public ActionResult About()
