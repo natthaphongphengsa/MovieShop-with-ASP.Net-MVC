@@ -6,9 +6,9 @@
 <div>
     <div class="row">
         <div class="col-md-4">
-            <p style="padding-top:34px;">
+            @*<p style="padding-top:34px;">
                 @Html.ActionLink("Back to Movie", "Index")
-            </p>
+            </p>*@
             <h2>@Html.DisplayFor(model => model.MovieTitle)</h2>
             <div class="col-md">
                 <p style="width:50%;float:left;">Release year: @Html.DisplayFor(model => model.MovieReleaseYear)</p>
@@ -16,9 +16,19 @@
             </div>
             <img id="info-img" src="@Html.DisplayTextFor(model => model.MoviePosters)" style="width:100%;" />
         </div>
-        <div class="addToCart col-md-4">            
+        <div class="addToCart col-md-4">
             <h3>Price: @Html.DisplayFor(model => model.MoviePrice) SEK</h3>
-            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = Model.MovieId })" >Add To Cart</a>
+            <br />
+            <a id="btn_add" class="mvlbtn btn-default btn-lg" href="@Url.Action("AddToCart", "Home", new { id = Model.MovieId })" style="width:30%" >
+                <span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
+            </a>
+            <br />
+            <br/>
+            <a id="btn_add" class="mvlbtn btn-default btn-lg" href="@Url.Action("Index", "Home")" style="width:30%" >
+                <span class="glyphicon glyphicon-eye-open"></span> Continue shopping
+            </a>
+
+            @*<a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = Model.MovieId })" >Add To Cart</a>*@
         </div>
     </div>
     <div class="row">

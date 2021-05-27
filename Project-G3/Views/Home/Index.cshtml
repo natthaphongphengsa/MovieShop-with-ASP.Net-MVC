@@ -95,7 +95,7 @@
             </a>
             @*<p>Movie Duration: @movie.MovieDuration</p>*@
             <p class="mvlp"> Price: @movie.MoviePrice Kr</p>
-            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.MovieId })">Add To Cart</a>
+            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span>  Add To Cart</a>
         </div>
     }
 </div>

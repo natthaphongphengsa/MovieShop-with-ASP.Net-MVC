@@ -15,6 +15,8 @@ namespace Project_G3.Controllers
         {            
             ViewData["Genres"] = db.Genres.ToList();            
         }
+
+        //[Authorize (Roles="Admin")]
         public ActionResult Index()
         {
             List<Movie> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<Movie>)HttpContext.Session["ShoppingCart"] : new List<Movie>();
