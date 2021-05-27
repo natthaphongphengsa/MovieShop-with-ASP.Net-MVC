@@ -2,28 +2,28 @@
     ViewBag.Title = "MovieShop";
 }
 
-@model IEnumerable<Project_G3.Models.Movie>
+@model IEnumerable<Project_G3.Models.MovieDisplayViewModel>
 @Html.Partial("_Navigations")
 
 
 @*<div class="underNav navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Genre <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
-                {
-                    <li>@Html.ActionLink(Genre.GenreName, "Genre", new { Id=Genre.GenreId})</li>
-                }
-            </ul>
-        </li>
-        <li>@Html.ActionLink("News", "News", "Home")</li>
-        <li>@Html.ActionLink("Flash Sale", "GetFlashSale", "Home")</li>
-    </ul>
-</div>*@
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Genre <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
+                    {
+                        <li>@Html.ActionLink(Genre.GenreName, "Genre", new { Id=Genre.GenreId})</li>
+                    }
+                </ul>
+            </li>
+            <li>@Html.ActionLink("News", "News", "Home")</li>
+            <li>@Html.ActionLink("Flash Sale", "GetFlashSale", "Home")</li>
+        </ul>
+    </div>*@
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -65,8 +65,8 @@
 </div> <!-- Carousel -->
 <div class="randomImg row">
     @{
-        List<Project_G3.Models.Movie> random = new List<Project_G3.Models.Movie>();
-        foreach (var Movie in Model)
+        List<Project_G3.Models.MovieDisplayViewModel> random = new List<Project_G3.Models.MovieDisplayViewModel>();
+        foreach (Project_G3.Models.MovieDisplayViewModel Movie in Model)
         {
             random.Add(Movie);
         }
@@ -76,8 +76,8 @@
         foreach (var item in RadomMovies)
         {
             <div class="column col-md-2 ">
-                <a href="@Url.Action("Info","Home",new { id = item.MovieId })">
-                    <img id="col-img" src="@item.MoviePosters" />
+                <a href="@Url.Action("Info","Home",new { id = item.Movie.MovieId })">
+                    <img id="col-img" src="@item.Movie.MoviePosters" />
                 </a>
             </div>
         }
@@ -85,18 +85,25 @@
 </div>
 <hr class="solid">
 <div class="row">
-    @foreach (Project_G3.Models.Movie movie in Model)
+    @foreach (Project_G3.Models.MovieDisplayViewModel movie in Model)
     {
-        <div class="column col-md-2">
-            <h4 class="Movietitle">@movie.MovieTitle</h4>
-            @*<p>Release Year: @movie.MovieReleaseYear</p>*@
-            <a href="@Url.Action("Info","Home",new { id = movie.MovieId })">
-                <img id="col-img" src="@movie.MoviePosters" />
-            </a>
-            @*<p>Movie Duration: @movie.MovieDuration</p>*@
-            <p class="mvlp"> Price: @movie.MoviePrice Kr</p>
-            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span>  Add To Cart</a>
-        </div>
+    <div class="column col-md-2">
+        <h4 class="Movietitle">@movie.Movie.MovieTitle</h4>
+        @*<p>Release Year: @movie.MovieReleaseYear</p>*@
+        <a href="@Url.Action("Info","Home",new { id = movie.Movie.MovieId })">
+            <img id="col-img" src="@movie.Movie.MoviePosters" />
+        </a>
+        @*<p>Movie Duration: @movie.MovieDuration</p>*@
+        @if (movie.IsOnSale)
+        {
+            <p class="mvlp"> Price: <span style="color:red">@movie.NewPrice</span> Kr</p>
+        }
+        else
+        {
+            <p class="mvlp"> Price: @movie.Movie.MoviePrice Kr</p>
+        }
+        <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span>  Add To Cart</a>
+    </div>
     }
 </div>
 <div class="row">

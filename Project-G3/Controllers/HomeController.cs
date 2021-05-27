@@ -25,7 +25,21 @@ namespace Project_G3.Controllers
             //Om varukorg är tomt sätt 0
             if (CartList.Count != 0) { amount = CartList.Count; } else { amount = 0; }
             ViewBag.Amount = amount;
-            return View(db.Movies.ToArray());
+            List<Movie> movies = db.Movies.ToList();
+            List<MovieDisplayViewModel> dm = GetAllFlashSales();
+            foreach (Movie movie in movies)
+            {
+                if (!dm.Any(m => m.Movie == movie))
+                {
+                    dm.Add(new MovieDisplayViewModel
+                    {
+                        Movie = movie,
+                        IsOnSale = false
+                    });
+                }
+            }
+            dm.OrderBy(m => m.Movie.MovieId);
+            return View(dm);
         }
         public ActionResult Cart()
         {
@@ -71,7 +85,7 @@ namespace Project_G3.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            //ApplicationDbContext db = new ApplicationDbContext();
+
             Movie movie = db.Movies.FirstOrDefault(m => m.MovieId == id);
 
             //skapa en lita med all genre
@@ -104,10 +118,11 @@ namespace Project_G3.Controllers
             ViewBag.Name = "Please select your payment!";
             ViewBag.ContinueAsGuest = SelectedId;
             return View();
-        }        
-        public ActionResult GetFlashSale()
+        }
+
+        public List<MovieDisplayViewModel> GetAllFlashSales()
         {
-            List<FlashSalePriceViewModel> movies = new List<FlashSalePriceViewModel>();
+            List<MovieDisplayViewModel> movies = new List<MovieDisplayViewModel>();
             List<FlashSale> flashsales = db.FlashSales.ToList();
             foreach (FlashSale item in flashsales)
             {
@@ -126,12 +141,13 @@ namespace Project_G3.Controllers
                         discount = decimal.Parse(item.FlashSaleDiscount);
                         newPrice = movie.MoviePrice - discount;
                     }
-                    FlashSalePriceViewModel Mo = movies.Find(m => m.Movie.MovieId == movie.MovieId);
+                    MovieDisplayViewModel Mo = movies.Find(m => m.Movie.MovieId == movie.MovieId);
                     if (Mo == null)
                     {
-                        movies.Add(new FlashSalePriceViewModel
+                        movies.Add(new MovieDisplayViewModel
                         {
                             Movie = movie,
+                            IsOnSale = true,
                             NewPrice = newPrice.ToString("#.#0"),
                             FlashSale = item.FlashSaleDiscount
                         });
@@ -139,16 +155,22 @@ namespace Project_G3.Controllers
                     else if (Mo.Movie.MoviePrice > movie.MoviePrice)
                     {
                         movies.Remove(Mo);
-                        movies.Add(new FlashSalePriceViewModel
+                        movies.Add(new MovieDisplayViewModel
                         {
                             Movie = movie,
+                            IsOnSale = true,
                             NewPrice = newPrice.ToString(),
                             FlashSale = item.FlashSaleDiscount
                         });
                     }
                 }
             }
-            return View(movies);
+            return movies;
+        }
+
+        public ActionResult GetFlashSale()
+        {
+            return View(GetAllFlashSales());
         }
         public ActionResult News()
         {

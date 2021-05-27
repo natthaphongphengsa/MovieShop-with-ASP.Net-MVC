@@ -1,14 +1,38 @@
 ﻿@model Project_G3.Models.Movie
 @{
     ViewBag.Title = "MovieShop/" + @Html.DisplayFor(model => model.MovieTitle);
+    decimal price = Model.MoviePrice;
+    string discount = "";
+    bool IsProcentage = false;
+}
+@foreach (Project_G3.Models.FlashSale fs in Model.FlashSales)
+{
+    decimal np;
+    bool p = false;
+    if (fs.FlashSaleDiscount.Substring(fs.FlashSaleDiscount.Count() - 1, 1) == "%")
+    {
+        np = Model.MoviePrice - Model.MoviePrice * decimal.Parse(fs.FlashSaleDiscount.Substring(0, fs.FlashSaleDiscount.Count() - 1)) / 100;
+        p = true;
+    }
+    else
+    {
+        np = Model.MoviePrice - decimal.Parse(fs.FlashSaleDiscount.Substring(0, fs.FlashSaleDiscount.Count() - 1));
+    }
+    if (price > np)
+    {
+        price = np;
+        discount = fs.FlashSaleDiscount;
+        IsProcentage = p;
+    }
+
 }
 
 <div>
     <div class="row">
         <div class="col-md-4">
             @*<p style="padding-top:34px;">
-                @Html.ActionLink("Back to Movie", "Index")
-            </p>*@
+                    @Html.ActionLink("Back to Movie", "Index")
+                </p>*@
             <h2>@Html.DisplayFor(model => model.MovieTitle)</h2>
             <div class="col-md">
                 <p style="width:50%;float:left;">Release year: @Html.DisplayFor(model => model.MovieReleaseYear)</p>
@@ -17,14 +41,30 @@
             <img id="info-img" src="@Html.DisplayTextFor(model => model.MoviePosters)" style="width:100%;" />
         </div>
         <div class="addToCart col-md-4">
-            <h3>Price: @Html.DisplayFor(model => model.MoviePrice) SEK</h3>
+            @if (price < Model.MoviePrice)
+            {
+                <h3>Price: <span style="color:red">@price</span> SEK</h3>
+                <p style="text-decoration: line-through">@Model.MoviePrice</p>
+                if (IsProcentage)
+                {
+                    <p>Discount: @discount</p>
+                }
+                else
+                {
+                    <p>Discount: @discount SEK</p>
+                }
+            }
+            else
+            {
+                <h3>Price: @Html.DisplayFor(model => model.MoviePrice) SEK</h3>
+            }
             <br />
-            <a id="btn_add" class="mvlbtn btn-default btn-lg" href="@Url.Action("AddToCart", "Home", new { id = Model.MovieId })" style="width:30%" >
+            <a id="btn_add" class="mvlbtn btn-default btn-lg" href="@Url.Action("AddToCart", "Home", new { id = Model.MovieId })" style="width:30%">
                 <span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
             </a>
             <br />
-            <br/>
-            <a id="btn_add" class="mvlbtn btn-default btn-lg" href="@Url.Action("Index", "Home")" style="width:30%" >
+            <br />
+            <a id="btn_add" class="mvlbtn btn-default btn-lg" href="@Url.Action("Index", "Home")" style="width:30%">
                 <span class="glyphicon glyphicon-eye-open"></span> Continue shopping
             </a>
 
@@ -36,8 +76,8 @@
             <h3>
                 Genre:
                 @foreach (Project_G3.Models.Genre genres in ViewBag.GenreInfo)
-                {           
-                    <a href="@Url.Action("Genre", new { Id = genres.GenreId })">@genres.GenreName</a>                    
+                {
+                    <a href="@Url.Action("Genre", new { Id = genres.GenreId })">@genres.GenreName</a>
                 }
             </h3>
         </div>
