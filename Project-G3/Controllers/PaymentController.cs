@@ -11,17 +11,17 @@ namespace Project_G3.Controllers
     public class PaymentController : Controller
     {
         // GET: Payment        
-        public ActionResult PaymentMethod(FormDetails CustomInfo, int Id)
+        public ActionResult PaymentMethod(FormDetails CustomInfo)
         {
-            if (Session["Email"] == null && Id == 2)
+            if (Session["Email"] == null && CustomInfo.UserType == 2)
             {
                 return RedirectToAction("Login","Account");
             }
-            else if(Session["Email"] != null && Id == 2)
+            else if(Session["Email"] != null && CustomInfo.UserType == 2)
             {
                 return View(CustomInfo);
             }
-            else if(Session["Email"] != null && Id == 1)
+            else if(Session["Email"] != null && CustomInfo.UserType == 1)
             {
                 return View(CustomInfo);
             }

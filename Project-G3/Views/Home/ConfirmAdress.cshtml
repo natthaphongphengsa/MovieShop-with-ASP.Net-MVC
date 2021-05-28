@@ -1,68 +1,90 @@
 ﻿@model Project_G3.Models.FormDetails
-<div class="form row">
-    <form action="@Url.Action("PaymentMethod","Payment", new { CustomInfo= Model, Id= ViewBag.ContinueAsGuest })" method="post" class="form-horizontal">
-        <div class="form-group">
-            <h2>Faktura adress:</h2>
-        </div>
-        <div class="formsInput form-group">
-            <input type="text" class="form-control" name="Firstname" placeholder="Firstname" style=" width: 49%; float: left; margin-right: 1%;">
-            <input type="text" class="form-control" name="LastName" placeholder="Lastname" style=" width: 49%; float: left; margin-left: 1%;">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="StreetAdress" placeholder="Street Adress">
-        </div>
-        <div class="formsInput form-group">
-            <input type="text" class="form-control" name="ZipCode" placeholder="Zip-code" style=" width: 34%; float: left; margin-right: 1%;">
-            <input type="text" class="form-control" name="City" placeholder="City" style=" width: 64%; float: left; margin-left: 1%;">
-        </div>
-        <div class="formsInput form-group">
-            <select class="form-control" name="Contry">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <input type="email" class="form-control" name="EmailAdress" placeholder="Email-adress">
-        </div>
-        <div class="form-group">
-            <input type="tel" class="form-control" name="PhoneNumber" placeholder="Phone-number">
-        </div>
-        <h3 style="height:65px;">payment method:</h3>
-        <div class="col-md" style="background-color:white; border-radius:4px; margin-bottom: 24px;">
-            <div class="form-check">
-                <label class="form-check-label">                    
-                    @Html.RadioButtonFor(m => m.PaymentName, "Master Card", new { @value = "Option1", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
-                    <img src="~/picture/—pngtree—mastercard logo icon_6019479.png" width="65" />
-                    Master card
-                </label>
+
+@using (Html.BeginForm("ConfirmAdress", "Home", new { form = Model, id = ViewBag.ContinueAsGuest }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form row">
+        <form @*action="@Url.Action("PaymentMethod", "Payment", new { CustomInfo = Model, Id = ViewBag.ContinueAsGuest })" method="post"*@ class="form-horizontal">
+            @{
+                List<string> contries = new List<string>();
+                foreach (var item in ViewBag.Contries)
+                {
+                    contries.Add(item.Name);
+                }
+            }
+            <div class="form-group">
+                <h2>Faktura adress:</h2>
             </div>
-            <div class="form-check">
-                <label class="form-check-label">                    
-                    @Html.RadioButtonFor(m => m.PaymentName, "Visa", new { @value = "Option2", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
-                    <img src="~/picture/visa.png" width="65" />
-                    Visa card
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">                    
-                    @Html.RadioButtonFor(m => m.PaymentName, "Paypal", new { @value = "Option3", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
-                    <img src="~/picture/paypal.png" width="65" />
-                    Paypal
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">                   
-                    @Html.RadioButtonFor(m => m.PaymentName, "Swish", new { @value = "Option4", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
-                    <img src="~/picture/Swish.png" width="65" />
-                    Swish
-                </label>
-            </div>
-        </div>
-        <div class="form-group">
-            <input type="submit" class="form-control" value="Continue" />
-        </div>
-    </form>
-</div>
+            <div class="form-group">
+                <div class="FormsInput">
+                    @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @type = "text", @class = "form-control", @name = "Firstname", @placeholder = "Firstname", @style = "width: 49%;float: left;" } })
+                    @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { @type = "text", @class = "form-control", @name = "LastName", @placeholder = "Lastname", @style = "width: 49%; float: left; margin-left: 2%;" } })
+                    <div style="width: 100%; display: inline-block;">
+                        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger", @style = "width: 49%;float: left;" })
+                        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger", @style = "width: 49 %; float: left; margin-left: 2%;" })
+                    </div>
+                </div>
+                @Html.EditorFor(m => m.StreetAdress, new { htmlAttributes = new { @type = "text", @class = "form-control", @name = "StreetAdress", @placeholder = "Street Adress" } })
+                <div style="width: 100%; display: inline-block;">
+                    @Html.ValidationMessageFor(m => m.StreetAdress, "", new { @class = "text-danger" })
+                </div>
+                <div class="FormsInput">
+                    @Html.EditorFor(m => m.Zipcode, new { htmlAttributes = new { @type = "text", @class = "form-control", @name = "ZipCode", @placeholder = "Zip-code", @style = " width: 34%; float: left; margin-right: 1%;" } })
+                    @Html.EditorFor(m => m.City, new { htmlAttributes = new { @type = "text", @class = "form-control", @name = "City", @placeholder = "City", @style = " width: 64%; float: left; margin-left: 1%;" } })
+                    <div style="width: 100%; display: inline-block;">
+                        @Html.ValidationMessageFor(m => m.Zipcode, "", new { @class = "text-danger", @style = " width: 34%; float: left; margin-right: 1%;" })
+                        @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger", @style = " width: 64%; float: left; margin-left: 1%;" })
+                    </div>
+                </div>
+                <div class="FormsInput">
+                    @Html.DropDownListFor(m => m.Contry, new SelectList(contries, "ContryName"), "Select your contry", new { @class = "form-control", @name = "Contry" })
+                    <div style="width: 100%; display: inline-block;">
+                        @Html.ValidationMessageFor(m => m.Contry, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="FormsInput">
+                    @Html.EditorFor(m => m.EmailAdress, new { htmlAttributes = new { @type = "email", @class = "form-control", @name = "EmailAdress", @placeholder = "Email-adress" } })
+                    <div style="width: 100%; display: inline-block;">
+                        @Html.ValidationMessageFor(m => m.EmailAdress, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                @Html.EditorFor(m => m.PhoneNumber, new { htmlAttributes = new { @type = "tel", @class = "form-control", @name = "PhoneNumber", @placeholder = "Phone-number", @style = "width: 49%;" } })
+                @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+
+                <h3 style="height:65px;">Payment method: @Html.ValidationMessageFor(m => m.PaymentName, "", new { @class = "text-danger" })</h3>
+                <div class="col-md" style="background-color:white; border-radius:4px; margin-bottom: 24px;">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            @Html.RadioButtonFor(m => m.PaymentName, "Master Card", new { @value = "Option1", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
+                            <img src="~/picture/—pngtree—mastercard logo icon_6019479.png" width="65" />
+                            Master card
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            @Html.RadioButtonFor(m => m.PaymentName, "Visa", new { @value = "Option2", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
+                            <img src="~/picture/visa.png" width="65" />
+                            Visa card
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            @Html.RadioButtonFor(m => m.PaymentName, "Paypal", new { @value = "Option3", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
+                            <img src="~/picture/paypal.png" width="65" />
+                            Paypal
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            @Html.RadioButtonFor(m => m.PaymentName, "Swish", new { @value = "Option4", @class = "form-check-input", @type = "radio", @name = "exampleradios" })
+                            <img src="~/picture/Swish.png" width="65" />
+                            Swish
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="form-control" value="Continue" />
+                </div>
+        </form>
+    </div>
+}

@@ -1,7 +1,9 @@
-﻿using Project_G3.Models;
+﻿using Newtonsoft.Json;
+using Project_G3.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
@@ -14,6 +16,11 @@ namespace Project_G3.Controllers
         public HomeController()
         {
             ViewData["Genres"] = db.Genres.ToList();
+            //Hämta data från URL/API
+            var webClient = new WebClient();
+            var json = webClient.DownloadString(@"https://restcountries.eu/rest/v2/all");
+            Contries[] contry = JsonConvert.DeserializeObject<Contries[]>(json);
+            ViewData["Contries"] = contry;
         }
 
         //[Authorize (Roles="Admin")]
@@ -56,7 +63,7 @@ namespace Project_G3.Controllers
                 {
                     TotalPrice += item.Movie.MoviePrice;
                 }
-                
+
             }
             ViewBag.Sum = TotalPrice;
             return View(CartList);
@@ -70,7 +77,7 @@ namespace Project_G3.Controllers
             foreach (Movie movie in movies)
             {
                 if (!dm.Any(m => m.Movie == movie))
-                {                    
+                {
                     dm.Add(new MovieDisplayViewModel
                     {
                         Movie = movie,
@@ -78,8 +85,8 @@ namespace Project_G3.Controllers
                     });
                 }
             }
-            if(!CartList.Any(m => m.Movie.MovieId == Id)) CartList.Add(dm.Find(m => m.Movie.MovieId == Id));
-            
+            if (!CartList.Any(m => m.Movie.MovieId == Id)) CartList.Add(dm.Find(m => m.Movie.MovieId == Id));
+
 
             HttpContext.Session["ShoppingCart"] = CartList;
             return RedirectToAction("Index");
@@ -89,6 +96,10 @@ namespace Project_G3.Controllers
             List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
             if (CartList.Any(m => m.Movie.MovieId == Id)) CartList.Remove(CartList.First(m => m.Movie.MovieId == Id));
             return RedirectToAction("Cart");
+        }
+        public ActionResult DeleteAllFromCartAfterBought()
+        {
+            return View();
         }
         public ActionResult About()
         {
@@ -133,17 +144,31 @@ namespace Project_G3.Controllers
         }
         public ActionResult ConfirmAdress(int? SelectedId)
         {
-            //List<PaymentOption> method = new List<PaymentOption>();
-            //method.Add(new PaymentOption() { PaymentId = 1, PaymentIcon = "https://aux2.iconspalace.com/uploads/master-card-icon-256.png", PaymentName = "Master Card" });
-            //method.Add(new PaymentOption() { PaymentId = 2, PaymentIcon = "https://cdn4.iconfinder.com/data/icons/payment-method/160/payment_method_card_visa-256.png", PaymentName = "Visa" });
-            //method.Add(new PaymentOption() { PaymentId = 3, PaymentIcon = "https://www.skibike.se/wp-content/uploads/2018/11/Paypal-icon.png", PaymentName = "Paypal" });
-            //method.Add(new PaymentOption() { PaymentId = 4, PaymentIcon = "https://redlight.se/wp-content/uploads/2015/12/produkt-swish-2.png", PaymentName = "Swish" });
-            //ViewData["PaymentList"] = method;
             ViewBag.Name = "Please select your payment!";
             ViewBag.ContinueAsGuest = SelectedId;
             return View();
         }
-
+        [HttpPost]
+        public ActionResult ConfirmAdress(FormDetails form, int Id)
+        {
+            FormDetails CustomInfo = form;
+            CustomInfo.UserType = Id;
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }            
+            return RedirectToAction("PaymentMethod", "Payment", CustomInfo);
+        }
+        public ActionResult DeleteFromCartAfterReceipt()
+        {
+            List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
+            //if (CartList.Any(m => m.Movie.MovieId == Id)) CartList.Remove(CartList.First(m => m.Movie.MovieId == Id));
+            if(CartList != null)
+            {
+                CartList.Clear();
+            }
+            return RedirectToAction("Index");
+        }
         public List<MovieDisplayViewModel> GetAllFlashSales()
         {
             List<MovieDisplayViewModel> movies = new List<MovieDisplayViewModel>();
@@ -191,7 +216,6 @@ namespace Project_G3.Controllers
             }
             return movies;
         }
-
         public ActionResult GetFlashSale()
         {
             return View(GetAllFlashSales());

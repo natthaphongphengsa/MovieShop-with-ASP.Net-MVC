@@ -5,26 +5,6 @@
 @model IEnumerable<Project_G3.Models.MovieDisplayViewModel>
 @Html.Partial("_Navigations")
 
-
-@*<div class="underNav navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-            <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    Genre <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
-                    {
-                        <li>@Html.ActionLink(Genre.GenreName, "Genre", new { Id=Genre.GenreId})</li>
-                    }
-                </ul>
-            </li>
-            <li>@Html.ActionLink("News", "News", "Home")</li>
-            <li>@Html.ActionLink("Flash Sale", "GetFlashSale", "Home")</li>
-        </ul>
-    </div>*@
-
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">

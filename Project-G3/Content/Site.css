@@ -162,10 +162,14 @@ cart{
     transition: .5s ease;
     backface-visibility: hidden;
 }
+.form{
+    width:70%;
+    margin:auto;
+}
 /*justera Betaltsätt knappar */
-.form-check:hover{
-    background-color:whitesmoke;  
-    border-radius:4px;
+.form-check:hover {
+    background-color: whitesmoke;
+    border-radius: 4px;
 }
 .form-check-label{
     padding:18px;

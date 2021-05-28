@@ -192,7 +192,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModels.cs" />
-    <Compile Include="Models\Contries.cs" />
     <Compile Include="Models\Director.cs" />
     <Compile Include="Models\FlashSale.cs" />
     <Compile Include="Models\FormDetails.cs" />
