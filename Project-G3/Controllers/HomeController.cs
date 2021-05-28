@@ -142,23 +142,36 @@ namespace Project_G3.Controllers
             ViewData["GenreTitle"] = genre.First(g => g.GenreId == Id).GenreName;
             return View(movies);
         }
-        public ActionResult ConfirmAdress(int? SelectedId)
+        public ActionResult ConfirmAdress(int Id)
         {
-            ViewBag.Name = "Please select your payment!";
-            ViewBag.ContinueAsGuest = SelectedId;
+            //ViewBag.Name = "Please select your payment!";
+            //ViewBag.ContinueAsGuest = Id;
+            FormDetails GetId = new FormDetails();
+            GetId.UserType = Id;
+            ViewBag.UserId = Id;
             return View();
         }
         [HttpPost]
-        public ActionResult ConfirmAdress(FormDetails form, int Id)
+        [ValidateAntiForgeryToken]
+        public ActionResult ConfirmAdress(FormDetails form, int id)
         {
-            FormDetails CustomInfo = form;
-            CustomInfo.UserType = Id;
+            FormDetails CustomInfo = new FormDetails();
+            CustomInfo.FirstName = form.FirstName;
+            CustomInfo.LastName = form.LastName;
+            CustomInfo.StreetAdress = form.StreetAdress;
+            CustomInfo.Zipcode = form.Zipcode;
+            CustomInfo.City = form.City;
+            CustomInfo.Contry = form.Contry;
+            CustomInfo.EmailAdress = form.EmailAdress;
+            CustomInfo.PhoneNumber = form.PhoneNumber;
+            CustomInfo.PaymentName = form.PaymentName;
+            CustomInfo.UserType = id;
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(CustomInfo);
             }            
             return RedirectToAction("PaymentMethod", "Payment", CustomInfo);
-        }
+        }        
         public ActionResult DeleteFromCartAfterReceipt()
         {
             List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();

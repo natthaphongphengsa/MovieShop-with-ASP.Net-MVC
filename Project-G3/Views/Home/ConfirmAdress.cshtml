@@ -1,6 +1,6 @@
 ﻿@model Project_G3.Models.FormDetails
 
-@using (Html.BeginForm("ConfirmAdress", "Home", new { form = Model, id = ViewBag.ContinueAsGuest }))
+@using (Html.BeginForm("ConfirmAdress", "Home", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     <div class="form row">
@@ -11,7 +11,7 @@
                 {
                     contries.Add(item.Name);
                 }
-            }
+            }            
             <div class="form-group">
                 <h2>Faktura adress:</h2>
             </div>

@@ -76,9 +76,8 @@
             <p class="Price pull-right">Totalt: @ViewBag.Sum SEK</p>
         </div>
         <div class="row" style="padding:12px;">
-            <a class="btn btn-default pull-left" href="@Url.Action("ConfirmAdress","Home", new { SelectedId = 1 })" style="min-width:40%">Continue as guest</a>
-            <a class="btn btn-default pull-right" href="@Url.Action("ConfirmAdress","Home", new {SelectedId = 2 })" style="width:40%">Continue</a>
+            <a class="btn btn-default pull-left" href="@Url.Action("ConfirmAdress","Home", new { Id = 1 } )" style="min-width:40%">Continue as guest</a>
+            <a class="btn btn-default pull-right" href="@Url.Action("ConfirmAdress","Home", new { Id = 2} )" style="width:40%">Continue</a>
         </div>
-
     }
 }
