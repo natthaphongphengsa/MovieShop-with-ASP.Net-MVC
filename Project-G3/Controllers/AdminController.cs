@@ -12,9 +12,10 @@ namespace Project_G3.Controllers
 {
     public class AdminController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        public AdminController(){}
+        public AdminController() { }
         public AdminController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
@@ -53,7 +54,7 @@ namespace Project_G3.Controllers
 
         // GET: Admin
         [Authorize(Roles = "Admin")]
-        public ActionResult Index()
+        public ActionResult AdminPage()
         {
             return View();
         }
@@ -92,5 +93,35 @@ namespace Project_G3.Controllers
             }
             return View(model);
         }
+
+        // GET: Admin/AddMovie
+        [Authorize(Roles = "Admin")]
+        public ActionResult AddMovie()
+        {
+            return View();
+        }
+        // POST: Admin/AddMovie
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddMovie(AddMovieModels model)
+        {
+            if (ModelState.IsValid)
+            {
+                Movie movie = new Movie { MovieTitle=model.MovieTitel,
+                    MovieReleaseYear=model.MovieReleaseYear, 
+                    MovieDuration=model.MovieDuration, 
+                    MoviePosters=model.MoviePosters, 
+                    MovieDescription=model.MovieDescription, 
+                    MoviePrice=model.MoviePrice};
+
+                _db.Movies.Add(movie);
+
+               return RedirectToAction("Index");
+            }
+            else return View(model); 
+        }
+
     }
+
 }

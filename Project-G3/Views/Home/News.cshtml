@@ -9,11 +9,37 @@
         <div class="column col-md-2">
             <h4 class="Movietitle">@item.MovieTitle</h4>
             <a href="@Url.Action("Info", "Home", new { id = item.MovieId })">
-            <img id="col-img" src="@item.MoviePosters" />
+
+                <div class="icon-button">
+                    <img id="col-img" src="@item.MoviePosters" />
+                    @*<span class="material-icons"></span>*@
+                    <span class="icon-button__badge">NEW</span>
+                </div>
+
             </a>
             <p class="mvlp"> Price: @item.MoviePrice Kr</p>
             <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart", "Home", new { Id = item.MovieId })">Add To Cart</a>
         </div>
     }
-    </div>
-       
+</div>
+
+<style>
+    .icon-button {
+        position: relative;
+    }
+      
+    .icon-button__badge {
+        position: absolute;
+        top: -5%;
+        right: -9%;
+        width: 37%;
+        height: 14%;
+        background: yellow;
+        color: red; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+</style>

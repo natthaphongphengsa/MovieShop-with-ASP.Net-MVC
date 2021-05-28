@@ -32,4 +32,34 @@ namespace Project_G3.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
+    public class AddMovieModels
+    {
+        [Required]
+        [Display(Name = "Titel")]
+        public string MovieTitel { get; set; }
+
+        [Required]
+        [Display(Name = "Release year")]
+        public string MovieReleaseYear { get; set; }
+
+        [Required]
+        [Display(Name = "Duration")]
+        public string MovieDuration { get; set; }
+
+        [Required]
+        [Display(Name = "Poster/URL")]
+        public string MoviePosters { get; set; }
+
+        [Required]
+        [Display(Name = "Description")]
+        public string MovieDescription { get; set; }
+
+        [Required]
+        [Display(Name = "Price")]
+        public decimal MoviePrice { get; set; }
+
+
+    }
+
+
 }
