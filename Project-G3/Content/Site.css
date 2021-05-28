@@ -50,6 +50,14 @@ html {
 #col-img {
     width: 100%;  
 }
+.saleIMG {
+    max-height: 35%;
+    max-width: 35%;
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 55%;
+}
 /*Justera undernav Nagiveringsbar*/
 .underNav {
     border-radius:4px;
@@ -84,13 +92,16 @@ html {
 }
 .mvlbtn:hover{        
     opacity:70%;    
-    transition: .5s ease;    
+    transition: .5s ease;      
+    text-decoration:none;
 }
 .column {
     margin-top: 24px;
+    transform: scale(1);
+    transition: .5s ease-out;
 }
-.col-md-2:hover {    
-    transform: scale(1.08);       
+.column:hover {
+    transform: scale(1.08);
     transition: .5s ease;
 }
 /*Sklijer linjen*/

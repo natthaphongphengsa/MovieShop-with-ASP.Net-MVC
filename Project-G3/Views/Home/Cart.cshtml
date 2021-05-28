@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Cart";
 }
-@model IEnumerable<Project_G3.Models.Movie>
+@model IEnumerable<Project_G3.Models.MovieDisplayViewModel>
 
 @{
     //Om varukorgen är tomt ska detta visa annars visa filmen som man har lagt till
@@ -18,46 +18,54 @@
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.MoviePosters)
+                    @Html.DisplayNameFor(model => model.Movie.MoviePosters)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.MovieDescription)
+                    @Html.DisplayNameFor(model => model.Movie.MovieDescription)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.MovieReleaseYear)
+                    @Html.DisplayNameFor(model => model.Movie.MovieReleaseYear)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.MovieDuration)
+                    @Html.DisplayNameFor(model => model.Movie.MovieDuration)
                 </th>
 
                 <th>
-                    @Html.DisplayNameFor(model => model.MoviePrice)
+                    @Html.DisplayNameFor(model => model.Movie.MoviePrice)
                 </th>
                 <th></th>
             </tr>
-            @foreach (var item in Model)
+            @foreach (Project_G3.Models.MovieDisplayViewModel item in Model)
             {
                 <tr>
                     <td>
-                        <a href="@Url.Action("Info","Home",new { id=item.MovieId })">
-                            <img id="info-img" src="@Html.DisplayTextFor(model => item.MoviePosters)" />
+                        <a href="@Url.Action(" Info","Home",new { id=item.Movie.MovieId })">
+                            <img id="info-img" src="@Html.DisplayTextFor(model => item.Movie.MoviePosters)" />
                         </a>
                     </td>
                     <td>
-                        <p style="font-weight:600;">Title: @Html.DisplayFor(modelItem => item.MovieTitle)</p>
-                        @Html.DisplayFor(modelItem => item.MovieDescription)
+                        <p style="font-weight:600;">Title: @Html.DisplayFor(modelItem => item.Movie.MovieDescription)</p>
+                        @Html.DisplayFor(modelItem => item.Movie.MovieDescription)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.MovieReleaseYear)
+                        @Html.DisplayFor(modelItem => item.Movie.MovieReleaseYear)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.MovieDuration)
+                        @Html.DisplayFor(modelItem => item.Movie.MovieDuration)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.MoviePrice)
+                        @if (item.IsOnSale)
+                        {
+                            <p style="text-decoration: line-through">@Html.DisplayFor(modelItem => item.Movie.MoviePrice)</p>
+                            <p class="mvlp"><span style="color:red">@Html.DisplayFor(modelItem => item.NewPrice) SEK</span></p>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.Movie.MoviePrice)
+                        }
                     </td>
                     <td>
-                        @Html.ActionLink("Remove", "DeleteFromCart", new { Id = item.MovieId })
+                        @Html.ActionLink("Remove", "DeleteFromCart", new { Id = item.Movie.MovieId })
                     </td>
                 </tr>
             }
@@ -65,7 +73,7 @@
         <hr />
         <div class="row">
             @*Visa Totalt pris*@
-            <p class="Price pull-right">Totalt: @ViewBag.Sum kr</p>
+            <p class="Price pull-right">Totalt: @ViewBag.Sum SEK</p>
         </div>
         <div class="row" style="padding:12px;">
             <a class="btn btn-default pull-left" href="@Url.Action("ConfirmAdress","Home", new { SelectedId = 1 })" style="min-width:40%">Continue as guest</a>

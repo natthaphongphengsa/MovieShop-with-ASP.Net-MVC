@@ -96,11 +96,12 @@
         @*<p>Movie Duration: @movie.MovieDuration</p>*@
         @if (movie.IsOnSale)
         {
-            <p class="mvlp"> Price: <span style="color:red">@movie.NewPrice</span> Kr</p>
+            <p class="mvlp"> Price: <span style="color:red">@movie.NewPrice SEK</span></p>
+            <img class="saleIMG" src="https://th.bing.com/th/id/OIP.7LnzqF2D9IH73pynNCNu4QHaHa?pid=ImgDet&rs=1" alt="50%off" />
         }
         else
         {
-            <p class="mvlp"> Price: @movie.Movie.MoviePrice Kr</p>
+            <p class="mvlp"> Price: @movie.Movie.MoviePrice SEK</p>
         }
         <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span>  Add To Cart</a>
     </div>

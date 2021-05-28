@@ -230,9 +230,9 @@
 
 <hr class="solid">
 <div class="row">
-    @foreach (Project_G3.Models.FlashSalePriceViewModel movie1 in Model)
+    @foreach (Project_G3.Models.MovieDisplayViewModel movie1 in Model)
     {
-        <div class="col-md-2">
+        <div class="column col-md-2">
             <h4 class="Movietitle">@movie1.Movie.MovieTitle</h4>
             @*<p>Release Year: @movie.MovieReleaseYear</p>*@
             <a href="@Url.Action("Info","Home",new { id = movie1.Movie.MovieId })">

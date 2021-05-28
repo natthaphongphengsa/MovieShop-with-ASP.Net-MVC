@@ -6,7 +6,7 @@
 <div class="row">
     @foreach (var item in Model)
     {
-        <div class="col-md-2">
+        <div class="column col-md-2">
             <h4 class="Movietitle">@item.MovieTitle</h4>
             <a href="@Url.Action("Info", "Home", new { id = item.MovieId })">
 
