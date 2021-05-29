@@ -27,17 +27,30 @@
                     }
                     <a href="@Url.Action("Cart","Home")"><img src="~/Picture/unnamed.png" width="40" /></a>
                 </Cart>
-                @*<img src="~/Picture/free-movie-icon-850-thumb.png" width="48" />*@
-                @Html.ActionLink("MovieShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <!--<form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">-->
-                @*<button type="submit" class="btn btn-default">Search</button>*@
-                <!--</div>
-                </form>-->
+                <a href="@Url.Action("Index","Home")" style="text-decoration: none; color: whitesmoke;">
+                    @*@Html.ActionLink("MovieShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                    <img src="~/Picture/free-movie-icon-850-thumb.png" width="48" />
+                    MovieShop
+                </a>
+                <div class="Seach input-group">
+                    <input type="text" placeholder="Sök bland över 18 000 produkter" class="form-control" style="margin-top:5px;">
+                    <span class="input-group-btn">
+                        <button type="button" aria-label="search-button" class="btn btn-primary" style="margin-top:5px;">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
+    <!--<div class="input-group">-->
+    @*<input type="text" class="form-control" placeholder="Search">*@
+    <!--<input type="text" placeholder="Sök bland över 18 000 produkter" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control">
+    <span class="input-group-btn"><button type="button" aria-label="search-button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button></span>-->
+    @*<button type="submit" class="btn btn-default">
+            Search
+        </button>*@
+    <!--</div>-->
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -64,8 +77,8 @@
                     <ul style="list-style-type:none">
                         <b>@Html.ActionLink("Kontakta oss", "Contact")</b>
                         @*<b>Kontakt</b>
-                        <li>Tel. 070-7625665</li>
-                        <li>e-post: info@movie-shop.com</li>*@
+                            <li>Tel. 070-7625665</li>
+                            <li>e-post: info@movie-shop.com</li>*@
                     </ul>
                 </div>
             </div>

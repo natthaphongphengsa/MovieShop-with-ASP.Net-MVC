@@ -230,10 +230,19 @@ cart{
 .addToCart {
     padding: 88px 48px ;
 }
+/*Fixa sökbar*/
+.Seach {
+    margin-top:4px;
+    width: 50%;
+    display: inline-flex;
+}
 /*Fixa underNav mobil anpasning */
 @media (max-width: 425px) {
+    .body-content {
+        margin-top: 56px;
+    }
     .underNav {
-        margin-top: 0;
+        margin-top: 0px;
         position: fixed;
         width: 100%;
         z-index: 100;
@@ -251,21 +260,24 @@ cart{
         display: inherit;
     }
     .col-md-2 {
-        float: left;
-        width: 50%;
+        float: left;  
+        width:50%;
     }
     .addToCart {
         padding: 18px 18px;
     }
+    .Seach {
+        margin-top: 4px;
+        width: 100%;
+        display: inline-flex;
+        padding: 0px 12px 12px
+    }
 }
-@media (max-width: 766px) and (min-width:425px) {
-    .underNav {
-        margin-top: 0;
-        position: fixed;
+@media (max-width: 768px) and (min-width:426px) {
+    .underNav {                
         width: 100%;
         z-index:100;
     }
-
     .randomImg {
         display: none;
     }
@@ -275,10 +287,19 @@ cart{
     }
 
     .Breakline {
-        display: inherit;
+        display: none;
     }
     .addToCart {
         padding: 18px 18px;
+    }
+    .col-md-2 {
+        float: left;
+        width: 150px;
+    }
+}
+@media (min-width:768px) and (max-width:1024px){
+    .randomImg {
+        display: none;
     }
     .col-md-2 {
         float: left;

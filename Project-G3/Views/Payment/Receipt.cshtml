@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<Project_G3.Models.MovieDisplayViewModel>
-
+@{
+    ViewBag.Title = "Receipt";
+}
 <div class="Row">
     <div class="row" style="width:fit-content;margin:auto;">
         <img src="~/Picture/free-movie-icon-850-thumb.png" width="120" />
@@ -65,7 +67,4 @@
         @*Visa Totalt pris*@
         <p class="Price pull-right" style="color:white;">Totalt: @ViewBag.Sum SEK</p>
     </div>
-</div>
-<div class="row">
-    <div class="MSG"><a class="BackToTopBtn" href="@Url.Action("DeleteFromCartAfterReceipt","Home")">Back To Shopping</a></div>
 </div>
