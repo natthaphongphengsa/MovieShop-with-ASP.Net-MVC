@@ -16,11 +16,12 @@
         text-align: center;
         color: white;
         font-size: 5em;
-        background-color: #fc030b;
+        background-color: #2a2a72;
         border: solid white;
         border-radius: 5px;
         -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
     }
 
     body {
@@ -39,7 +40,7 @@
     }
 
         .wrapper:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
 
     .product-img {
@@ -97,60 +98,6 @@
             overflow: hidden;
         }
 
-    .product-price-btn {
-        height: 103px;
-        width: 327px;
-        margin-top: 17px;
-        position: relative;
-    }
-
-        .product-price-btn p {
-            display: inline-block;
-            position: absolute;
-            top: -13px;
-            height: 50px;
-            font-family: "Trocchi", serif;
-            margin: 0 0 0 38px;
-            font-size: 28px;
-            font-weight: lighter;
-            color: #474747;
-        }
-
-    span {
-        display: inline-block;
-        height: 50px;
-        font-family: "Suranna", serif;
-        font-size: 50px;
-    }
-
-    .product-price-btn button {
-        float: right;
-        display: inline-block;
-        height: 50px;
-        width: 100px;
-        margin: 0 40px 0 16px;
-        box-sizing: border-box;
-        border: transparent;
-        border-radius: 60px;
-        font-family: "Raleway", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        color: white;
-        background-color: red;
-        cursor: pointer;
-        outline: none;
-    }
-
-        .product-price-btn button:hover {
-            background-color: black;
-        }
-
-    .flashtable {
-        border: solid black;
-        max-width: 50%;
-    }
 
     .Flash {
         float: right;
@@ -159,18 +106,60 @@
         transform: rotate(30deg);
     }
 
+    .Flash2 {
+        float: left;
+        max-height: 150px;
+        max-width: 150px;
+        position: absolute;
+        top: 40%;
+    }
+
     p.oldprice {
         color: black;
         opacity: 0.3;
+        text-decoration: line-through;
+        text-align: center;
+    }
+
+    p.newprice {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
     }
 
     .saleIMG {
         max-height: 35%;
         max-width: 35%;
-        border-radius: 50%;
+        border-radius: 30%;
         position: absolute;
         top: 57%;
         left: 59%;
+    }
+
+    .saleIMG2 {
+        max-height: 35%;
+        max-width: 35%;
+        border-radius: 30%;
+        position: absolute;
+        top: 60%;
+        left: 59%;
+    }
+
+    .fiftyoff {
+        text-align: center;
+        font-family: futura;
+        font-style: italic;
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        color: white;
+        font-size: 5em;
+        background-color: #fc030b;
+        border: solid white;
+        border-radius: 5px;
+        -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     }
 </style>
 
@@ -179,7 +168,10 @@
 
 
 <h2 class="FlashSale">FLASHSALE</h2>
-<img class="Flash" src="https://cdn.pixabay.com/photo/2017/05/26/05/38/discount-2345221_960_720.png" alt="FlashSale" />
+<a href="#S1"><img class="Flash" src="https://cdn.pixabay.com/photo/2017/05/26/05/38/discount-2345221_960_720.png" alt="FlashSale" /></a>
+<a href="#S2"><img class="Flash2" src="https://www.transparentpng.com/thumb/25-off/FcCezL-25-off-free-transparent.png" alt="FlashSale" /></a>
+
+
 
 
 @foreach (Project_G3.Models.MovieDisplayViewModel movie in Model)
@@ -202,14 +194,16 @@
                 </p>
 
             </div>
-            <div class="product-price-btn">
-                <p><span>@movie.NewPrice</span>Kr</p>
-                <p class="oldprice"></p>
-                <button type="button" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })">buy now</button>
-            </div>
+
+            <p class="newprice">New price: <span style="color:red">@movie.NewPrice SEK</span></p>
+            <p class="oldprice">@movie.Movie.MoviePrice SEK</p>
+
         </div>
+        <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })">Add To Cart</a>
     </div>
+
 }
+
 
 <script>
     var myIndex = 0;
@@ -228,25 +222,55 @@
     }
 </script>
 
+
+
+
 <hr class="solid">
+<h2 class="fiftyoff" id="S1">50% OFF</h2>
 <div class="row">
     @foreach (Project_G3.Models.MovieDisplayViewModel movie1 in Model)
     {
         <div class="column col-md-2">
             <h4 class="Movietitle">@movie1.Movie.MovieTitle</h4>
-            @*<p>Release Year: @movie.MovieReleaseYear</p>*@
+
             <a href="@Url.Action("Info","Home",new { id = movie1.Movie.MovieId })">
                 <img id="col-img" src="@movie1.Movie.MoviePosters" />
             </a>
-            @*<p>Movie Duration: @movie.MovieDuration</p>*@
-            <p class="oldprice">@movie1.Movie.MoviePrice Kr</p>
-            <p class="mvlp">New price: @movie1.NewPrice Kr</p>
+
+            <p class="oldprice">@movie1.Movie.MoviePrice SEK</p>
+            <p class="mvlp">New price:<span style=" color:red"> @movie1.NewPrice SEK</span></p>
             <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie1.Movie.MovieId })">Add To Cart</a>
             <img class="saleIMG" src="https://th.bing.com/th/id/OIP.7LnzqF2D9IH73pynNCNu4QHaHa?pid=ImgDet&rs=1" alt="50%off" />
         </div>
     }
 </div>
+
+
+<hr class="solid">
+<h2 class="fiftyoff" id="S2">25% OFF</h2>
+<div class="row">
+    @foreach (Project_G3.Models.MovieDisplayViewModel movie1 in Model)
+    {
+
+        if (movie1.Movie.MoviePrice > 100) // Test test inte lyckats lösa   Filmer över 100:D
+        {
+            <div class="column col-md-2">
+                <h4 class="Movietitle">@movie1.Movie.MovieTitle</h4>
+
+                <a href="@Url.Action("Info","Home",new { id = movie1.Movie.MovieId })">
+                    <img id="col-img" src="@movie1.Movie.MoviePosters" />
+                </a>
+
+                <p class="oldprice">@movie1.Movie.MoviePrice SEK</p>
+                <p class="mvlp">New price:<span style=" color:red"> @movie1.NewPrice SEK</span></p>
+                <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie1.Movie.MovieId })">Add To Cart</a>
+                <img class="saleIMG2" src="https://www.transparentpng.com/thumb/25-off/FcCezL-25-off-free-transparent.png" alt="25%off" />
+            </div>
+
+        }
+
+    }
+</div>
 <div class="row">
     <p class="MSG"><a class="BackToTopBtn" href="#top">Back To Top</a></p>
 </div>
-
