@@ -18,6 +18,7 @@ namespace Project_G3.Controllers
             ViewData["Genres"] = db.Genres.ToList();
             //Hämta data från URL/API
             var webClient = new WebClient();
+            webClient.Encoding = Encoding.UTF8;
             var json = webClient.DownloadString(@"https://restcountries.eu/rest/v2/all");
             Contries[] contry = JsonConvert.DeserializeObject<Contries[]>(json);
             ViewData["Contries"] = contry;
