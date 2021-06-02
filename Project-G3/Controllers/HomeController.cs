@@ -47,7 +47,44 @@ namespace Project_G3.Controllers
                 }
             }
             dm.OrderBy(m => m.Movie.MovieId);
+            ViewData["RandomMovie"] = dm;
             return View(dm);
+        }
+        public ActionResult Searching()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Searching(string Searchstring)
+        {
+            List<Movie> movies = db.Movies.ToList();
+            List<MovieDisplayViewModel> dm = GetAllFlashSales();
+            ViewData["RandomMovie"] = dm;
+            foreach (Movie movie in movies)
+            {
+                if (!dm.Any(m => m.Movie == movie))
+                {
+                    dm.Add(new MovieDisplayViewModel
+                    {
+                        Movie = movie,
+                        IsOnSale = false
+                    });
+                }
+            }
+            //Använd av LINQ query för att hämta data
+            var mo = from m in dm
+                     where m.Movie.MovieTitle.Contains(Searchstring)                                          
+                     select m;
+            ViewBag.Message = Searchstring;
+            if (!string.IsNullOrEmpty(Searchstring))
+            {
+                //Leta efter movie title och kolla om det finns någon liknade title som matcha det kunden skrev i sök fälten                
+                return View(mo);             
+            }
+            else
+            {                
+                return RedirectToAction("Index");
+            }
         }
         public ActionResult Cart()
         {
@@ -98,10 +135,6 @@ namespace Project_G3.Controllers
             if (CartList.Any(m => m.Movie.MovieId == Id)) CartList.Remove(CartList.First(m => m.Movie.MovieId == Id));
             return RedirectToAction("Cart");
         }
-        public ActionResult DeleteAllFromCartAfterBought()
-        {
-            return View();
-        }
         public ActionResult About()
         {
 
@@ -123,8 +156,7 @@ namespace Project_G3.Controllers
             }
 
             Movie movie = db.Movies.FirstOrDefault(m => m.MovieId == id);
-
-            //skapa en lita med all genre
+            //skapa en lista med all genre
             List<Genre> genres = db.Genres.ToList();
             List<Genre> title = new List<Genre>();
             //leta efter vilken genre och hur många genre som finns i den filmen och lägger in i tomt lista
@@ -132,16 +164,56 @@ namespace Project_G3.Controllers
             {
                 title.Add(genre);
             }
-            //lägger in alla genre i Viewdata med Namn GenreInfo
+            //lägger in alla genreName i Viewdata
             ViewData["GenreInfo"] = title;
             return View(movie);
         }
         public ActionResult Genre(int Id)
         {
-            List<Movie> movies = db.Genres.First(g => g.GenreId == Id).Movies.ToList();
+            //List<Movie> movies = db.Genres.First(g => g.GenreId == Id).Movies.ToList();
             List<Genre> genre = db.Genres.ToList();
+            List<Movie> movies = db.Genres.First(g => g.GenreId == Id).Movies.ToList();
+            List<MovieDisplayViewModel> dm = GetAllFlashSales();
+
+            var mo = dm.Any(m => m.Movie.Genres.Any(ge => ge.GenreId == Id));
+            if (mo == false)
+            {
+                dm.RemoveAt(0);
+            }
+            foreach (Movie movie in movies)
+            {
+                if (!dm.Any(m => m.Movie == movie))
+                {
+                    dm.Add(new MovieDisplayViewModel
+                    {
+                        Movie = movie,
+                        IsOnSale = false
+                    });
+                }
+            }            
+            //foreach (var g in genre)
+            //{
+              
+            //    //foreach (Movie movie in movies)
+            //    //{
+            //    //    dm.Add(new MovieDisplayViewModel
+            //    //    {
+            //    //        Movie = movie,
+            //    //        IsOnSale = false
+            //    //    });
+            //    //    //if (!dm.Any(m => m.Movie == movie))
+            //    //    //{
+            //    //    //    dm.Add(new MovieDisplayViewModel
+            //    //    //    {
+            //    //    //        Movie = movie,
+            //    //    //        IsOnSale = false
+            //    //    //    });
+            //    //    //}
+            //    //}
+            //}
+            dm.OrderBy(m => m.Movie.MovieId);
             ViewData["GenreTitle"] = genre.First(g => g.GenreId == Id).GenreName;
-            return View(movies);
+            return View(dm);
         }
         public ActionResult ConfirmAdress(int Id)
         {
@@ -170,14 +242,14 @@ namespace Project_G3.Controllers
             if (!ModelState.IsValid)
             {
                 return View(CustomInfo);
-            }            
+            }
             return RedirectToAction("PaymentMethod", "Payment", CustomInfo);
-        }        
+        }
         public ActionResult DeleteFromCartAfterReceipt()
         {
             List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
             //if (CartList.Any(m => m.Movie.MovieId == Id)) CartList.Remove(CartList.First(m => m.Movie.MovieId == Id));
-            if(CartList != null)
+            if (CartList != null)
             {
                 CartList.Clear();
             }
@@ -236,16 +308,19 @@ namespace Project_G3.Controllers
         }
         public ActionResult News()
         {
-            List<Movie> moviesNew = new List<Movie>();
-            foreach (var item in db.Movies)
+            List<Movie> movies = db.Movies.ToList();
+            List<MovieDisplayViewModel> dm = GetAllFlashSales();
+            foreach (Movie movie in movies)
             {
-                if (Int32.Parse(item.MovieReleaseYear) > 2018)
+                if (Int32.Parse(movie.MovieReleaseYear) > 2018 )
                 {
-                    moviesNew.Add(item);
+                    if (!dm.Any(m => m.Movie == movie))
+                    {
+                        dm.Add(new MovieDisplayViewModel { Movie = movie, IsOnSale = false });
+                    }                    
                 }
             }
-
-            return View(moviesNew);
+            return View(dm);
         }
     }
 }
