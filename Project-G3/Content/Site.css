@@ -236,6 +236,23 @@ cart{
     width: 50%;
     display: inline-flex;
 }
+.icon-button {
+    position: relative;
+}
+
+.icon-button__badge {
+    position: absolute;
+    top: -5%;
+    right: -9%;
+    width: 37%;
+    height: 14%;
+    background: yellow;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
 /*Fixa underNav mobil anpasning */
 @media (max-width: 425px) {
     .body-content {
@@ -247,7 +264,6 @@ cart{
         width: 100%;
         z-index: 100;
     }
-
     .randomImg {
         display: none;
     }

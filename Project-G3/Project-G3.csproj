@@ -292,6 +292,8 @@
     <Content Include="Views\Admin\CreateUser.cshtml" />
     <Content Include="Views\Admin\AdminPage.cshtml" />
     <Content Include="Views\Admin\AddMovie.cshtml" />
+    <Content Include="Views\Home\Searching.cshtml" />
+    <Content Include="Views\Shared\SearchBar.cshtml" />
     <Content Include="Views\Admin\MovieList.cshtml" />
   </ItemGroup>
   <ItemGroup>

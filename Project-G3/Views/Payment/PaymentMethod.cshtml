@@ -1,4 +1,7 @@
 ﻿@model Project_G3.Models.FormDetails
+    @{ 
+        ViewBag.Title = "Payment/" + Html.DisplayFor(m => m.PaymentName);
+    }
 @if (Model.PaymentName == "Swish")
 {
     <div class="row">

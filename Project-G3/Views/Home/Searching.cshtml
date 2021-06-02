@@ -1,20 +1,17 @@
 ﻿@model IEnumerable<Project_G3.Models.MovieDisplayViewModel>
 
-@Html.Partial("_Navigations")
-<h4>NEW MOVIES</h4>
-@*<span class="icon-button__badge">NEW</span>*@
 <div class="row">
-    @foreach (var movie in Model)
+    @if(Model.Count() == 0 )
+    {
+        <h1>Could not find "@ViewBag.Message"</h1>
+    }
+    @foreach (Project_G3.Models.MovieDisplayViewModel movie in Model)
     {
         <div class="column col-md-2">
             <h4 class="Movietitle">@movie.Movie.MovieTitle</h4>
             @*<p>Release Year: @movie.MovieReleaseYear</p>*@
-
             <a href="@Url.Action("Info","Home",new { id = movie.Movie.MovieId })">
-                <div class="icon-button">
-                    <img id="col-img" src="@movie.Movie.MoviePosters" />
-                    <span class="icon-button__badge">NEW</span>
-                </div>
+                <img id="col-img" src="@movie.Movie.MoviePosters" />
             </a>
             @*<p>Movie Duration: @movie.MovieDuration</p>*@
             @if (movie.IsOnSale)
@@ -29,4 +26,7 @@
             <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span>  Add To Cart</a>
         </div>
     }
+</div>
+<div class="row">
+    <div class="MSG"><a class="BackToTopBtn" href="#top">Back To Top</a></div>
 </div>

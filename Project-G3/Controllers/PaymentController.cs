@@ -52,6 +52,7 @@ namespace Project_G3.Controllers
 
             }
             ViewBag.Sum = TotalPrice;
+            ((List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"]).Clear();
             return View(CartList);
         }
     }
