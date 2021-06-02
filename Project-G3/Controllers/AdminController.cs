@@ -16,6 +16,7 @@ namespace Project_G3.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         public AdminController() { }
+
         public AdminController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
@@ -50,6 +51,16 @@ namespace Project_G3.Controllers
             {
                 ModelState.AddModelError("", error);
             }
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult MovieList(List<Movie> movies)
+        {
+            if (movies == null)
+            {
+                movies = _db.Movies.ToList();
+            }
+            return View();
         }
 
         // GET: Admin
@@ -106,22 +117,71 @@ namespace Project_G3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddMovie(AddMovieModels model)
         {
+
             if (ModelState.IsValid)
             {
-                Movie movie = new Movie { MovieTitle=model.MovieTitel,
-                    MovieReleaseYear=model.MovieReleaseYear, 
-                    MovieDuration=model.MovieDuration, 
-                    MoviePosters=model.MoviePosters, 
-                    MovieDescription=model.MovieDescription, 
-                    MoviePrice=model.MoviePrice};
+                Movie movie = new Movie
+                {
+                    MovieTitle = model.MovieTitel,
+                    MovieReleaseYear = model.MovieReleaseYear,
+                    MovieDuration = model.MovieDuration,
+                    MoviePosters = model.MoviePosters,
+                    MovieDescription = model.MovieDescription,
+                    MoviePrice = model.MoviePrice
+                };
 
-                _db.Movies.Add(movie);
+                if (!_db.Movies.Any(m => m.MovieTitle == model.MovieTitel)) _db.Movies.Add(movie);
 
-               return RedirectToAction("Index");
+
+                return RedirectToAction("Index");
             }
-            else return View(model); 
+            else return View(model);
         }
 
-    }
+        // GET: Admin/DeleteMovie
+        [Authorize(Roles = "Admin")]
+        public ActionResult DeleteMovie()
+        {
 
+            return View();
+        }
+
+        // POST: Admin/DeleteMovie
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteMovie(int? Id)
+        {
+            List<Movie> movies = _db.Movies.ToList();
+
+            if (ModelState.IsValid)
+            {
+
+                if (movies.Any(m => m.MovieId == Id)) movies.Remove(movies.First(m => m.MovieId == Id));
+
+                return RedirectToAction("MovieList");
+            }
+
+            return View(movies);
+        }
+
+        // GET: Admin/EditMovie
+        [Authorize(Roles = "Admin")]
+        public ActionResult EditMovie()
+        {
+
+            return View();
+        }
+
+        // POST: Admin/EditMovie
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditMovie(int? Id)
+        {
+
+
+            return View();
+        }
+    }
 }
