@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<Project_G3.Models.Movie>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -15,7 +15,8 @@
             @Html.DisplayNameFor(model => model.MovieDuration)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MoviePosters)
+          @Html.DisplayNameFor(model => model.MoviePosters)
+            
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MovieDescription)
@@ -38,7 +39,9 @@
             @Html.DisplayFor(modelItem => item.MovieDuration)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MoviePosters)
+            <a href="@Url.Action(" Info","Home",new { id=item.MovieId })">
+                <img id="info-img" src="@Html.DisplayTextFor(model => item.MoviePosters)" />
+            </a>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MovieDescription)
