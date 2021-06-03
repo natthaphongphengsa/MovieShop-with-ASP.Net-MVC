@@ -60,7 +60,7 @@ namespace Project_G3.Controllers
             {
                 movies = _db.Movies.ToList();
             }
-            return View();
+            return View(movies);
         }
 
         // GET: Admin
@@ -146,10 +146,10 @@ namespace Project_G3.Controllers
             return View();
         }
 
-        // POST: Admin/DeleteMovie
-        [Authorize(Roles = "Admin")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+       // POST: Admin/DeleteMovie
+       [Authorize(Roles = "Admin")]
+       [HttpPost]
+       [ValidateAntiForgeryToken]
         public ActionResult DeleteMovie(int? Id)
         {
             List<Movie> movies = _db.Movies.ToList();
@@ -159,7 +159,7 @@ namespace Project_G3.Controllers
 
                 if (movies.Any(m => m.MovieId == Id)) movies.Remove(movies.First(m => m.MovieId == Id));
 
-                return RedirectToAction("MovieList");
+               return RedirectToAction("MovieList");
             }
 
             return View(movies);
