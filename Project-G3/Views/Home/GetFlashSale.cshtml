@@ -176,31 +176,31 @@
 
 @foreach (Project_G3.Models.MovieDisplayViewModel movie in Model)
 {
-    <div class="wrapper">
-        <div class="product-img">
-            <img src=@movie.Movie.MoviePosters height="420" width="327" />
-        </div>
-        <div class="product-info">
-
-            <div class="product-text">
-                <h1>
-                    @Html.DisplayFor(modelItem => movie.Movie.MovieTitle)
-
-                </h1>
-                <h2>&nbsp; @movie.Movie.MovieReleaseYear | @movie.Movie.MovieDuration min </h2>
-
-                <p>
-                    @movie.Movie.MovieDescription
-                </p>
-
-            </div>
-
-            <p class="newprice">New price: <span style="color:red">@movie.NewPrice SEK</span></p>
-            <p class="oldprice">@movie.Movie.MoviePrice SEK</p>
-
-        </div>
-        <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })">Add To Cart</a>
+<div class="wrapper">
+    <div class="product-img">
+        <img src=@movie.Movie.MoviePosters height="420" width="327" />
     </div>
+    <div class="product-info">
+
+        <div class="product-text">
+            <h1>
+                @Html.DisplayFor(modelItem => movie.Movie.MovieTitle)
+
+            </h1>
+            <h2>&nbsp; @movie.Movie.MovieReleaseYear | @movie.Movie.MovieDuration min </h2>
+
+            <p>
+                @movie.Movie.MovieDescription
+            </p>
+
+        </div>
+
+        <p class="newprice">New price: <span style="color:red">@movie.NewPrice SEK</span></p>
+        <p class="oldprice">@movie.Movie.MoviePrice SEK</p>
+
+    </div>
+    <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</a>
+</div>
 
 }
 
@@ -230,29 +230,7 @@
 <div class="row">
     @foreach (Project_G3.Models.MovieDisplayViewModel movie1 in Model)
     {
-        <div class="column col-md-2">
-            <h4 class="Movietitle">@movie1.Movie.MovieTitle</h4>
-
-            <a href="@Url.Action("Info","Home",new { id = movie1.Movie.MovieId })">
-                <img id="col-img" src="@movie1.Movie.MoviePosters" />
-            </a>
-
-            <p class="oldprice">@movie1.Movie.MoviePrice SEK</p>
-            <p class="mvlp">New price:<span style=" color:red"> @movie1.NewPrice SEK</span></p>
-            <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie1.Movie.MovieId })">Add To Cart</a>
-            <img class="saleIMG" src="https://th.bing.com/th/id/OIP.7LnzqF2D9IH73pynNCNu4QHaHa?pid=ImgDet&rs=1" alt="50%off" />
-        </div>
-    }
-</div>
-
-
-<hr class="solid">
-<h2 class="fiftyoff" id="S2">25% OFF</h2>
-<div class="row">
-    @foreach (Project_G3.Models.MovieDisplayViewModel movie1 in Model)
-    {
-
-        if (movie1.Movie.MoviePrice > 100) // Test test inte lyckats lösa   Filmer över 100:D
+        if (movie1.FlashSale == "50%")
         {
             <div class="column col-md-2">
                 <h4 class="Movietitle">@movie1.Movie.MovieTitle</h4>
@@ -263,7 +241,33 @@
 
                 <p class="oldprice">@movie1.Movie.MoviePrice SEK</p>
                 <p class="mvlp">New price:<span style=" color:red"> @movie1.NewPrice SEK</span></p>
-                <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie1.Movie.MovieId })">Add To Cart</a>
+                <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie1.Movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</a>
+                <img class="saleIMG" src="https://th.bing.com/th/id/R1c60bd8e3af6f1d7f1d8fb318d61731d?rik=5CkMs7XRhHCAZQ&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f04%2f50-off-Transparent.png&ehk=CMvnKP86M9ZJXRAUkB6goVWtw79ntEohcX9lIaD2nsg%3d&risl=&pid=ImgRaw" alt="50%off" />
+            </div>
+        }
+
+    }
+</div>
+
+
+<hr class="solid">
+<h2 class="fiftyoff" id="S2">25% OFF</h2>
+<div class="row">
+    @foreach (Project_G3.Models.MovieDisplayViewModel movie1 in Model)
+    {
+
+        if (movie1.FlashSale == "25%")           //(Decimal.Parse(movie1.NewPrice) < 100) 
+        {
+            <div class="column col-md-2">
+                <h4 class="Movietitle">@movie1.Movie.MovieTitle</h4>
+
+                <a href="@Url.Action("Info","Home",new { id = movie1.Movie.MovieId })">
+                    <img id="col-img" src="@movie1.Movie.MoviePosters" />
+                </a>
+
+                <p class="oldprice">@movie1.Movie.MoviePrice SEK</p>
+                <p class="mvlp">New price:<span style=" color:red"> @movie1.NewPrice SEK</span></p>
+                <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie1.Movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</a>
                 <img class="saleIMG2" src="https://www.transparentpng.com/thumb/25-off/FcCezL-25-off-free-transparent.png" alt="25%off" />
             </div>
 
