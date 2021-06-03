@@ -1,8 +1,8 @@
 ﻿body {
-    padding-top:50px;
+    padding-top: 50px;
     padding-bottom: 20px;
     background-image: url(https://i1.wp.com/desktopbackground.org/download/4096x2160/2010/04/17/3405_cool-simple-white-backgrounds-picture-gallery_5120x2880_h.jpg);
-    background-attachment: fixed;    
+    background-attachment: fixed;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -27,7 +27,7 @@ textarea {
 
 /*-----------------Egen CSS------------------------*/
 html {
-    scroll-behavior: smooth;   
+    scroll-behavior: smooth;
 }
 /*Justera navbar-top*/
 .navbar {
@@ -39,17 +39,19 @@ html {
     margin-left: 12px;
     margin-right: -10px;
 }
+
 .navbar-header {
     width: 100%;
 }
 /*Justera Movie bilden under slider*/
-.column{
-    padding-top:22px;
+.column {
+    padding-top: 22px;
 }
 /*Justera storlek på varje Movie bilden*/
 #col-img {
-    width: 100%;  
+    width: 100%;
 }
+
 .saleIMG {
     max-height: 35%;
     max-width: 35%;
@@ -60,16 +62,27 @@ html {
 }
 /*Justera undernav Nagiveringsbar*/
 .underNav {
-    border-radius:4px;
-    color:whitesmoke;
-    margin:12px;    
-    font-size: 24px;    
+    border-radius: 4px;
+    color: whitesmoke;
+    margin: 12px;
+    font-size: 24px;
     background-color: #2a2a72;
     background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 }
+
 .underNavli {
-    color: white;    
+    color: white;
 }
+/*Inne på info ska nav inte visa när det inte är mobil anpassning*/
+.undernav {
+    position: fixed;
+    display: block;
+    width: 100%;
+    z-index: 100;
+    margin-top: auto;
+    margin-left: -28px;
+}
+
 .Breakline {
     display: none;
 }
@@ -80,42 +93,47 @@ html {
     font-size: 1.2em;
     font-weight: bold;
 }
+
 .mvlp {
     margin-top: 34px;
-    font-weight: 700; 
+    font-weight: 700;
 }
+
 .mvlbtn {
     width: 100%;
     color: whitesmoke;
     background-color: #06bcfb;
     background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
 }
-.mvlbtn:hover{        
-    opacity:70%;    
-    transition: .5s ease;      
-    text-decoration:none;
-}
+
+    .mvlbtn:hover {
+        opacity: 70%;
+        transition: .5s ease;
+        text-decoration: none;
+    }
+
 .column {
     margin-top: 24px;
     transform: scale(1);
     transition: .5s ease-out;
 }
-.column:hover {
-    transform: scale(1.08);
-    transition: .5s ease;
-}
+
+    .column:hover {
+        transform: scale(1.08);
+        transition: .5s ease;
+    }
 /*Sklijer linjen*/
 hr.solid {
     border-top: 3px solid #bbb;
 }
 /*Ändra höjden på Slider bilden (Home page)*/
 .carousel-inner {
-    max-height:520px;
+    max-height: 520px;
 }
 /*Justera Cart Icon */
-cart{
-    float:right;  
-    margin-top:6px;
+cart {
+    float: right;
+    margin-top: 6px;
 }
 /*Flytta meddelande texten till mitten (cart page)*/
 .MSG {
@@ -126,20 +144,21 @@ cart{
     padding: 45px;
 }
 /*Ändra bred&Höjd på meddelande titel*/
-.Title{
-    min-height:800px;
+.Title {
+    min-height: 800px;
 }
 /*Justera storlek på TotaltPris*/
-.Price{
-    padding:14px;
-    font-size:34px;
+.Price {
+    padding: 14px;
+    font-size: 34px;
 }
 /*Justera Antal siffra film*/
 .amount {
-    background-color:red;    
-    color:white;    
-    font-size:20px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
 }
+
 .badge {
     padding-left: 9px;
     padding-right: 9px;
@@ -152,6 +171,7 @@ cart{
 .badge-warning[href] {
     background-color: #c67605;
 }
+
 #lblCartCount {
     font-size: 18px;
     background: #ff0000;
@@ -162,46 +182,53 @@ cart{
     transition: .5s ease;
     backface-visibility: hidden;
 }
-.form{
-    width:70%;
-    margin:auto;
+
+.form {
+    width: 70%;
+    margin: auto;
 }
 /*justera Betaltsätt knappar */
 .form-check:hover {
     background-color: whitesmoke;
     border-radius: 4px;
 }
-.form-check-label{
-    padding:18px;
-    font-size:18px;
-    width:100%;
+
+.form-check-label {
+    padding: 18px;
+    font-size: 18px;
+    width: 100%;
 }
-.form-check-input{
-    min-width:100px;
+
+.form-check-input {
+    min-width: 100px;
 }
+
 .dropdown-toggle {
     font-weight: 300;
-    font-size: 22px;    
+    font-size: 22px;
 }
-.custom-select{
-    padding:6px;
-    font-size:22px;
-    width:100%;
-    border-radius:12px;
-}.btn1{
-     width:35%;
- }
+
+.custom-select {
+    padding: 6px;
+    font-size: 22px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.btn1 {
+    width: 35%;
+}
 /* styla PaymentMethod sidan*/
-.col-lg{
-    margin-top:24px;
+.col-lg {
+    margin-top: 24px;
 }
 /*.form{    
     max-width:600px;
     margin:auto;
 }*/
-.form-horizontal .form-group{
-    margin-left:0;
-    margin-right:0;
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
 }
 /*styla Kvitto sidan*/
 .Row {
@@ -213,29 +240,32 @@ cart{
     padding: 44px;
     margin-top: 42px;
 }
+
 .inner-row {
     background-color: #fee2f8;
     background-image: linear-gradient(360deg, #fee2f8 0%, #dcf8ef 100%);
     padding: 22px;
     border-radius: 8px;
 }
+
 .thankscard {
-    margin:auto;
-    padding:44px;
+    margin: auto;
+    padding: 44px;
     width: fit-content;
     height: 170px;
     color: white;
 }
 /*Justera höjd och längd på AddToCart knapp*/
 .addToCart {
-    padding: 88px 48px ;
+    padding: 88px 48px;
 }
 /*Fixa sökbar*/
 .Seach {
-    margin-top:4px;
+    margin-top: 4px;
     width: 50%;
     display: inline-flex;
 }
+
 .icon-button {
     position: relative;
 }
@@ -253,17 +283,27 @@ cart{
     align-items: center;
     border-radius: 50%;
 }
-/*Fixa underNav mobil anpasning */
-@media (max-width: 425px) {
-    .body-content {
-        margin-top: 56px;
-    }
+/*Fixa underNav mobil anpassning */
+@media (max-width:767px){
     .underNav {
         margin-top: 0px;
         position: fixed;
         width: 100%;
         z-index: 100;
     }
+}
+@media (max-width: 425px) {
+    .body-content {
+        margin-top: 56px;
+    }
+
+    .underNav {
+        margin-top: 0px;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+    }
+
     .randomImg {
         display: none;
     }
@@ -275,13 +315,16 @@ cart{
     .Breakline {
         display: inherit;
     }
+
     .col-md-2 {
-        float: left;  
-        width:50%;
+        float: left;
+        width: 50%;
     }
+
     .addToCart {
         padding: 18px 18px;
     }
+
     .Seach {
         margin-top: 4px;
         width: 100%;
@@ -289,11 +332,13 @@ cart{
         padding: 0px 12px 12px
     }
 }
+
 @media (max-width: 768px) and (min-width:426px) {
-    .underNav {                
-        width: 100%;
-        z-index:100;
+    .underNav {
+        width:100%;
+        z-index: 100;        
     }
+
     .randomImg {
         display: none;
     }
@@ -305,20 +350,30 @@ cart{
     .Breakline {
         display: none;
     }
+
     .addToCart {
         padding: 18px 18px;
     }
+
     .col-md-2 {
         float: left;
         width: 150px;
     }
 }
-@media (min-width:768px) and (max-width:1024px){
+
+@media (min-width:768px) and (max-width:1024px) {
     .randomImg {
         display: none;
     }
+
     .col-md-2 {
         float: left;
         width: 150px;
+    }
+}
+
+@media (min-width: 768px) {
+    .undernav {
+        display: none;
     }
 }

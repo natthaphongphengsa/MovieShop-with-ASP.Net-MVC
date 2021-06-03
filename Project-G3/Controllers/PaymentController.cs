@@ -34,7 +34,12 @@ namespace Project_G3.Controllers
         public ActionResult Receipt(FormDetails FD)
         {
             List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
-            ViewData["ShoppingCart"] = CartList;
+            List<MovieDisplayViewModel> Cart = new List<MovieDisplayViewModel>();
+            foreach (var item in CartList)
+            {
+                Cart.Add(item);
+            }
+            ViewData["ShoppingCart"] = Cart;
             List<FormDetails> info = new List<FormDetails>();
             info.Add(FD);
             ViewData["CustomDetails"] = info;

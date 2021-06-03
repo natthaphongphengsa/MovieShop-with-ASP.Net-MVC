@@ -2,9 +2,6 @@
 @{
     ViewBag.Title = "Receipt";
 }
-<div class="row" style="padding: 44px; max-width: 83%; margin: auto;">
-    <a class="mvlbtn btn btn-default" href="@Url.Action("DeleteAllFromCartAfterReceipt","Home")">Continue shopping</a>
-</div>
 <div class="Row">
     <div class="row" style="width:fit-content;margin:auto;">
         <img src="~/Picture/free-movie-icon-850-thumb.png" width="120" />
@@ -39,7 +36,7 @@
                 </th>
                 <th></th>
             </tr>
-            @foreach (Project_G3.Models.MovieDisplayViewModel item in Model)
+            @foreach (Project_G3.Models.MovieDisplayViewModel item in ViewBag.ShoppingCart)
             {
                 <tr>
                     <td>

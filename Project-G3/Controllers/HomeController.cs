@@ -28,11 +28,7 @@ namespace Project_G3.Controllers
         public ActionResult Index()
         {
             List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
-            //Visa Antal film som finns i varukorg i index sidan
-            int amount;
-            //Om varukorg är tomt sätt 0
-            if (CartList.Count != 0) { amount = CartList.Count; } else { amount = 0; }
-            ViewBag.Amount = amount;
+            //ViewBag.Amount = GetCartAmount();
             List<Movie> movies = db.Movies.ToList();
             List<MovieDisplayViewModel> dm = GetAllFlashSales();
             foreach (Movie movie in movies)
@@ -48,15 +44,17 @@ namespace Project_G3.Controllers
             }
             dm.OrderBy(m => m.Movie.MovieId);
             ViewData["RandomMovie"] = dm;
+            ViewBag.Amount = GetCartAmount();
             return View(dm);
         }
         public ActionResult Searching()
-        {
+        {            
             return View();
         }
         [HttpPost]
         public ActionResult Searching(string Searchstring)
         {
+            ViewBag.Amount = GetCartAmount();
             List<Movie> movies = db.Movies.ToList();
             List<MovieDisplayViewModel> dm = GetAllFlashSales();
             ViewData["RandomMovie"] = dm;
@@ -73,16 +71,16 @@ namespace Project_G3.Controllers
             }
             //Använd av LINQ query för att hämta data
             var mo = from m in dm
-                     where m.Movie.MovieTitle.Contains(Searchstring)                                          
+                     where m.Movie.MovieTitle.Contains(Searchstring)
                      select m;
             ViewBag.Message = Searchstring;
             if (!string.IsNullOrEmpty(Searchstring))
             {
                 //Leta efter movie title och kolla om det finns någon liknade title som matcha det kunden skrev i sök fälten                
-                return View(mo);             
+                return View(mo);
             }
             else
-            {                
+            {
                 return RedirectToAction("Index");
             }
         }
@@ -104,6 +102,7 @@ namespace Project_G3.Controllers
 
             }
             ViewBag.Sum = TotalPrice;
+            ViewBag.Amount = GetCartAmount();
             return View(CartList);
         }
         public ActionResult AddToCart(int Id)
@@ -124,9 +123,8 @@ namespace Project_G3.Controllers
                 }
             }
             if (!CartList.Any(m => m.Movie.MovieId == Id)) CartList.Add(dm.Find(m => m.Movie.MovieId == Id));
-
-
             HttpContext.Session["ShoppingCart"] = CartList;
+            Session["Count"] = CartList.Count;
             return RedirectToAction("Index");
         }
         public ActionResult DeleteFromCart(int Id)
@@ -166,6 +164,7 @@ namespace Project_G3.Controllers
             }
             //lägger in alla genreName i Viewdata
             ViewData["GenreInfo"] = title;
+            ViewBag.Amount = GetCartAmount();
             return View(movie);
         }
         public ActionResult Genre(int Id)
@@ -190,29 +189,10 @@ namespace Project_G3.Controllers
                         IsOnSale = false
                     });
                 }
-            }            
-            //foreach (var g in genre)
-            //{
-              
-            //    //foreach (Movie movie in movies)
-            //    //{
-            //    //    dm.Add(new MovieDisplayViewModel
-            //    //    {
-            //    //        Movie = movie,
-            //    //        IsOnSale = false
-            //    //    });
-            //    //    //if (!dm.Any(m => m.Movie == movie))
-            //    //    //{
-            //    //    //    dm.Add(new MovieDisplayViewModel
-            //    //    //    {
-            //    //    //        Movie = movie,
-            //    //    //        IsOnSale = false
-            //    //    //    });
-            //    //    //}
-            //    //}
-            //}
+            }
             dm.OrderBy(m => m.Movie.MovieId);
             ViewData["GenreTitle"] = genre.First(g => g.GenreId == Id).GenreName;
+            ViewBag.Amount = GetCartAmount();
             return View(dm);
         }
         public ActionResult ConfirmAdress(int Id)
@@ -222,6 +202,7 @@ namespace Project_G3.Controllers
             FormDetails GetId = new FormDetails();
             GetId.UserType = Id;
             ViewBag.UserId = Id;
+            ViewBag.Amount = GetCartAmount();
             return View();
         }
         [HttpPost]
@@ -304,6 +285,7 @@ namespace Project_G3.Controllers
         }
         public ActionResult GetFlashSale()
         {
+            ViewBag.Amount = GetCartAmount();
             return View(GetAllFlashSales());
         }
         public ActionResult News()
@@ -312,15 +294,23 @@ namespace Project_G3.Controllers
             List<MovieDisplayViewModel> dm = GetAllFlashSales();
             foreach (Movie movie in movies)
             {
-                if (Int32.Parse(movie.MovieReleaseYear) > 2018 )
+                if (Int32.Parse(movie.MovieReleaseYear) > 2018)
                 {
                     if (!dm.Any(m => m.Movie == movie))
                     {
                         dm.Add(new MovieDisplayViewModel { Movie = movie, IsOnSale = false });
-                    }                    
+                    }
                 }
             }
+            ViewBag.Amount = GetCartAmount();
             return View(dm);
+        }
+        //hämta antal varor i varokorgen
+        public int GetCartAmount()
+        {
+            List<MovieDisplayViewModel> CartList = HttpContext.Session["ShoppingCart"] != null ? (List<MovieDisplayViewModel>)HttpContext.Session["ShoppingCart"] : new List<MovieDisplayViewModel>();
+            int Count = CartList.Count;
+            return Count;
         }
     }
 }

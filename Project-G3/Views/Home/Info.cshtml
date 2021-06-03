@@ -5,6 +5,9 @@
     string discount = "";
     bool IsProcentage = false;
 }
+<div class="undernav" @*style="display:none;"*@>
+    @Html.Partial("_Navigations")
+</div>
 @foreach (Project_G3.Models.FlashSale fs in Model.FlashSales)
 {
     decimal np;
