@@ -65,7 +65,7 @@ namespace Project_G3.Controllers
 
         // GET: Admin
         [Authorize(Roles = "Admin")]
-        public ActionResult AdminPage()
+        public ActionResult Index()
         {
             return View();
         }
@@ -98,7 +98,7 @@ namespace Project_G3.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index");
                 }
                 AddErrors(result);
             }
@@ -162,10 +162,10 @@ namespace Project_G3.Controllers
             {
 
                 if (movies.Any(m => m.MovieId == Id))
-                //{
+                {
                     _db.Movies.Remove(movies.First(m => m.MovieId == Id));
                     _db.SaveChanges();
-               // }
+                }
 
                return RedirectToAction("MovieList");
             }

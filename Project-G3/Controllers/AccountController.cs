@@ -455,8 +455,8 @@ namespace Project_G3.Controllers
             {
                 return Redirect(returnUrl);
             }
-            //return RedirectToAction("Index", "Home");
-            return RedirectToAction("AdminPage", "Admin");
+            if(User.IsInRole("Admin")) return RedirectToAction("Index", "Admin");
+            else return RedirectToAction("Index", "Home");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
