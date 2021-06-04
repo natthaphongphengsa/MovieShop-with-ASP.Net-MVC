@@ -3,7 +3,7 @@
         <li class="underNavli">@Html.ActionLink("Home", "Index", "Home", new { @class = "underNavli" })</li>
         <li role="presentation" class="underNavli dropdown">
             <a class="underNavli dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Genre <span class="caret"></span>
+                <span style="font-weight:500">Genre</span><span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
                 @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)

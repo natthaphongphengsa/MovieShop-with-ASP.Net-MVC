@@ -41,7 +41,7 @@
                 <p style="width:50%;float:left;">Release year: @Html.DisplayFor(model => model.MovieReleaseYear)</p>
                 <p style="width:50%;float:right;text-align:right;">Duration: @Html.DisplayFor(model => model.MovieDuration) min</p>
             </div>
-            <img id="info-img" src="@Html.DisplayTextFor(model => model.MoviePosters)" style="width:100%;" />
+            <img id="Info-img" src="@Html.DisplayTextFor(model => model.MoviePosters)" />
         </div>
         <div class="addToCart col-md-4">
             @if (price < Model.MoviePrice)

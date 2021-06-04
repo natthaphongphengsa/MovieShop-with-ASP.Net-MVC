@@ -2,7 +2,9 @@
     ViewBag.Title = "Cart";
 }
 @model IEnumerable<Project_G3.Models.MovieDisplayViewModel>
-
+<div class="undernav" @*style="display:none;"*@>
+    @Html.Partial("_Navigations")
+</div>
 @{
     //Om varukorgen är tomt ska detta visa annars visa filmen som man har lagt till
     if (ViewBag.ShoppingCart.Count == 0)
@@ -15,61 +17,63 @@
     else
     {
         <h2>Varukorg:</h2>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Movie.MoviePosters)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Movie.MovieDescription)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Movie.MovieReleaseYear)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Movie.MovieDuration)
-                </th>
+        <div class="table-responsive">
+            <table class="table">
+                <tr class="Hidden">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Movie.MoviePosters)
+                    </th>
+                    <th class="Table">
+                        @Html.DisplayNameFor(model => model.Movie.MovieDescription)
+                    </th>
+                    <th class="Hidden">
+                        @Html.DisplayNameFor(model => model.Movie.MovieReleaseYear)
+                    </th>
+                    <th class="Hidden">
+                        @Html.DisplayNameFor(model => model.Movie.MovieDuration)
+                    </th>
 
-                <th>
-                    @Html.DisplayNameFor(model => model.Movie.MoviePrice)
-                </th>
-                <th></th>
-            </tr>
-            @foreach (Project_G3.Models.MovieDisplayViewModel item in Model)
-            {
-                <tr>
-                    <td>
-                        <a href="@Url.Action(" Info","Home",new { id=item.Movie.MovieId })">
-                            <img id="info-img" src="@Html.DisplayTextFor(model => item.Movie.MoviePosters)" />
-                        </a>
-                    </td>
-                    <td>
-                        <p style="font-weight:600;">Title: @Html.DisplayFor(modelItem => item.Movie.MovieDescription)</p>
-                        @Html.DisplayFor(modelItem => item.Movie.MovieDescription)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Movie.MovieReleaseYear)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Movie.MovieDuration)
-                    </td>
-                    <td>
-                        @if (item.IsOnSale)
-                        {
-                            <p style="text-decoration: line-through">@Html.DisplayFor(modelItem => item.Movie.MoviePrice)</p>
-                            <p class="mvlp"><span style="color:red">@Html.DisplayFor(modelItem => item.NewPrice) SEK</span></p>
-                        }
-                        else
-                        {
-                            @Html.DisplayFor(modelItem => item.Movie.MoviePrice)
-                        }
-                    </td>
-                    <td>
-                        @Html.ActionLink("Remove", "DeleteFromCart", new { Id = item.Movie.MovieId })
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Movie.MoviePrice)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </table>
+                @foreach (Project_G3.Models.MovieDisplayViewModel item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("Info","Home",new { id=item.Movie.MovieId })">
+                                <img id="info-img" src="@Html.DisplayTextFor(model => item.Movie.MoviePosters)" />
+                            </a>
+                        </td>
+                        <td class="Table">
+                            <p style="font-weight:600;">@Html.DisplayFor(modelItem => item.Movie.MovieTitle)</p>
+                            <p class="Length">@Html.DisplayFor(modelItem => item.Movie.MovieDescription)</p>
+                        </td>
+                        <td class="Hidden">
+                            @Html.DisplayFor(modelItem => item.Movie.MovieReleaseYear)
+                        </td>
+                        <td class="Hidden">
+                            @Html.DisplayFor(modelItem => item.Movie.MovieDuration)
+                        </td>
+                        <td>
+                            @if (item.IsOnSale)
+                            {
+                                <p style="text-decoration: line-through">@Html.DisplayFor(modelItem => item.Movie.MoviePrice)</p>
+                                <p class="mvlp"><span style="color:red">@Html.DisplayFor(modelItem => item.NewPrice) SEK</span></p>
+                            }
+                            else
+                            {
+                                <p>@Html.DisplayFor(modelItem => item.Movie.MoviePrice) SEK</p>
+                            }
+                        </td>
+                        <td>
+                            @Html.ActionLink("Remove", "DeleteFromCart", new { Id = item.Movie.MovieId })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
         <hr />
         <div class="row">
             @*Visa Totalt pris*@

@@ -95,7 +95,6 @@ html {
 }
 
 .mvlp {
-    margin-top: 34px;
     font-weight: 700;
 }
 
@@ -283,20 +282,55 @@ cart {
     align-items: center;
     border-radius: 50%;
 }
-/*Fixa underNav mobil anpassning */
-@media (max-width:767px){
-    .underNav {
-        margin-top: 0px;
-        position: fixed;
-        width: 100%;
-        z-index: 100;
-    }
+
+.table-responsive {
+    border: none;
 }
+/*Mobile*/
 @media (max-width: 425px) {
+
+    #logo {
+        margin-left: 12px;
+    }
+    #Info-img {
+        width: 100%;
+    }
+
+    .Hidden {
+        display: none;
+    }
+
+    .thankscard {
+        text-align: center;
+    }
+    /* ändra storlek på Receipt*/
+    .Row {
+        background-color: transparent;
+        background-image: none;
+        max-width: 100%;
+        padding: 0;
+    }
+    /* ändra storlek på fromulär(ConfirmAdress)*/
+    .form {
+        width: 100%;
+    }
+    /*ta bort breakline*/
+    .solid {
+        display: none;
+    }
+    /*ta bort slider*/
+    #carousel-example-generic {
+        display: none;
+    }
+    /*Visa text längden vertical*/
+    .table-responsive > .table > tbody > tr > td {
+        white-space: normal;
+    }
+    /*flytta Nav på rätt platts*/
     .body-content {
         margin-top: 56px;
     }
-
+    /*Justera underNav*/
     .underNav {
         margin-top: 0px;
         position: fixed;
@@ -332,11 +366,16 @@ cart {
         padding: 0px 12px 12px
     }
 }
-
+/*mobil & Tablet*/
 @media (max-width: 768px) and (min-width:426px) {
+    #Info-img {
+        width: 35%;
+    }
+
     .underNav {
-        width:100%;
-        z-index: 100;        
+        width: 100%;
+        margin-top: 0px;
+        z-index: 100;
     }
 
     .randomImg {
@@ -344,7 +383,7 @@ cart {
     }
 
     .dropdown-menu > li > a {
-        color: whitesmoke;
+        color: black;
     }
 
     .Breakline {
@@ -360,8 +399,12 @@ cart {
         width: 150px;
     }
 }
-
+/*Tablet*/
 @media (min-width:768px) and (max-width:1024px) {
+    .underNav {
+        margin-top: 12px;
+    }
+
     .randomImg {
         display: none;
     }
@@ -370,10 +413,28 @@ cart {
         float: left;
         width: 150px;
     }
-}
 
-@media (min-width: 768px) {
     .undernav {
         display: none;
     }
 }
+/*PC*/
+@media (min-width: 769px) {
+    /*Visa inte navigation while inside info page&cart page*/
+    .undernav {
+        display: none;
+    }
+
+    #Info-img {
+        width: 100%;
+    }
+}
+/*Fixa underNav mobil anpassning */
+/*@media (max-width:767px) {
+    .underNav {
+        margin-top: 12px;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+    }
+}*/
