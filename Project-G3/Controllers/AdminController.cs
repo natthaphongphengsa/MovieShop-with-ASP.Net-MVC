@@ -140,28 +140,37 @@ namespace Project_G3.Controllers
 
         // GET: Admin/DeleteMovie
         [Authorize(Roles = "Admin")]
-        public ActionResult DeleteMovie()
+        public ActionResult DeleteMovie(int? Id)
         {
+            if (Id == null)
+            {
+                return RedirectToAction("MovieList");
+            }
 
-            return View();
+            return View(_db.Movies.First(m => m.MovieId == Id));
         }
 
        // POST: Admin/DeleteMovie
        [Authorize(Roles = "Admin")]
        [HttpPost]
        [ValidateAntiForgeryToken]
-        public ActionResult DeleteMovie(int? Id)
+        public ActionResult DeleteMovie(int Id)
         {
             List<Movie> movies = _db.Movies.ToList();
 
             if (ModelState.IsValid)
             {
 
-                if (movies.Any(m => m.MovieId == Id)) movies.Remove(movies.First(m => m.MovieId == Id));
+                if (movies.Any(m => m.MovieId == Id))
+                //{
+                    _db.Movies.Remove(movies.First(m => m.MovieId == Id));
+                    _db.SaveChanges();
+               // }
 
                return RedirectToAction("MovieList");
             }
 
+            
             return View(movies);
         }
 

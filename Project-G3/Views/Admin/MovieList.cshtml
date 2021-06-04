@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<Project_G3.Models.Movie>
 
 @*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
-<table class="table">
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
+<table class="table"  media="screen and (min-width: 375px)" style="max-width:100%">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.MovieTitle)
@@ -15,8 +16,8 @@
             @Html.DisplayNameFor(model => model.MovieDuration)
         </th>
         <th>
-          @Html.DisplayNameFor(model => model.MoviePosters)
-            
+            @Html.DisplayNameFor(model => model.MoviePosters)
+
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MovieDescription)
@@ -27,34 +28,41 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieReleaseYear)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieDuration)
-        </td>
-        <td>
-            <a href="@Url.Action(" Info","Home",new { id=item.MovieId })">
-                <img id="info-img" src="@Html.DisplayTextFor(model => item.MoviePosters)" />
-            </a>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoviePrice)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MovieId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MovieId }) |
-            @Html.ActionLink("Delete", "DeleteMovie", new { id=item.MovieId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieReleaseYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieDuration)
+            </td>
+            <td>
+                <a href="@Url.Action(" Info","Home",new { id=item.MovieId })">
+                    <img id="info-img" src="@Html.DisplayTextFor(model => item.MoviePosters)" />
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoviePrice)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MovieId }) |
+                @Html.ActionLink("Delete", "DeleteMovie", new { id = item.MovieId })
+            </td>
+        </tr>
+    }
 
 </table>
+
+<style>
+    
+    .table{
+        max-width:100%
+    }
+</style>
