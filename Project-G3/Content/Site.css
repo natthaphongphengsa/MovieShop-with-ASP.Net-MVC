@@ -302,14 +302,20 @@ cart {
     float: left;
     margin-left: 2%;
 }
+#Swish{
+    width:500px;
+}
 /*Fix responsive lastname varning message*/
-@media (max-width: 320px){
+@media (max-width: 320px) {
     #Lastname {
         float: none;
     }
 }
 /*Mobile*/
 @media (max-width: 425px) {
+    #Swish {
+        width: inherit;
+    }
     #logo {
         margin-left: 12px;
     }
