@@ -296,6 +296,7 @@
     <Content Include="Views\Shared\SearchBar.cshtml" />
     <Content Include="Views\Admin\MovieList.cshtml" />
     <Content Include="Views\Admin\DeleteMovie.cshtml" />
+    <Content Include="Views\Shared\AdminNavigations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -286,12 +286,23 @@ cart {
 .table-responsive {
     border: none;
 }
+
+#logoff {
+    color: whitesmoke;
+}
+
+#logoff:hover {
+    color: #337ab7;
+}
+.navbar-right {    
+    margin-right: 0px;
+}
 /*Mobile*/
 @media (max-width: 425px) {
-
     #logo {
         margin-left: 12px;
     }
+
     #Info-img {
         width: 100%;
     }
@@ -416,6 +427,9 @@ cart {
 
     .undernav {
         display: none;
+    }
+    .navbar-right {       
+        margin-right: -10px;
     }
 }
 /*PC*/
