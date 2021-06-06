@@ -10,7 +10,12 @@ namespace Project_G3.Controllers
 {
     public class PaymentController : Controller
     {
-        // GET: Payment        
+        // GET: Payment
+        private ApplicationDbContext db = new ApplicationDbContext();
+        public PaymentController()
+        {
+            ViewData["Genres"] = db.Genres.ToList();
+        }
         public ActionResult PaymentMethod(FormDetails CustomInfo)
         {
             if (Session["Email"] == null && CustomInfo.UserType == 2)

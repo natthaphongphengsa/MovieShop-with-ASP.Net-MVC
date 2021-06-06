@@ -2,12 +2,8 @@
 @{
     ViewBag.Title = "Receipt";
 }
-<div class="underNav navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-        <li class="underNavli"><a style="color:white" href="@Url.Action("Index", "Home",new { @class="underNavli" })">Continue shopping</a></li>
-    </ul>
-    <hr class="Breakline" />
-    @Html.Partial("_LoginPartial")
+<div class="undernav" @*style="display:none;"*@>
+    @Html.Partial("_Navigations")
 </div>
 <div class="Row">
     <div class="row" style="width:fit-content;margin:auto;">

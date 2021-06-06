@@ -297,6 +297,17 @@ cart {
 .navbar-right {    
     margin-right: 0px;
 }
+#Lastname {
+    width: 49%;
+    float: left;
+    margin-left: 2%;
+}
+/*Fix responsive lastname varning message*/
+@media (max-width: 320px){
+    #Lastname {
+        float: none;
+    }
+}
 /*Mobile*/
 @media (max-width: 425px) {
     #logo {
