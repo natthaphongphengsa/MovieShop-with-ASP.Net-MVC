@@ -1,5 +1,8 @@
 ﻿@model Project_G3.Models.RegisterViewModel
 @using Microsoft.AspNet.Identity
+<div class="undernav" @*style="display:none;"*@>
+    @Html.Partial("_Navigations")
+</div>
 <div>
     <h4>My profile</h4>
     <hr />
@@ -30,6 +33,3 @@
 
     </dl>
 </div>
-<p>
-    <a href="@Url.Action("Index","Home")">Back to shopping</a>
-</p>
