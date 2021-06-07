@@ -17,16 +17,16 @@ namespace Project_G3.Controllers
             ViewData["Genres"] = db.Genres.ToList();
         }
         public ActionResult PaymentMethod(FormDetails CustomInfo)
-        {
-            if (Session["Email"] == null && CustomInfo.UserType == 2)
+        {            
+            if (Session["CurrentUser"] == null && CustomInfo.UserType == 2)
             {
-                return RedirectToAction("Login","Account");
+                return RedirectToAction("Login", "Account");
             }
-            else if(Session["Email"] != null && CustomInfo.UserType == 2)
+            else if (Session["CurrentUser"] != null && CustomInfo.UserType == 2)
             {
                 return View(CustomInfo);
             }
-            else if(Session["Email"] != null && CustomInfo.UserType == 1)
+            else if (Session["CurrentUser"] != null && CustomInfo.UserType == 1)
             {
                 return View(CustomInfo);
             }
@@ -34,7 +34,7 @@ namespace Project_G3.Controllers
             {
                 return View(CustomInfo);
             }
-            
+
         }
         public ActionResult Receipt(FormDetails FD)
         {

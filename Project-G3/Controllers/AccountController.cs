@@ -76,13 +76,14 @@ namespace Project_G3.Controllers
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
-            {
+            {                
                 return View(model);
             }
             string username = model.UsernameOrEmail;
             if (Regex.IsMatch(model.UsernameOrEmail, @"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase))
             {
                 username = (await UserManager.FindByEmailAsync(model.UsernameOrEmail)).UserName;
+                Session.Add("CurrentUser", model.UsernameOrEmail);
             }
 
             // This doesn't count login failures towards account lockout
@@ -404,7 +405,8 @@ namespace Project_G3.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            Session.Add("CurrentUser", null);
+            return RedirectToAction("Index", "Home");            
         }
 
         //
