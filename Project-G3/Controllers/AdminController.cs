@@ -104,7 +104,38 @@ namespace Project_G3.Controllers
             }
             return View(model);
         }
+        public ActionResult DeleteUser()
+        {
+            var users = from u in _db.Users
+                    where u.UserName != "Admin"
+                    select u;
+            List<ApplicationUser> user = new List<ApplicationUser>();
+            foreach (var item in users)
+            {
+                user.Add(item);
+            }
+            return View(user);
+        }
+        [Authorize(Roles = "Admin")]       
+        public ActionResult DeleteU(string Id)
+        {
+            List<ApplicationUser> users = _db.Users.ToList();
 
+            if (ModelState.IsValid)
+            {
+
+                if (users.Any(m => m.Id == Id))
+                {
+                    _db.Users.Remove(users.First(m => m.Id == Id));
+                    _db.SaveChanges();
+                }
+
+                return RedirectToAction("MovieList");
+            }
+
+
+            return View(users);
+        }
         // GET: Admin/AddMovie
         [Authorize(Roles = "Admin")]
         public ActionResult AddMovie()

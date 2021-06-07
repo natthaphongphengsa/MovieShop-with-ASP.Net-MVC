@@ -1,0 +1,85 @@
+﻿@model List<Project_G3.Models.ApplicationUser>
+
+@Html.Partial("AdminNavigations")
+<h4>Users</h4>
+<hr />
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>
+                Email
+            </th>
+            <th>
+                EmailConfirmed
+            </th>
+            <th>
+                PasswordHash
+            </th>
+            <th>
+                SecurityStamp
+            </th>
+            <th>
+                PhoneNumber
+            </th>
+            <th>
+                PhoneNumberConfirmed
+            </th>
+            <th>
+                TwoFactorEnabled
+            </th>
+            <th>
+                LockoutEndDateUtc
+            </th>
+            <th>
+                LockoutEnabled
+            </th>
+            <th>
+                AccessFailedCount
+            </th>
+            <th>
+                UserName
+            </th>
+        </tr>
+        @foreach (Project_G3.Models.ApplicationUser user in Model)
+        {
+            <tr>
+                <td>
+                    @user.Email
+                </td>
+                <td>
+                    @user.EmailConfirmed
+                </td>
+                <td>
+                    @user.PasswordHash
+                </td>
+                <td>
+                    @user.SecurityStamp
+                </td>
+                <td>
+                    @user.PhoneNumber
+                </td>
+                <td>
+                    @user.PhoneNumberConfirmed
+                </td>
+                <td>
+                    @user.TwoFactorEnabled
+                </td>
+                <td>
+                    @user.LockoutEndDateUtc
+                </td>
+                <td>
+                    @user.LockoutEnabled
+                </td>
+                <td>
+                    @user.AccessFailedCount
+                </td>
+                <td>
+                    @user.UserName
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "DeleteU", new { id = user.Id }, new { onclick = "return confirm('Are sure wants to delete?');" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
