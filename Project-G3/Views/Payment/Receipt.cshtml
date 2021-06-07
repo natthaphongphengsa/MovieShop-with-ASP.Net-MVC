@@ -2,6 +2,9 @@
 @{
     ViewBag.Title = "Receipt";
 }
+<div class="undernav" @*style="display:none;"*@>
+    @Html.Partial("_Navigations")
+</div>
 <div class="Row">
     <div class="row" style="width:fit-content;margin:auto;">
         <img src="~/Picture/free-movie-icon-850-thumb.png" width="120" />
@@ -9,7 +12,7 @@
     <h1 class="thankscard">Thank you for your purchase!</h1>
     @foreach (var item in ViewBag.CustomDetails)
     {
-        <div class="inner-row" style="margin-bottom: 10px;">
+        <div class="inner-row table-responsive" style="margin-bottom: 10px;">
             <h3>Delivery To:</h3>
             <p>Name: @item.FirstName @item.LastName</p>
             <p>Email: @item.EmailAdress</p>
@@ -22,7 +25,7 @@
             <p>Phone: @item.PhoneNumber</p>
         </div>
     }
-    <div class="inner-row">
+    <div class="inner-row table-responsive">
         <table class="table">
             <tr>
                 <th>

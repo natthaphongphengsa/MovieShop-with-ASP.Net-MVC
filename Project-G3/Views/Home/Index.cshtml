@@ -76,11 +76,13 @@
             @*<p>Movie Duration: @movie.MovieDuration</p>*@
             @if (movie.IsOnSale)
             {
+                <p style="text-decoration:line-through">Before: @movie.Movie.MoviePrice SEK</p>
                 <p class="mvlp"> Price: <span style="color:red">@movie.NewPrice SEK</span></p>
                 <img class="saleIMG" src="https://th.bing.com/th/id/R1c60bd8e3af6f1d7f1d8fb318d61731d?rik=5CkMs7XRhHCAZQ&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f04%2f50-off-Transparent.png&ehk=CMvnKP86M9ZJXRAUkB6goVWtw79ntEohcX9lIaD2nsg%3d&risl=&pid=ImgRaw" alt="50%off" />
             }
             else
             {
+                <div style="height:30px;"></div>
                 <p class="mvlp"> Price: @movie.Movie.MoviePrice SEK</p>
             }
             <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span>  Add To Cart</a>

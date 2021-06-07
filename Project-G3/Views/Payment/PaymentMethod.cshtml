@@ -1,11 +1,14 @@
 ﻿@model Project_G3.Models.FormDetails
-    @{ 
-        ViewBag.Title = "Payment/" + Html.DisplayFor(m => m.PaymentName);
-    }
+@{
+    ViewBag.Title = "Payment/" + Html.DisplayFor(m => m.PaymentName);
+}
+<div class="undernav" @*style="display:none;"*@>
+    @Html.Partial("_Navigations")
+</div>
 @if (Model.PaymentName == "Swish")
 {
-    <div class="row">
-        <img src="~/Picture/swish QR code.png" width="500" />
+    <div class="form row">
+        <img src="~/Picture/swish QR code.png" id="Swish" />
         <div class="col-lg">
             <a class="btn btn-default pull-left" href="@Url.Action("ConfirmAdress","Home")" style="width:35%" ;>Back</a>
             <a class="btn btn-default pull-right" href="@Url.Action("Receipt","Payment", Model)" style="width:35%" ;>Check Out</a>
@@ -14,7 +17,7 @@
 }
 else
 {
-    <div class="creditCardForm" style="width:50%; margin:auto;">
+    <div class="form creditCardForm">
         <div class="heading">
             <h1>Pay with: @Html.DisplayFor(m => m.PaymentName)</h1>
             <h3>Confirm Purchase</h3>

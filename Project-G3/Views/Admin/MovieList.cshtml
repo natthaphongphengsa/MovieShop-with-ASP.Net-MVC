@@ -3,30 +3,32 @@
 @*<p>
         @Html.ActionLink("Create New", "Create")
     </p>*@
+@Html.Partial("AdminNavigations")
+@*lagt till div class table-responsive för att inte förstör mobil anpassning*@
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieReleaseYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviePosters)
 
-<table class="table"  media="screen and (min-width: 375px)" style="max-width:100%">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieReleaseYear)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieDuration)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MoviePosters)
-
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MoviePrice)
-        </th>
-        <th></th>
-    </tr>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviePrice)
+            </th>
+            <th></th>
+        </tr>
 
     @foreach (var item in Model)
     {

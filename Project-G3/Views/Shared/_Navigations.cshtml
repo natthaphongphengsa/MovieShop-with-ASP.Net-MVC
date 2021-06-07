@@ -1,19 +1,19 @@
 ﻿<div class="underNav navbar-collapse collapse">
     <ul class="nav navbar-nav">
-        <li class="underNavli">@Html.ActionLink("Home", "Index", "Home", new { @class = "underNavli" })</li>
+        <li class="underNavli"><a style="color:whitesmoke;" href="@Url.Action("Index", "Home")">Home</a></li>
         <li role="presentation" class="underNavli dropdown">
             <a class="underNavli dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Genre <span class="caret"></span>
+                <span style="font-weight:500">Genre</span><span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
                 @foreach (Project_G3.Models.Genre Genre in ViewBag.Genres)
                 {
-                    <li>@Html.ActionLink(Genre.GenreName, "Genre", new { Id = Genre.GenreId })</li>
+                    <li><a href="@Url.Action("Genre", "Home", new { Id = Genre.GenreId })">@Genre.GenreName</a></li>
                 }
             </ul>
         </li>
-        <li class="underNavli">@Html.ActionLink("News", "News", "Home", new { @class = "underNavli" })</li>
-        <li class="underNavli">@Html.ActionLink("Flash Sale", "GetFlashSale", "Home", new { @class = "underNavli" })</li>
+        <li class="underNavli"><a style="color:whitesmoke;" href="@Url.Action("News", "Home", new { @class = "underNavli" })">News</a></li>
+        <li class="underNavli"><a style="color:whitesmoke;" href="@Url.Action("GetFlashSale", "Home", new { @class = "underNavli" })">Flash Sale</a></li>
     </ul>
     <hr class="Breakline" />
     @Html.Partial("_LoginPartial")
