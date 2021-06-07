@@ -1,5 +1,7 @@
 ﻿@model Project_G3.Models.AddMovieModels
-
+<div class="undernav">
+    @Html.Partial("AdminNavigations")
+</div>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()

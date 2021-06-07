@@ -1,6 +1,8 @@
 ﻿@model List<Project_G3.Models.ApplicationUser>
 
-@Html.Partial("AdminNavigations")
+<div class="undernav" @*style="display:none;"*@>
+    @Html.Partial("AdminNavigations")
+</div>
 <h4>Users</h4>
 <hr />
 <div class="table-responsive">
@@ -82,4 +84,7 @@
             </tr>
         }
     </table>
+</div>
+<div>
+    @Html.ActionLink("Back to Admin page", "Index")
 </div>
