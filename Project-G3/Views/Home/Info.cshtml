@@ -62,12 +62,12 @@
                 <h3>Price: @Html.DisplayFor(model => model.MoviePrice) SEK</h3>
             }
             <br />
-            <a id="btn_add" class="mvlbtn btn-default btn-lg" href="@Url.Action("AddToCart", "Home", new { id = Model.MovieId })" style="width:30%">
+            <a id="btn_add" class="mvlbtn btn-default btn-block btn-lg" href="@Url.Action("AddToCart", "Home", new { id = Model.MovieId })" style="text-align:center">
                 <span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
             </a>
             <br />
             <br />
-            <a id="btn_add" class="mvlbtn btn-default btn-lg" href="@Url.Action("Index", "Home")" style="width:30%">
+            <a id="btn_add" class="mvlbtn btn-default btn-block btn-lg" href="@Url.Action("Index", "Home")" style="text-align:center">
                 <span class="glyphicon glyphicon-eye-open"></span> Continue shopping
             </a>
 

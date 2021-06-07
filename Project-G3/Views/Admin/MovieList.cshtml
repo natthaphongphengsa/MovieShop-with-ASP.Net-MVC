@@ -41,7 +41,7 @@
                 @Html.DisplayFor(modelItem => item.MovieDuration)
             </td>
             <td>
-                <a href="@Url.Action(" Info","Home",new { id=item.MovieId })">
+                <a href="@Url.Action("Info","Home",new { id=item.MovieId })">
                     <img id="info-img" src="@Html.DisplayTextFor(model => item.MoviePosters)" />
                 </a>
             </td>
@@ -60,9 +60,3 @@
 
 </table>
 
-<style>
-    
-    .table{
-        max-width:100%
-    }
-</style>
