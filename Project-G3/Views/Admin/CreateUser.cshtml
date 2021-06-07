@@ -10,10 +10,12 @@
 <h2>CreateUser</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+    List<string> roles = new List<string>();
+    roles.Add("Admin");
+
     <div class="form-horizontal">
         <h4>CreateUserViewModel</h4>
         <hr />
@@ -37,7 +39,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Role, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Role, new SelectList(roles, "RolesName"), "Select your role", new { @class = "form-control" })
+                @*@Html.EditorFor(model => model.Role, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
             </div>
         </div>
