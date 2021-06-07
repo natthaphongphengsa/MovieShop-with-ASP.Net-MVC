@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -53,7 +54,11 @@ namespace Project_G3.Controllers
                 _userManager = value;
             }
         }
-
+        //Get: /Account/CustomProfile
+        public ActionResult CustomProfile()
+        {            
+            return View();
+        }
         //
         // GET: /Account/Login
         [AllowAnonymous]

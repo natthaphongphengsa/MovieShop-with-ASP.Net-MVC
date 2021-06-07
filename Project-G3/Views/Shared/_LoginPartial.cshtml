@@ -7,7 +7,14 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Admin", null, htmlAttributes: new { title = "Manage", @id = "logoff" })
+                @if (User.Identity.Name == "Admin")
+                {
+                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Admin", null, htmlAttributes: new { title = "Manage", @id = "logoff" })
+                }
+                else
+                {
+                    <a id="logoff" href="@Url.Action("CustomProfile", "Account")">My Profile</a>                    
+                }
             </li>
             <li><a id="logoff" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
