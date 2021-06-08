@@ -45,8 +45,8 @@
 
     .product-img {
         float: left;
-        height: 420px;
-        width: 327px;
+        max-height: 420px;
+        max-width: 327px;
     }
 
         .product-img img {
@@ -62,8 +62,8 @@
     }
 
     .product-text {
-        height: 300px;
-        width: 327px;
+        max-height: 300px;
+        max-width: 327px;
     }
 
         .product-text h1 {
@@ -150,6 +150,7 @@
         font-family: futura;
         font-style: italic;
         max-width: 50%;
+        max-height:auto;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
@@ -161,6 +162,46 @@
         -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     }
+
+    @@media screen and (max-width:1000px){
+       
+        .FlashSale{
+            display:none;
+        }
+        .product-img{
+            display:none;
+        }
+        .wrapper{
+            display:none;
+            display:flex;
+        }
+        .product-img{
+            display:none;
+        }
+        .product-info{
+            display:none;
+        }
+        .product-text{
+            display:none;
+        }
+        .mvlbtn{
+            display:none;
+        }
+        .Flash{
+            display:none;
+        }
+       .Flash2{
+           display:none;
+       }
+        .wrapper:hover {
+            display:none;
+        }
+        .fiftyoff{
+            display:none;
+        }
+
+    }
+
 </style>
 
 @Html.Partial("_Navigations")
@@ -176,32 +217,32 @@
 
 @foreach (Project_G3.Models.MovieDisplayViewModel movie in Model)
 {
-<div class="wrapper">
-    <div class="product-img">
-        <img src=@movie.Movie.MoviePosters height="420" width="327" />
-    </div>
-    <div class="product-info">
+    <div class="wrapper">
+        <div class="product-img">
+            <img src=@movie.Movie.MoviePosters height="420" width="327" />
+        </div>
+        <div class="product-info">
 
-        <div class="product-text">
-            <h1>
-                @Html.DisplayFor(modelItem => movie.Movie.MovieTitle)
+            <div class="product-text">
+                <h1>
+                    @Html.DisplayFor(modelItem => movie.Movie.MovieTitle)
 
-            </h1>
-            <h2>&nbsp; @movie.Movie.MovieReleaseYear | @movie.Movie.MovieDuration min </h2>
+                </h1>
+                <h2>&nbsp; @movie.Movie.MovieReleaseYear | @movie.Movie.MovieDuration min </h2>
 
-            <p>
-                @movie.Movie.MovieDescription
-            </p>
+                <p>
+                    @movie.Movie.MovieDescription
+                </p>
+
+            </div>
+
+            <p class="newprice">New price: <span style="color:red">@movie.NewPrice SEK</span></p>
+            <p class="oldprice">@movie.Movie.MoviePrice SEK</p>
 
         </div>
-
-        <p class="newprice">New price: <span style="color:red">@movie.NewPrice SEK</span></p>
-        <p class="oldprice">@movie.Movie.MoviePrice SEK</p>
-
+        <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</a>
     </div>
-    <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie.Movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</a>
-</div>
-
+    
 }
 
 
@@ -256,7 +297,7 @@
     @foreach (Project_G3.Models.MovieDisplayViewModel movie1 in Model)
     {
 
-        if (movie1.FlashSale == "25%")           //(Decimal.Parse(movie1.NewPrice) < 100) 
+        if (movie1.FlashSale == "25%")           //(Decimal.Parse(movie1.NewPrice) < 100)
         {
             <div class="column col-md-2">
                 <h4 class="Movietitle">@movie1.Movie.MovieTitle</h4>
