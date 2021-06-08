@@ -210,7 +210,7 @@
 
 <h2 class="FlashSale">FLASHSALE</h2>
 <a href="#S1"><img class="Flash" src="https://cdn.pixabay.com/photo/2017/05/26/05/38/discount-2345221_960_720.png" alt="FlashSale" /></a>
-<a href="#S2"><img class="Flash2" src="https://www.transparentpng.com/thumb/25-off/FcCezL-25-off-free-transparent.png" alt="FlashSale" /></a>
+
 
 
 
@@ -291,31 +291,3 @@
 </div>
 
 
-<hr class="solid">
-<h2 class="fiftyoff" id="S2">25% OFF</h2>
-<div class="row">
-    @foreach (Project_G3.Models.MovieDisplayViewModel movie1 in Model)
-    {
-
-        if (movie1.FlashSale == "25%")           //(Decimal.Parse(movie1.NewPrice) < 100)
-        {
-            <div class="column col-md-2">
-                <h4 class="Movietitle">@movie1.Movie.MovieTitle</h4>
-
-                <a href="@Url.Action("Info","Home",new { id = movie1.Movie.MovieId })">
-                    <img id="col-img" src="@movie1.Movie.MoviePosters" />
-                </a>
-
-                <p class="oldprice">@movie1.Movie.MoviePrice SEK</p>
-                <p class="mvlp">New price:<span style=" color:red"> @movie1.NewPrice SEK</span></p>
-                <a class="mvlbtn btn btn-default" href="@Url.Action("AddToCart","Home", new { Id = movie1.Movie.MovieId })"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</a>
-                <img class="saleIMG2" src="https://www.transparentpng.com/thumb/25-off/FcCezL-25-off-free-transparent.png" alt="25%off" />
-            </div>
-
-        }
-
-    }
-</div>
-<div class="row">
-    <p class="MSG"><a class="BackToTopBtn" href="#top">Back To Top</a></p>
-</div>
