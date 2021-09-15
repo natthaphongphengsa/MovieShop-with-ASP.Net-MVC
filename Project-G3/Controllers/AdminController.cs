@@ -207,21 +207,35 @@ namespace Project_G3.Controllers
 
         // GET: Admin/EditMovie
         [Authorize(Roles = "Admin")]
-        public ActionResult EditMovie()
+        public ActionResult EditMovie(int? Id)
         {
+            if (Id == null)
+            {
+                return RedirectToAction("MovieList");
+            }
 
-            return View();
+            return View(_db.Movies.First(m => m.MovieId == Id));
+            
         }
 
         // POST: Admin/EditMovie
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditMovie(int? Id)
+        public ActionResult EditMovie (Movie mov)
         {
+           Movie oldMovie =_db.Movies.First(m => m.MovieTitle == mov.MovieTitle);
+            _db.Movies.Remove(oldMovie);
+            _db.Movies.Add(mov);
+           
+
+            //_db.Movies.Remove(movies.First(m => m.MovieId == mov.MovieId));
+            //_db.Movies.Add(movie);
+            _db.SaveChanges();
+            
 
 
-            return View();
+            return RedirectToAction("MovieList");
         }
     }
 }
