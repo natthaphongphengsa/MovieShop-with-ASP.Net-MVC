@@ -19,9 +19,9 @@ namespace Project_G3.Controllers
             //Hämta data från URL/API
             var webClient = new WebClient();
             webClient.Encoding = Encoding.UTF8;
-            var json = webClient.DownloadString(@"https://restcountries.eu/rest/v2/all");
+            var json = webClient.DownloadString(@"https://restcountries.com/v3.1/all");
             Contries[] contry = JsonConvert.DeserializeObject<Contries[]>(json);
-            ViewData["Contries"] = contry;
+            ViewData["Contries"] = contry.Select(c => c.Name).OrderBy(c => c.common);
         }
 
         //[Authorize (Roles="Admin")]
@@ -174,11 +174,11 @@ namespace Project_G3.Controllers
             List<Movie> movies = db.Genres.First(g => g.GenreId == Id).Movies.ToList();
             List<MovieDisplayViewModel> dm = GetAllFlashSales();
 
-            var mo = dm.Any(m => m.Movie.Genres.Any(ge => ge.GenreId == Id));
-            if (mo == false)
-            {
-                dm.RemoveAt(0);
-            }
+            //var mo = dm.Any(m => m.Movie.Genres.Any(ge => ge.GenreId == Id));
+            //if (mo == false)
+            //{
+            //    dm.RemoveAt(0);
+            //}
             foreach (Movie movie in movies)
             {
                 if (!dm.Any(m => m.Movie == movie))

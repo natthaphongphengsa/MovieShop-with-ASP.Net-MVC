@@ -44,7 +44,7 @@ namespace Project_G3.Migrations
             #region 100 movies (Seeded)
             decimal[] priceList = { 25M, 50M, 99.9M, 150M, 200M };
             Random r = new Random(1);
-            string jsonString = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "..\\SeedData100.min.json"));
+            string jsonString = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "..\\SeedData100.json"));
             List<SeedModel> movieList = JsonConvert.DeserializeObject<List<SeedModel>>(jsonString);
             List<Star> starList = context.Stars.ToList();
             List<Genre> genreList = context.Genres.ToList();

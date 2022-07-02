@@ -70,9 +70,11 @@
         <div class="column col-md-2">
             <h4 class="Movietitle">@movie.Movie.MovieTitle</h4>
             @*<p>Release Year: @movie.MovieReleaseYear</p>*@
-            <a href="@Url.Action("Info","Home",new { id = movie.Movie.MovieId })">
-                <img id="col-img" src="@movie.Movie.MoviePosters" />
-            </a>
+            <div style="height:250px;">
+                <a href="@Url.Action("Info","Home",new { id = movie.Movie.MovieId })">
+                    <img id="col-img" src="@movie.Movie.MoviePosters" />
+                </a>
+            </div>
             @*<p>Movie Duration: @movie.MovieDuration</p>*@
             @if (movie.IsOnSale)
             {

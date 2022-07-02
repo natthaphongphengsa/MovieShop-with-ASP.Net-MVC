@@ -50,6 +50,7 @@ html {
 /*Justera storlek på varje Movie bilden*/
 #col-img {
     width: 100%;
+    height: 250px;
 }
 
 .saleIMG {
@@ -66,8 +67,7 @@ html {
     color: whitesmoke;
     margin: 12px;
     font-size: 24px;
-    background-color: #2a2a72;
-    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    background-color: #222;
 }
 
 .underNavli {
@@ -291,19 +291,22 @@ cart {
     color: whitesmoke;
 }
 
-#logoff:hover {
-    color: #337ab7;
-}
-.navbar-right {    
+    #logoff:hover {
+        color: #337ab7;
+    }
+
+.navbar-right {
     margin-right: 0px;
 }
+
 #Lastname {
     width: 49%;
     float: left;
     margin-left: 2%;
 }
-#Swish{
-    width:500px;
+
+#Swish {
+    width: 500px;
 }
 /*Fix responsive lastname varning message*/
 @media (max-width: 320px) {
@@ -316,6 +319,7 @@ cart {
     #Swish {
         width: inherit;
     }
+
     #logo {
         margin-left: 12px;
     }
@@ -445,7 +449,8 @@ cart {
     .undernav {
         display: none;
     }
-    .navbar-right {       
+
+    .navbar-right {
         margin-right: -10px;
     }
 }

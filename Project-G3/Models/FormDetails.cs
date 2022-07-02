@@ -30,7 +30,11 @@ namespace Project_G3.Models
     }
     public class Contries
     {
-        public string Name { get; set; }
-        public string Capital { get; set; }
+        public Name Name{ get; set; }
+    }
+    public class Name
+    {
+        public string common { get; set; }
+        public string official { get; set; }
     }
 }

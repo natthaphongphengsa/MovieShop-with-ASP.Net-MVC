@@ -1,7 +1,7 @@
 [
   {
     "tittle": "Nyckeln till frihet",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
     "releasYear": "1994",
     "duration": "142",
     "genres": [
@@ -18,7 +18,7 @@
   },
   {
     "tittle": "Gudfadern",
-    "cover": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1972",
     "duration": "175",
     "genres": [
@@ -36,7 +36,7 @@
   },
   {
     "tittle": "The Dark Knight",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@.jpg",
     "releasYear": "2008",
     "duration": "152",
     "genres": [
@@ -55,7 +55,7 @@
   },
   {
     "tittle": "Gudfadern del II",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1974",
     "duration": "202",
     "genres": [
@@ -72,8 +72,8 @@
     ]
   },
   {
-    "tittle": "12 edsvurna män",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "12 edsvurna mÃ¤n",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
     "releasYear": "1957",
     "duration": "96",
     "genres": [
@@ -90,8 +90,8 @@
     ]
   },
   {
-    "tittle": "Sagan om konungens återkomst",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Sagan om konungens Ã¥terkomst",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "2003",
     "duration": "201",
     "genres": [
@@ -110,7 +110,7 @@
   },
   {
     "tittle": "Pulp Fiction",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1994",
     "duration": "154",
     "genres": [
@@ -128,7 +128,7 @@
   },
   {
     "tittle": "Schindler's List",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "1993",
     "duration": "195",
     "genres": [
@@ -148,7 +148,7 @@
   },
   {
     "tittle": "Inception",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@.jpg",
     "releasYear": "2010",
     "duration": "148",
     "genres": [
@@ -167,7 +167,7 @@
   },
   {
     "tittle": "Fight Club",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1999",
     "duration": "139",
     "genres": [
@@ -183,8 +183,8 @@
     ]
   },
   {
-    "tittle": "Sagan om ringen: Härskarringen",
-    "cover": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Sagan om ringen: HÃ¤rskarringen",
+    "cover": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@.jpg",
     "releasYear": "2001",
     "duration": "178",
     "genres": [
@@ -203,7 +203,7 @@
   },
   {
     "tittle": "Forrest Gump",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UY98_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
     "releasYear": "1994",
     "duration": "142",
     "genres": [
@@ -221,7 +221,7 @@
   },
   {
     "tittle": "Den gode, den onde, den fule",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOTQ5NDI3MTI4MF5BMl5BanBnXkFtZTgwNDQ4ODE5MDE@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOTQ5NDI3MTI4MF5BMl5BanBnXkFtZTgwNDQ4ODE5MDE@.jpg",
     "releasYear": "1966",
     "duration": "161",
     "genres": [
@@ -233,12 +233,12 @@
       "Clint Eastwood",
       "Eli Wallach",
       "Lee Van Cleef",
-      "Aldo Giuffrè"
+      "Aldo Giuffrï¿½"
     ]
   },
   {
-    "tittle": "Sagan om de två tornen",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Sagan om de tvÃ¥ tornen",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "2002",
     "duration": "179",
     "genres": [
@@ -257,7 +257,7 @@
   },
   {
     "tittle": "Matrix",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "1999",
     "duration": "136",
     "genres": [
@@ -275,8 +275,8 @@
     ]
   },
   {
-    "tittle": "Maffiabröder",
-    "cover": "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "MaffiabrÃ¶der",
+    "cover": "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1990",
     "duration": "146",
     "genres": [
@@ -295,8 +295,8 @@
     ]
   },
   {
-    "tittle": "Rymdimperiet slår tillbaka",
-    "cover": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Rymdimperiet slÃ¥r tillbaka",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1980",
     "duration": "124",
     "genres": [
@@ -314,8 +314,8 @@
     ]
   },
   {
-    "tittle": "Gökboet",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZjA0OWVhOTAtYWQxNi00YzNhLWI4ZjYtNjFjZTEyYjJlNDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "GÃ¥kboet",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZjA0OWVhOTAtYWQxNi00YzNhLWI4ZjYtNjFjZTEyYjJlNDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
     "releasYear": "1975",
     "duration": "133",
     "genres": [
@@ -332,7 +332,7 @@
   },
   {
     "tittle": "Parasit",
-    "cover": "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@.jpg",
     "releasYear": "2019",
     "duration": "132",
     "genres": [
@@ -351,7 +351,7 @@
   },
   {
     "tittle": "Interstellar",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
     "releasYear": "2014",
     "duration": "169",
     "genres": [
@@ -370,7 +370,7 @@
   },
   {
     "tittle": "Guds stad",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOTMwYjc5ZmItYTFjZC00ZGQ3LTlkNTMtMjZiNTZlMWQzNzI5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOTMwYjc5ZmItYTFjZC00ZGQ3LTlkNTMtMjZiNTZlMWQzNzI5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "2002",
     "duration": "130",
     "genres": [
@@ -380,7 +380,7 @@
     "text": "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin.",
     "director": "Fernando Meirelles",
     "stars": [
-      "Kátia Lund",
+      "Kï¿½tia Lund",
       "Alexandre Rodrigues",
       "Leandro Firmino",
       "Matheus Nachtergaele",
@@ -389,7 +389,7 @@
   },
   {
     "tittle": "Spirited Away",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
     "releasYear": "2001",
     "duration": "125",
     "genres": [
@@ -407,8 +407,8 @@
     ]
   },
   {
-    "tittle": "Rädda menige Ryan",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "RÃ¤dda menige Ryan",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@.jpg",
     "releasYear": "1998",
     "duration": "169",
     "genres": [
@@ -425,8 +425,8 @@
     ]
   },
   {
-    "tittle": "Den gröna milen",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Den grÃ¶na milen",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3.jpg",
     "releasYear": "1999",
     "duration": "189",
     "genres": [
@@ -444,8 +444,8 @@
     ]
   },
   {
-    "tittle": "Livet är underbart",
-    "cover": "https://m.media-amazon.com/images/M/MV5BYmJmM2Q4NmMtYThmNC00ZjRlLWEyZmItZTIwOTBlZDQ3NTQ1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Livet Ã¤r underbart",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYmJmM2Q4NmMtYThmNC00ZjRlLWEyZmItZTIwOTBlZDQ3NTQ1XkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
     "releasYear": "1997",
     "duration": "116",
     "genres": [
@@ -464,7 +464,7 @@
   },
   {
     "tittle": "Seven",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "1995",
     "duration": "127",
     "genres": [
@@ -482,8 +482,8 @@
     ]
   },
   {
-    "tittle": "När lammen tystnar",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "NÃ¤r lammen tystnar",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "1991",
     "duration": "118",
     "genres": [
@@ -501,8 +501,8 @@
     ]
   },
   {
-    "tittle": "Stjärnornas krig",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "StjÃ¤rnornas krig",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNzg4MjQxNTQtZmI5My00YjMwLWJlMjUtMmJlY2U2ZWFlNzY1XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg",
     "releasYear": "1977",
     "duration": "121",
     "genres": [
@@ -521,7 +521,7 @@
   },
   {
     "tittle": "Harakiri",
-    "cover": "https://m.media-amazon.com/images/M/MV5BYjBmYTQ1NjItZWU5MS00YjI0LTg2OTYtYmFkN2JkMmNiNWVkXkEyXkFqcGdeQXVyMTMxMTY0OTQ@._V1_UY98_CR2,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYjBmYTQ1NjItZWU5MS00YjI0LTg2OTYtYmFkN2JkMmNiNWVkXkEyXkFqcGdeQXVyMTMxMTY0OTQ@.jpg",
     "releasYear": "1962",
     "duration": "133",
     "genres": [
@@ -535,12 +535,12 @@
       "Tatsuya Nakadai",
       "Akira Ishihama",
       "Shima Iwashita",
-      "Tetsurô Tanba"
+      "Tetsurï¿½ Tanba"
     ]
   },
   {
     "tittle": "De sju samurajerna",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOWE4ZDdhNmMtNzE5ZC00NzExLTlhNGMtY2ZhYjYzODEzODA1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UY98_CR1,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOWE4ZDdhNmMtNzE5ZC00NzExLTlhNGMtY2ZhYjYzODEzODA1XkEyXkFqcGdeQXVyNTAyODkwOQ@@.jpg",
     "releasYear": "1954",
     "duration": "207",
     "genres": [
@@ -551,15 +551,15 @@
     "text": "A poor village under attack by bandits recruits seven unemployed samurai to help them defend themselves.",
     "director": "Akira Kurosawa",
     "stars": [
-      "Toshirô Mifune",
+      "Toshirï¿½ Mifune",
       "Takashi Shimura",
       "Keiko Tsushima",
       "Yukiko Shimazaki"
     ]
   },
   {
-    "tittle": "Livet är underbart",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZjc4NDZhZWMtNGEzYS00ZWU2LThlM2ItNTA0YzQ0OTExMTE2XkEyXkFqcGdeQXVyNjUwMzI2NzU@._V1_UY98_CR0,0,67,98_AL_.jpg",
+    "tittle": "Livet ï¿½r underbart",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZjc4NDZhZWMtNGEzYS00ZWU2LThlM2ItNTA0YzQ0OTExMTE2XkEyXkFqcGdeQXVyNjUwMzI2NzU@.jpg",
     "releasYear": "1946",
     "duration": "130",
     "genres": [
@@ -578,7 +578,7 @@
   },
   {
     "tittle": "Hamilton",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNjViNWRjYWEtZTI0NC00N2E3LTk0NGQtMjY4NTM3OGNkZjY0XkEyXkFqcGdeQXVyMjUxMTY3ODM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNjViNWRjYWEtZTI0NC00N2E3LTk0NGQtMjY4NTM3OGNkZjY0XkEyXkFqcGdeQXVyMjUxMTY3ODM@.jpg",
     "releasYear": "2020",
     "duration": "160",
     "genres": [
@@ -592,12 +592,12 @@
       "Lin-Manuel Miranda",
       "Phillipa Soo",
       "Leslie Odom Jr.",
-      "Renée Elise Goldsberry"
+      "Renï¿½e Elise Goldsberry"
     ]
   },
   {
     "tittle": "Whiplash",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOTA5NDZlZGUtMjAxOS00YTRkLTkwYmMtYWQ0NWEwZDZiNjEzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOTA5NDZlZGUtMjAxOS00YTRkLTkwYmMtYWQ0NWEwZDZiNjEzXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
     "releasYear": "2014",
     "duration": "106",
     "genres": [
@@ -614,8 +614,8 @@
     ]
   },
   {
-    "tittle": "En oväntad vänskap",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "En ovÃ¤ntad vÃ¤nskap",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@.jpg",
     "releasYear": "2011",
     "duration": "112",
     "genres": [
@@ -626,8 +626,8 @@
     "text": "After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.",
     "director": "Olivier Nakache",
     "stars": [
-      "Éric Toledano",
-      "François Cluzet",
+      "ï¿½ric Toledano",
+      "Franï¿½ois Cluzet",
       "Omar Sy",
       "Anne Le Ny",
       "Audrey Fleurot"
@@ -635,7 +635,7 @@
   },
   {
     "tittle": "The Prestige",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMjA4NDI0MTIxNF5BMl5BanBnXkFtZTYwNTM0MzY2._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMjA4NDI0MTIxNF5BMl5BanBnXkFtZTYwNTM0MzY2._V1.jpg",
     "releasYear": "2006",
     "duration": "130",
     "genres": [
@@ -654,7 +654,7 @@
   },
   {
     "tittle": "The Departed",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTI1MTY2OTIxNV5BMl5BanBnXkFtZTYwNjQ4NjY3._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTI1MTY2OTIxNV5BMl5BanBnXkFtZTYwNjQ4NjY3._V1.jpg",
     "releasYear": "2006",
     "duration": "151",
     "genres": [
@@ -673,7 +673,7 @@
   },
   {
     "tittle": "The Pianist",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOWRiZDIxZjktMTA1NC00MDQ2LWEzMjUtMTliZmY3NjQ3ODJiXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UY98_CR2,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOWRiZDIxZjktMTA1NC00MDQ2LWEzMjUtMTliZmY3NjQ3ODJiXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "2002",
     "duration": "150",
     "genres": [
@@ -692,7 +692,7 @@
   },
   {
     "tittle": "Gladiator",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "2000",
     "duration": "155",
     "genres": [
@@ -711,7 +711,7 @@
   },
   {
     "tittle": "American History X",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZTJhN2FkYWEtMGI0My00YWM4LWI2MjAtM2UwNjY4MTI2ZTQyXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZTJhN2FkYWEtMGI0My00YWM4LWI2MjAtM2UwNjY4MTI2ZTQyXkEyXkFqcGdeQXVyNjc3MjQzNTI@.jpg",
     "releasYear": "1998",
     "duration": "119",
     "genres": [
@@ -727,8 +727,8 @@
     ]
   },
   {
-    "tittle": "De misstänkta",
-    "cover": "https://m.media-amazon.com/images/M/MV5BYTViNjMyNmUtNDFkNC00ZDRlLThmMDUtZDU2YWE4NGI2ZjVmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "De misstÃ¤nkta",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYTViNjMyNmUtNDFkNC00ZDRlLThmMDUtZDU2YWE4NGI2ZjVmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "1995",
     "duration": "106",
     "genres": [
@@ -746,8 +746,8 @@
     ]
   },
   {
-    "tittle": "Léon",
-    "cover": "https://m.media-amazon.com/images/M/MV5BODllNWE0MmEtYjUwZi00ZjY3LThmNmQtZjZlMjI2YTZjYmQ0XkEyXkFqcGdeQXVyNTc1NTQxODI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Leon",
+    "cover": "https://m.media-amazon.com/images/M/MV5BODllNWE0MmEtYjUwZi00ZjY3LThmNmQtZjZlMjI2YTZjYmQ0XkEyXkFqcGdeQXVyNTc1NTQxODI@.jpg",
     "releasYear": "1994",
     "duration": "110",
     "genres": [
@@ -755,7 +755,7 @@
       "Crime",
       "Drama"
     ],
-    "text": "Mathilda, a 12-year-old girl, is reluctantly taken in by Léon, a professional assassin, after her family is murdered. An unusual relationship forms as she becomes his protégée and learns the assassin's trade.",
+    "text": "Mathilda, a 12-year-old girl, is reluctantly taken in by Lï¿½on, a professional assassin, after her family is murdered. An unusual relationship forms as she becomes his protï¿½gï¿½e and learns the assassin's trade.",
     "director": "Luc Besson",
     "stars": [
       "Jean Reno",
@@ -766,7 +766,7 @@
   },
   {
     "tittle": "Lejonkungen",
-    "cover": "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@.jpg",
     "releasYear": "1994",
     "duration": "88",
     "genres": [
@@ -786,7 +786,7 @@
   },
   {
     "tittle": "Terminator 2 - Domedagen",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMGU2NzRmZjUtOGUxYS00ZjdjLWEwZWItY2NlM2JhNjkxNTFmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMGU2NzRmZjUtOGUxYS00ZjdjLWEwZWItY2NlM2JhNjkxNTFmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "1991",
     "duration": "137",
     "genres": [
@@ -804,7 +804,7 @@
   },
   {
     "tittle": "Cinema Paradiso",
-    "cover": "https://m.media-amazon.com/images/M/MV5BM2FhYjEyYmYtMDI1Yy00YTdlLWI2NWQtYmEzNzAxOGY1NjY2XkEyXkFqcGdeQXVyNTA3NTIyNDg@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BM2FhYjEyYmYtMDI1Yy00YTdlLWI2NWQtYmEzNzAxOGY1NjY2XkEyXkFqcGdeQXVyNTA3NTIyNDg@.jpg",
     "releasYear": "1988",
     "duration": "155",
     "genres": [
@@ -822,7 +822,7 @@
   },
   {
     "tittle": "Eldflugornas grav",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZmY2NjUzNDQtNTgxNC00M2Q4LTljOWQtMjNjNDBjNWUxNmJlXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZmY2NjUzNDQtNTgxNC00M2Q4LTljOWQtMjNjNDBjNWUxNmJlXkEyXkFqcGdeQXVyNTA4NzY1MzY@.jpg",
     "releasYear": "1988",
     "duration": "89",
     "genres": [
@@ -841,7 +841,7 @@
   },
   {
     "tittle": "Tillbaka till framtiden",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
     "releasYear": "1985",
     "duration": "116",
     "genres": [
@@ -859,8 +859,8 @@
     ]
   },
   {
-    "tittle": "Harmonica - En hämnare",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZGI5MjBmYzYtMzJhZi00NGI1LTk3MzItYjBjMzcxM2U3MDdiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Harmonica - En hÃ¤mnare",
+    "cover": "https://image.tmdb.org/t/p/original/3VxdWrRxRfC5WsIGW67Jd3lXO2h.jpg",
     "releasYear": "1968",
     "duration": "165",
     "genres": [
@@ -877,7 +877,7 @@
   },
   {
     "tittle": "Psycho",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNTQwNDM1YzItNDAxZC00NWY2LTk0M2UtNDIwNWI5OGUyNWUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNTQwNDM1YzItNDAxZC00NWY2LTk0M2UtNDIwNWI5OGUyNWUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1960",
     "duration": "109",
     "genres": [
@@ -896,7 +896,7 @@
   },
   {
     "tittle": "Casablanca",
-    "cover": "https://m.media-amazon.com/images/M/MV5BY2IzZGY2YmEtYzljNS00NTM5LTgwMzUtMzM1NjQ4NGI0OTk0XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BY2IzZGY2YmEtYzljNS00NTM5LTgwMzUtMzM1NjQ4NGI0OTk0XkEyXkFqcGdeQXVyNDYyMDk5MTU@.jpg",
     "releasYear": "1942",
     "duration": "102",
     "genres": [
@@ -915,7 +915,7 @@
   },
   {
     "tittle": "Moderna tider",
-    "cover": "https://m.media-amazon.com/images/M/MV5BYjJiZjMzYzktNjU0NS00OTkxLWEwYzItYzdhYWJjN2QzMTRlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYjJiZjMzYzktNjU0NS00OTkxLWEwYzItYzdhYWJjN2QzMTRlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "1936",
     "duration": "87",
     "genres": [
@@ -934,7 +934,7 @@
   },
   {
     "tittle": "Stadens ljus",
-    "cover": "https://m.media-amazon.com/images/M/MV5BY2I4MmM1N2EtM2YzOS00OWUzLTkzYzctNDc5NDg2N2IyODJmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BY2I4MmM1N2EtM2YzOS00OWUzLTkzYzctNDc5NDg2N2IyODJmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1931",
     "duration": "87",
     "genres": [
@@ -953,7 +953,7 @@
   },
   {
     "tittle": "Kapernaum",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMmExNzU2ZWMtYzUwYi00YmM2LTkxZTQtNmVhNjY0NTMyMWI2XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMmExNzU2ZWMtYzUwYi00YmM2LTkxZTQtNmVhNjY0NTMyMWI2XkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
     "releasYear": "2018",
     "duration": "126",
     "genres": [
@@ -970,7 +970,7 @@
   },
   {
     "tittle": "Joker",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@.jpg",
     "releasYear": "2019",
     "duration": "122",
     "genres": [
@@ -989,7 +989,7 @@
   },
   {
     "tittle": "Your Name.",
-    "cover": "https://m.media-amazon.com/images/M/MV5BODRmZDVmNzUtZDA4ZC00NjhkLWI2M2UtN2M0ZDIzNDcxYThjL2ltYWdlXkEyXkFqcGdeQXVyNTk0MzMzODA@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BODRmZDVmNzUtZDA4ZC00NjhkLWI2M2UtN2M0ZDIzNDcxYThjL2ltYWdlXkEyXkFqcGdeQXVyNTk0MzMzODA@.jpg",
     "releasYear": "2016",
     "duration": "106",
     "genres": [
@@ -1000,15 +1000,15 @@
     "text": "Two strangers find themselves linked in a bizarre way. When a connection forms, will distance be the only thing to keep them apart?",
     "director": "Makoto Shinkai",
     "stars": [
-      "Ryûnosuke Kamiki",
+      "Ryï¿½nosuke Kamiki",
       "Mone Kamishiraishi",
-      "Ryô Narita",
-      "Aoi Yûki"
+      "Ryï¿½ Narita",
+      "Aoi Yï¿½ki"
     ]
   },
   {
     "tittle": "Dangal",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_UY98_CR1,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@.jpg",
     "releasYear": "2016",
     "duration": "161",
     "genres": [
@@ -1028,7 +1028,7 @@
   },
   {
     "tittle": "Spider-Man: Into the Spider-Verse",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@.jpg",
     "releasYear": "2018",
     "duration": "117",
     "genres": [
@@ -1049,7 +1049,7 @@
   },
   {
     "tittle": "Avengers: Endgame",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@.jpg",
     "releasYear": "2019",
     "duration": "181",
     "genres": [
@@ -1070,7 +1070,7 @@
   },
   {
     "tittle": "Avengers: Infinity War",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@.jpg",
     "releasYear": "2018",
     "duration": "149",
     "genres": [
@@ -1090,7 +1090,7 @@
   },
   {
     "tittle": "Coco",
-    "cover": "https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_UY98_CR1,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@.jpg",
     "releasYear": "2017",
     "duration": "105",
     "genres": [
@@ -1103,14 +1103,14 @@
     "stars": [
       "Adrian Molina",
       "Anthony Gonzalez",
-      "Gael García Bernal",
+      "Gael Garcï¿½a Bernal",
       "Benjamin Bratt",
       "Alanna Ubach"
     ]
   },
   {
     "tittle": "Django Unchained",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@.jpg",
     "releasYear": "2012",
     "duration": "165",
     "genres": [
@@ -1128,7 +1128,7 @@
   },
   {
     "tittle": "The Dark Knight Rises",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@.jpg",
     "releasYear": "2012",
     "duration": "164",
     "genres": [
@@ -1146,7 +1146,7 @@
   },
   {
     "tittle": "3 Idiots",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNTkyOGVjMGEtNmQzZi00NzFlLTlhOWQtODYyMDc2ZGJmYzFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UY98_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNTkyOGVjMGEtNmQzZi00NzFlLTlhOWQtODYyMDc2ZGJmYzFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "2009",
     "duration": "170",
     "genres": [
@@ -1164,7 +1164,7 @@
   },
   {
     "tittle": "Taare Zameen Par",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMDhjZWViN2MtNzgxOS00NmI4LThiZDQtZDI3MzM4MDE4NTc0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY98_CR1,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMDhjZWViN2MtNzgxOS00NmI4LThiZDQtZDI3MzM4MDE4NTc0XkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
     "releasYear": "2007",
     "duration": "165",
     "genres": [
@@ -1183,7 +1183,7 @@
   },
   {
     "tittle": "Wall-E",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@.jpg",
     "releasYear": "2008",
     "duration": "98",
     "genres": [
@@ -1202,7 +1202,7 @@
   },
   {
     "tittle": "De andras liv",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOThkM2EzYmMtNDE3NS00NjlhLTg4YzktYTdhNzgyOWY3ZDYzXkEyXkFqcGdeQXVyNzQzNzQxNzI@._V1_UY98_CR1,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOThkM2EzYmMtNDE3NS00NjlhLTg4YzktYTdhNzgyOWY3ZDYzXkEyXkFqcGdeQXVyNzQzNzQxNzI@.jpg",
     "releasYear": "2006",
     "duration": "137",
     "genres": [
@@ -1213,15 +1213,15 @@
     "text": "In 1984 East Berlin, an agent of the secret police, conducting surveillance on a writer and his lover, finds himself becoming increasingly absorbed by their lives.",
     "director": "Florian Henckel von Donnersmarck",
     "stars": [
-      "Ulrich Mühe",
+      "Ulrich Mï¿½he",
       "Martina Gedeck",
       "Sebastian Koch",
       "Ulrich Tukur"
     ]
   },
   {
-    "tittle": "Old Boy - Hämnden",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Old Boy - HÃ¤mnden",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@.jpg",
     "releasYear": "2003",
     "duration": "120",
     "genres": [
@@ -1240,7 +1240,7 @@
   },
   {
     "tittle": "Memento",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZTcyNjk1MjgtOWI3Mi00YzQwLWI5MTktMzY4ZmI2NDAyNzYzXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZTcyNjk1MjgtOWI3Mi00YzQwLWI5MTktMzY4ZmI2NDAyNzYzXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "2000",
     "duration": "113",
     "genres": [
@@ -1258,7 +1258,7 @@
   },
   {
     "tittle": "Prinsessan Mononoke",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNGIzY2IzODQtNThmMi00ZDE4LWI5YzAtNzNlZTM1ZjYyYjUyXkEyXkFqcGdeQXVyODEzNjM5OTQ@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNGIzY2IzODQtNThmMi00ZDE4LWI5YzAtNzNlZTM1ZjYyYjUyXkEyXkFqcGdeQXVyODEzNjM5OTQ@.jpg",
     "releasYear": "1997",
     "duration": "134",
     "genres": [
@@ -1269,15 +1269,15 @@
     "text": "On a journey to find the cure for a Tatarigami's curse, Ashitaka finds himself in the middle of a war between the forest gods and Tatara, a mining colony. In this quest he also meets San, the Mononoke Hime.",
     "director": "Hayao Miyazaki",
     "stars": [
-      "Yôji Matsuda",
+      "Yï¿½ji Matsuda",
       "Yuriko Ishida",
-      "Yûko Tanaka",
+      "Yï¿½ko Tanaka",
       "Billy Crudup"
     ]
   },
   {
     "tittle": "Once Upon a Time in America",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMGFkNWI4MTMtNGQ0OC00MWVmLTk3MTktOGYxN2Y2YWVkZWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMGFkNWI4MTMtNGQ0OC00MWVmLTk3MTktOGYxN2Y2YWVkZWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "1984",
     "duration": "229",
     "genres": [
@@ -1294,8 +1294,8 @@
     ]
   },
   {
-    "tittle": "Jakten på den försvunna skatten",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Jakten pÃ¥ den fÃ¶rsvunna skatten",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@.jpg",
     "releasYear": "1981",
     "duration": "115",
     "genres": [
@@ -1314,7 +1314,7 @@
   },
   {
     "tittle": "The Shining",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZWFlYmY2MGEtZjVkYS00YzU4LTg0YjQtYzY1ZGE3NTA5NGQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZWFlYmY2MGEtZjVkYS00YzU4LTg0YjQtYzY1ZGE3NTA5NGQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
     "releasYear": "1980",
     "duration": "146",
     "genres": [
@@ -1332,7 +1332,7 @@
   },
   {
     "tittle": "Apocalypse",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMDdhODg0MjYtYzBiOS00ZmI5LWEwZGYtZDEyNDU4MmQyNzFkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMDdhODg0MjYtYzBiOS00ZmI5LWEwZGYtZDEyNDU4MmQyNzFkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1979",
     "duration": "147",
     "genres": [
@@ -1351,7 +1351,7 @@
   },
   {
     "tittle": "Alien",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMmQ2MmU3NzktZjAxOC00ZDZhLTk4YzEtMDMyMzcxY2IwMDAyXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOGQzZTBjMjQtOTVmMS00NGE5LWEyYmMtOGQ1ZGZjNmRkYjFhXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg",
     "releasYear": "1979",
     "duration": "117",
     "genres": [
@@ -1369,7 +1369,7 @@
   },
   {
     "tittle": "Himmel och helvete",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOTI4NTNhZDMtMWNkZi00MTRmLWJmZDQtMmJkMGVmZTEzODlhXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOTI4NTNhZDMtMWNkZi00MTRmLWJmZDQtMmJkMGVmZTEzODlhXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
     "releasYear": "1963",
     "duration": "143",
     "genres": [
@@ -1380,15 +1380,15 @@
     "text": "An executive of a shoe company becomes a victim of extortion when his chauffeur's son is kidnapped and held for ransom.",
     "director": "Akira Kurosawa",
     "stars": [
-      "Toshirô Mifune",
+      "Toshirï¿½ Mifune",
       "Yutaka Sada",
       "Tatsuya Nakadai",
-      "Kyôko Kagawa"
+      "Kyï¿½ko Kagawa"
     ]
   },
   {
-    "tittle": "Dr. Strangelove eller: Hur jag slutade ängslas och lärde mig älska bomben",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZWI3ZTMxNjctMjdlNS00NmUwLWFiM2YtZDUyY2I3N2MxYTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Dr. Strangelove eller: Hur jag slutade Ã¤ngslas och lÃ¤rde mig Ã¤lska bomben",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZWI3ZTMxNjctMjdlNS00NmUwLWFiM2YtZDUyY2I3N2MxYTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1964",
     "duration": "95",
     "genres": [
@@ -1404,8 +1404,8 @@
     ]
   },
   {
-    "tittle": "Åklagarens vittne",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNDQwODU5OWYtNDcyNi00MDQ1LThiOGMtZDkwNWJiM2Y3MDg0XkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Ã¥klagarens vittne",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNDQwODU5OWYtNDcyNi00MDQ1LThiOGMtZDkwNWJiM2Y3MDg0XkEyXkFqcGdeQXVyMDI2NDg0NQ@@.jpg",
     "releasYear": "1957",
     "duration": "116",
     "genres": [
@@ -1423,8 +1423,8 @@
     ]
   },
   {
-    "tittle": "Ärans väg",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNjViMmRkOTEtM2ViOS00ODg0LWJhYWEtNTBlOGQxNDczOGY3XkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_UY98_CR2,0,67,98_AL_.jpg",
+    "tittle": "Ã¤rans vÃ¥g",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNjViMmRkOTEtM2ViOS00ODg0LWJhYWEtNTBlOGQxNDczOGY3XkEyXkFqcGdeQXVyMDI2NDg0NQ@@.jpg",
     "releasYear": "1957",
     "duration": "88",
     "genres": [
@@ -1441,8 +1441,8 @@
     ]
   },
   {
-    "tittle": "Fönstret åt gården",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNGUxYWM3M2MtMGM3Mi00ZmRiLWE0NGQtZjE5ODI2OTJhNTU0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "FÃ¶nstret Ã¥t gÃ¥rden",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNGUxYWM3M2MtMGM3Mi00ZmRiLWE0NGQtZjE5ODI2OTJhNTU0XkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
     "releasYear": "1954",
     "duration": "112",
     "genres": [
@@ -1460,7 +1460,7 @@
   },
   {
     "tittle": "Sunset Boulevard",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTU0NTkyNzYwMF5BMl5BanBnXkFtZTgwMDU0NDk5MTI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTU0NTkyNzYwMF5BMl5BanBnXkFtZTgwMDU0NDk5MTI@.jpg",
     "releasYear": "1950",
     "duration": "110",
     "genres": [
@@ -1478,7 +1478,7 @@
   },
   {
     "tittle": "Diktatorn",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMmExYWJjNTktNGUyZS00ODhmLTkxYzAtNWIzOGEyMGNiMmUwXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMmExYWJjNTktNGUyZS00ODhmLTkxYzAtNWIzOGEyMGNiMmUwXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "1940",
     "duration": "125",
     "genres": [
@@ -1497,7 +1497,7 @@
   },
   {
     "tittle": "Jakten",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTg2NDg3ODg4NF5BMl5BanBnXkFtZTcwNzk3NTc3Nw@@._V1_UY98_CR1,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTg2NDg3ODg4NF5BMl5BanBnXkFtZTcwNzk3NTc3Nw@@.jpg",
     "releasYear": "2012",
     "duration": "115",
     "genres": [
@@ -1509,12 +1509,12 @@
       "Mads Mikkelsen",
       "Thomas Bo Larsen",
       "Annika Wedderkopp",
-      "Lasse Fogelstrøm"
+      "Lasse Fogelstrï¿½m"
     ]
   },
   {
     "tittle": "Inglourious Basterds",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOTJiNDEzOWYtMTVjOC00ZjlmLWE0NGMtZmE1OWVmZDQ2OWJhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOTJiNDEzOWYtMTVjOC00ZjlmLWE0NGMtZmE1OWVmZDQ2OWJhXkEyXkFqcGdeQXVyNTIzOTk5ODM@.jpg",
     "releasYear": "2009",
     "duration": "153",
     "genres": [
@@ -1528,12 +1528,12 @@
       "Brad Pitt",
       "Diane Kruger",
       "Eli Roth",
-      "Mélanie Laurent"
+      "Mï¿½lanie Laurent"
     ]
   },
   {
     "tittle": "Eternal Sunshine of the Spotless Mind",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@.jpg",
     "releasYear": "2004",
     "duration": "108",
     "genres": [
@@ -1552,7 +1552,7 @@
   },
   {
     "tittle": "Requiem for a Dream",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOTdiNzJlOWUtNWMwNS00NmFlLWI0YTEtZmI3YjIzZWUyY2Y3XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOTdiNzJlOWUtNWMwNS00NmFlLWI0YTEtZmI3YjIzZWUyY2Y3XkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
     "releasYear": "2000",
     "duration": "102",
     "genres": [
@@ -1569,7 +1569,7 @@
   },
   {
     "tittle": "American Beauty",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
     "releasYear": "1999",
     "duration": "122",
     "genres": [
@@ -1586,7 +1586,7 @@
   },
   {
     "tittle": "Will Hunting",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOTI0MzcxMTYtZDVkMy00NjY1LTgyMTYtZmUxN2M3NmQ2NWJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOTI0MzcxMTYtZDVkMy00NjY1LTgyMTYtZmUxN2M3NmQ2NWJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
     "releasYear": "1997",
     "duration": "126",
     "genres": [
@@ -1599,12 +1599,12 @@
       "Robin Williams",
       "Matt Damon",
       "Ben Affleck",
-      "Stellan Skarsgård"
+      "Stellan SkarsgÃ¥rd"
     ]
   },
   {
     "tittle": "Toy Story",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@.jpg",
     "releasYear": "1995",
     "duration": "81",
     "genres": [
@@ -1623,7 +1623,7 @@
   },
   {
     "tittle": "Braveheart",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMzkzMmU0YTYtOWM3My00YzBmLWI0YzctOGYyNTkwMWE5MTJkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMzkzMmU0YTYtOWM3My00YzBmLWI0YzctOGYyNTkwMWE5MTJkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1995",
     "duration": "178",
     "genres": [
@@ -1641,8 +1641,8 @@
     ]
   },
   {
-    "tittle": "De hänsynslösa",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "De hÃ¤nsynslÃ¶sa",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
     "releasYear": "1992",
     "duration": "99",
     "genres": [
@@ -1660,8 +1660,8 @@
     ]
   },
   {
-    "tittle": "Gå och se...",
-    "cover": "https://m.media-amazon.com/images/M/MV5BODM4Njg0NTAtYjI5Ny00ZjAxLTkwNmItZTMxMWU5M2U3M2RjXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "GÃ¥ och se...",
+    "cover": "https://m.media-amazon.com/images/M/MV5BODM4Njg0NTAtYjI5Ny00ZjAxLTkwNmItZTMxMWU5M2U3M2RjXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1985",
     "duration": "142",
     "genres": [
@@ -1679,8 +1679,8 @@
     ]
   },
   {
-    "tittle": "Aliens - Återkomsten",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZGU2OGY5ZTYtMWNhYy00NjZiLWI0NjUtZmNhY2JhNDRmODU3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Aliens - Ã¥terkomsten",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZGU2OGY5ZTYtMWNhYy00NjZiLWI0NjUtZmNhY2JhNDRmODU3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1986",
     "duration": "137",
     "genres": [
@@ -1699,7 +1699,7 @@
   },
   {
     "tittle": "Amadeus",
-    "cover": "https://m.media-amazon.com/images/M/MV5BNWJlNzUzNGMtYTAwMS00ZjI2LWFmNWQtODcxNWUxODA5YmU1XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BNWJlNzUzNGMtYTAwMS00ZjI2LWFmNWQtODcxNWUxODA5YmU1XkEyXkFqcGdeQXVyNTIzOTk5ODM@.jpg",
     "releasYear": "1984",
     "duration": "160",
     "genres": [
@@ -1719,8 +1719,8 @@
     ]
   },
   {
-    "tittle": "Jedins återkomst",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Jedins Ã¥terkomst",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@.jpg",
     "releasYear": "1983",
     "duration": "131",
     "genres": [
@@ -1738,8 +1738,8 @@
     ]
   },
   {
-    "tittle": "Ubåten",
-    "cover": "https://m.media-amazon.com/images/M/MV5BOGZhZDIzNWMtNjkxMS00MDQ1LThkMTYtZWQzYWU3MWMxMGU5XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "UbÃ¥ten",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOGZhZDIzNWMtNjkxMS00MDQ1LThkMTYtZWQzYWU3MWMxMGU5XkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
     "releasYear": "1981",
     "duration": "149",
     "genres": [
@@ -1750,15 +1750,15 @@
     "text": "The claustrophobic world of a WWII German U-boat; boredom, filth and sheer terror.",
     "director": "Wolfgang Petersen",
     "stars": [
-      "Jürgen Prochnow",
-      "Herbert Grönemeyer",
+      "JÃ¶rgen Prochnow",
+      "Herbert GrÃ¶nemeyer",
       "Klaus Wennemann",
       "Hubertus Bengsch"
     ]
   },
   {
-    "tittle": "År 2001 - Ett rymdäventyr",
-    "cover": "https://m.media-amazon.com/images/M/MV5BMmNlYzRiNDctZWNhMi00MzI4LThkZTctMTUzMmZkMmFmNThmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "tittle": "Ã¥r 2001 - Ett rymdÃ¤ventyr",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMmNlYzRiNDctZWNhMi00MzI4LThkZTctMTUzMmZkMmFmNThmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1968",
     "duration": "149",
     "genres": [
@@ -1776,7 +1776,7 @@
   },
   {
     "tittle": "Studie i brott",
-    "cover": "https://m.media-amazon.com/images/M/MV5BYTE4ODEwZDUtNDFjOC00NjAxLWEzYTQtYTI1NGVmZmFlNjdiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYTE4ODEwZDUtNDFjOC00NjAxLWEzYTQtYTI1NGVmZmFlNjdiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
     "releasYear": "1958",
     "duration": "128",
     "genres": [
@@ -1795,7 +1795,7 @@
   },
   {
     "tittle": "Singin' in the Rain",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZDRjNGViMjQtOThlMi00MTA3LThkYzQtNzJkYjBkMGE0YzE1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UY98_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZDRjNGViMjQtOThlMi00MTA3LThkYzQtNzJkYjBkMGE0YzE1XkEyXkFqcGdeQXVyNDYyMDk5MTU@.jpg",
     "releasYear": "1952",
     "duration": "103",
     "genres": [
@@ -1815,7 +1815,7 @@
   },
   {
     "tittle": "En sensation",
-    "cover": "https://m.media-amazon.com/images/M/MV5BYjBiOTYxZWItMzdiZi00NjlkLWIzZTYtYmFhZjhiMTljOTdkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYjBiOTYxZWItMzdiZi00NjlkLWIzZTYtYmFhZjhiMTljOTdkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
     "releasYear": "1941",
     "duration": "119",
     "genres": [
@@ -1833,7 +1833,7 @@
   },
   {
     "tittle": "M",
-    "cover": "https://m.media-amazon.com/images/M/MV5BODA4ODk3OTEzMF5BMl5BanBnXkFtZTgwMTQ2ODMwMzE@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BODA4ODk3OTEzMF5BMl5BanBnXkFtZTgwMTQ2ODMwMzE@.jpg",
     "releasYear": "1931",
     "duration": "117",
     "genres": [
@@ -1852,7 +1852,7 @@
   },
   {
     "tittle": "Chaplins pojke",
-    "cover": "https://m.media-amazon.com/images/M/MV5BZjhhMThhNDItNTY2MC00MmU1LTliNDEtNDdhZjdlNTY5ZDQ1XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX67_CR0,0,67,98_AL_.jpg",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZjhhMThhNDItNTY2MC00MmU1LTliNDEtNDdhZjdlNTY5ZDQ1XkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
     "releasYear": "1921",
     "duration": "68",
     "genres": [
